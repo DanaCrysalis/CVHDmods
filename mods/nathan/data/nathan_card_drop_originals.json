@@ -1,0 +1,78 @@
+{
+ "base/data/enemy/EnemyParam.dat#YA_SK7#0": [
+  0,
+  50
+ ],
+ "base/data/enemy/EnemyParam.dat#disk00#1": [
+  0,
+  20
+ ],
+ "base/data/enemy/EnemyParam.dat#ent#0": [
+  0,
+  50
+ ],
+ "base/data/enemy/EnemyParam.dat#frdm#0": [
+  0,
+  50
+ ],
+ "base/data/enemy/EnemyParam.dat#fu_sg#0": [
+  0,
+  50
+ ],
+ "base/data/enemy/EnemyParam.dat#grasha#0": [
+  0,
+  50
+ ],
+ "base/data/enemy/EnemyParam.dat#halfh#1": [
+  0,
+  20
+ ],
+ "base/data/enemy/EnemyParam.dat#harpy#0": [
+  0,
+  50
+ ],
+ "base/data/enemy/EnemyParam.dat#honeb#0": [
+  0,
+  50
+ ],
+ "base/data/enemy/EnemyParam.dat#matan0#1": [
+  0,
+  20
+ ],
+ "base/data/enemy/EnemyParam.dat#medusa#0": [
+  0,
+  50
+ ],
+ "base/data/enemy/EnemyParam.dat#oferia#1": [
+  0,
+  10
+ ],
+ "base/data/enemy/EnemyParam.dat#sedm#0": [
+  0,
+  50
+ ],
+ "base/data/enemy/EnemyParam.dat#sf_une#0": [
+  0,
+  50
+ ],
+ "base/data/enemy/EnemyParam.dat#syoku#0": [
+  0,
+  50
+ ],
+ "base/data/enemy/EnemyParam.dat#thdm#0": [
+  0,
+  50
+ ],
+ "base/data/enemy/EnemyParam.dat#troop#1": [
+  0,
+  30
+ ],
+ "base/data/enemy/EnemyParam.dat#ya_skl#0": [
+  0,
+  50
+ ],
+ "dlc/E939382FFF0128B6E9FBA68C8F1BDB186EA8ABA758/data/enemy/EnemyParam07.dat#DLL_FuSimon#0": [
+  0,
+  0
+ ]
+}

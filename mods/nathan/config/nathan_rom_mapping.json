@@ -1,0 +1,265 @@
+{
+  "source_root": "D:\\Games\\Emulators\\Recomps\\Castlevania - Harmony of Despair (World) (XBLA)\\modding\\build\\cotm",
+  "source_hz": 59.727500569606,
+  "target_hz": 60,
+  "notes": [
+    "4095-tick source holds are state sentinels, not real 68-second actions.",
+    "Host-only moves reuse compatible Nathan poses; adaptations are recorded per slot.",
+    "Slots 26/27 are the shot sprite flight/ending, not player casting animations."
+  ],
+  "slots": {
+    "0": {
+      "move": "idle",
+      "source": 0
+    },
+    "1": {
+      "move": "walk",
+      "source": 7
+    },
+    "2": {
+      "move": "crouch hold",
+      "source": 4,
+      "select": [
+        2
+      ],
+      "delays": [
+        5
+      ]
+    },
+    "3": {
+      "move": "stand from crouch",
+      "source": 6
+    },
+    "4": {
+      "move": "jump rise",
+      "source": 10,
+      "hold": 1
+    },
+    "5": {
+      "move": "fall",
+      "source": 16,
+      "hold": 29
+    },
+    "6": {
+      "move": "landing",
+      "source": 15,
+      "hold": 1
+    },
+    "7": {
+      "move": "slide",
+      "source": 22,
+      "rescale": 31,
+      "adaptation": "Complete native slide sequence, fitted to the existing host 31-tick slide window."
+    },
+    "8": {
+      "move": "dive kick (straight down)",
+      "source": 22,
+      "select": [
+        5
+      ],
+      "delays": [
+        31
+      ],
+      "png": "graves_down_spike.png",
+      "adaptation": "Hand-made pose (modding/art/dive_kick), drawn in Nathan's own palettes."
+    },
+    "9": {
+      "move": "dive kick (diagonal)",
+      "source": 22,
+      "select": [
+        5
+      ],
+      "delays": [
+        31
+      ],
+      "png": "graves_diagonal_spike.png",
+      "adaptation": "Hand-made pose (modding/art/dive_kick), drawn in Nathan's own palettes; facing mirrors it."
+    },
+    "10": {
+      "move": "standing damage",
+      "source": 27
+    },
+    "11": {
+      "move": "crouching damage",
+      "source": 28
+    },
+    "12": {
+      "move": "knockback",
+      "source": 27,
+      "select": [
+        2,
+        3
+      ],
+      "delays": [
+        7,
+        24
+      ],
+      "adaptation": "Airborne recoil poses held for the host knockback window."
+    },
+    "13": {
+      "move": "petrified",
+      "source": 30,
+      "select": [
+        0
+      ],
+      "delays": [
+        16
+      ],
+      "stone": true,
+      "adaptation": "Grayscale native rigid pose for the host petrification status."
+    },
+    "14": {
+      "move": "shake free",
+      "source": 30,
+      "delays": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "stone": true,
+      "x_offsets": [
+        0,
+        -1,
+        0,
+        1
+      ],
+      "adaptation": "Native rigid poses with the host shake cadence."
+    },
+    "15": {
+      "move": "death",
+      "source": 29,
+      "total": 160,
+      "adaptation": "All native death frames at source cadence; extend final pose to retain the host death cleanup window."
+    },
+    "16": {
+      "move": "standing whip",
+      "source": 17
+    },
+    "17": {
+      "move": "crouching whip",
+      "source": 18
+    },
+    "18": {
+      "move": "subweapon throw",
+      "source": 24
+    },
+    "19": {
+      "move": "crouching subweapon",
+      "source": 18,
+      "select": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "delays": [
+        4,
+        4,
+        3,
+        3,
+        5
+      ],
+      "crop": [
+        -12,
+        -22,
+        16,
+        1
+      ],
+      "adaptation": "Crouched arm windup/release poses cropped to the body; no native crouched throwing sequence exists in the current body bank."
+    },
+    "20": {
+      "move": "co-op waiting",
+      "source": 25,
+      "select": [
+        4
+      ],
+      "delays": [
+        20
+      ],
+      "adaptation": "Summoning preparation pose for the host co-op wait."
+    },
+    "21": {
+      "move": "co-op start",
+      "source": 25,
+      "select": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "rescale": 25,
+      "adaptation": "Summon startup adapted to the host 25-tick co-op start."
+    },
+    "22": {
+      "move": "co-op loop",
+      "source": 25,
+      "select": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "adaptation": "Native summoning glow loop while the co-op state is active."
+    },
+    "23": {
+      "move": "landing recovery roll",
+      "source": 29,
+      "select": [
+        7,
+        8,
+        9
+      ],
+      "append": {
+        "source": 6
+      },
+      "adaptation": "Ground recovery poses followed by the native stand-up sequence."
+    },
+    "24": {
+      "move": "back dash",
+      "source": 9,
+      "rescale": 21,
+      "adaptation": "Native braking/recoil cycle adapted to the host 21-tick back dash."
+    },
+    "25": {
+      "move": "hold up",
+      "source": 0,
+      "select": [
+        0
+      ],
+      "delays": [
+        1
+      ],
+      "adaptation": "Nathan has no separate look-up pose; intentional idle pose."
+    },
+    "26": {
+      "move": "tackle",
+      "source": 29,
+      "adaptation": "Nathan's CotM Tackle (shoulder lunge, impact burst, roll) for his Martial Art; replaces Simon's unused shot pose. Played through motion 193."
+    },
+    "27": {
+      "move": "fireball impact",
+      "source": 20,
+      "family": "effects",
+      "adaptation": "Native flame dissipating effect replaces the incorrectly mapped death animation."
+    },
+    "28": {
+      "move": "held whip rotation",
+      "source": 20
+    },
+    "29": {
+      "move": "crouching held whip rotation",
+      "source": 21
+    },
+    "30": {
+      "move": "lower into crouch",
+      "source": 4
+    }
+  }
+}

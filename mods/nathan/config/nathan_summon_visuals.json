@@ -1,0 +1,80 @@
+{
+  "reference": "https://www.youtube.com/watch?v=V5c8smOx61A",
+  "reference_game_crop": [
+    160,
+    40,
+    960,
+    640
+  ],
+  "reference_anchor": [
+    68,
+    148
+  ],
+  "tick_hz": 59.72750057,
+  "timeline_ticks": 448,
+  "visual_clip": [
+    -160,
+    -180,
+    160,
+    12
+  ],
+  "notes": [
+    "Original ARM controller spawns, trajectories, affine scale and animation scripts replace authored particle emitters.",
+    "HoD alpha blending replaces ordered coverage; 0.75 opacity is a video-matched adaptation, not a full GBA compositor.",
+    "54 ticks of cast entrance; 384 ROM ticks; 10 exit ticks. No video pixels ship."
+  ],
+  "creatures": [
+    {
+      "name": "Salamander",
+      "core": 9,
+      "resource": 80
+    },
+    {
+      "name": "Serpent",
+      "core": 10,
+      "resource": 81
+    },
+    {
+      "name": "Mandragora",
+      "core": 72,
+      "resource": 82
+    },
+    {
+      "name": "Golem",
+      "core": 12,
+      "resource": 83
+    },
+    {
+      "name": "Cockatrice",
+      "core": 8,
+      "resource": 84
+    },
+    {
+      "name": "Manticore",
+      "core": 1,
+      "resource": 85
+    },
+    {
+      "name": "Griffin",
+      "core": 8,
+      "resource": 86
+    },
+    {
+      "name": "Thunderbird",
+      "core": 4,
+      "resource": 87
+    },
+    {
+      "name": "Unicorn",
+      "core": 4,
+      "resource": 88
+    },
+    {
+      "name": "Black Dog",
+      "core": 11,
+      "resource": 89
+    }
+  ],
+  "opacity": 0.75,
+  "cast_entrance_ticks": 54
+}

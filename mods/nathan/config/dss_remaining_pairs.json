@@ -1,0 +1,1529 @@
+{
+ "source": "MP/STR from CotM USA table 0x080E47E8 (12 bytes per pair, 10x10); effects summarised from published guides and still to be confirmed against ROM behaviour",
+ "groups": {
+  "actor": "needs the moving hit-object pool",
+  "melee": "Mars weapon swaps",
+  "passive": "stat, status or damage rules",
+  "complex": "needs its own system"
+ },
+ "pairs": [
+  {
+   "action": "Jupiter",
+   "attribute": "Serpent",
+   "group": "actor",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 4368,
+   "mp_per_second": 3.98,
+   "rom_str_percent": 100,
+   "effect": "Four fast ice balls orbit Nathan; low damage; can freeze enemies near death.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.99
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Mandragora",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 17472,
+   "mp_per_second": 15.92,
+   "rom_str_percent": 100,
+   "effect": "Regenerate about 1% max HP per second while standing still.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 3.98
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Golem",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 4368,
+   "mp_per_second": 3.98,
+   "rom_str_percent": 100,
+   "effect": "Post-hit invincibility lasts four times as long.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.99
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Cockatrice",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 8736,
+   "mp_per_second": 7.96,
+   "rom_str_percent": 100,
+   "effect": "Immune to stone; movement is slowed.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 1.99
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Manticore",
+   "group": "actor",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 4368,
+   "mp_per_second": 3.98,
+   "rom_str_percent": 100,
+   "effect": "Large poison clouds spread around Nathan; light, frequent damage.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.99
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Thunderbird",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 4368,
+   "mp_per_second": 3.98,
+   "rom_str_percent": 100,
+   "effect": "Damage received is halved.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.99
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Unicorn",
+   "group": "actor",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 8736,
+   "mp_per_second": 7.96,
+   "rom_str_percent": 100,
+   "effect": "Holy sphere around Nathan damages enemies and blocks some projectiles; contact still hurts him.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 1.99
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "BlackDog",
+   "group": "actor",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 8736,
+   "mp_per_second": 7.96,
+   "rom_str_percent": 100,
+   "effect": "Large dark cloud around Nathan deals heavy damage; Nathan is poisoned while active.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 1.99
+  },
+  {
+   "action": "Mars",
+   "attribute": "Serpent",
+   "group": "melee",
+   "rom_mp_per_use": 4,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 71,
+   "effect": "Very fast ice sword; can freeze enemies near death.",
+   "hod_mp_per_use": 1,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Mars",
+   "attribute": "Mandragora",
+   "group": "melee",
+   "rom_mp_per_use": 10,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 112,
+   "effect": "Oversized plant sword.",
+   "hod_mp_per_use": 3,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Mars",
+   "attribute": "Golem",
+   "group": "melee",
+   "rom_mp_per_use": 4,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Slow sledgehammer; quake hits other grounded enemies.",
+   "hod_mp_per_use": 1,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Mars",
+   "attribute": "Cockatrice",
+   "group": "melee",
+   "rom_mp_per_use": 12,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 122,
+   "effect": "Fast blades (guides say tonfa or saber); can stone enemies near death.",
+   "hod_mp_per_use": 3,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Mars",
+   "attribute": "Manticore",
+   "group": "melee",
+   "rom_mp_per_use": 8,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 89,
+   "effect": "Poison claws, strike twice.",
+   "hod_mp_per_use": 2,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Mars",
+   "attribute": "Griffin",
+   "group": "melee",
+   "rom_mp_per_use": 16,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 141,
+   "effect": "Charge slash: holding attack adds levels of reach and damage.",
+   "hod_mp_per_use": 4,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Mars",
+   "attribute": "Thunderbird",
+   "group": "melee",
+   "rom_mp_per_use": 16,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Repeated presses: three punches then a kick.",
+   "hod_mp_per_use": 4,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Mars",
+   "attribute": "Unicorn",
+   "group": "melee",
+   "rom_mp_per_use": 32,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 173,
+   "effect": "Giant long holy sword.",
+   "hod_mp_per_use": 8,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Mars",
+   "attribute": "BlackDog",
+   "group": "melee",
+   "rom_mp_per_use": 32,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 200,
+   "effect": "Very slow, very strong gun.",
+   "hod_mp_per_use": 8,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Diana",
+   "attribute": "Serpent",
+   "group": "actor",
+   "rom_mp_per_use": 64,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Swing ejects three short-range ice projectiles.",
+   "hod_mp_per_use": 16,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Diana",
+   "attribute": "Mandragora",
+   "group": "actor",
+   "rom_mp_per_use": 96,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Swing ejects three plant clouds.",
+   "hod_mp_per_use": 24,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Diana",
+   "attribute": "Golem",
+   "group": "actor",
+   "rom_mp_per_use": 16,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Swing sends an earth wave along the floor.",
+   "hod_mp_per_use": 4,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Diana",
+   "attribute": "Cockatrice",
+   "group": "actor",
+   "rom_mp_per_use": 16,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Swing ejects three stones; can stone enemies near death.",
+   "hod_mp_per_use": 4,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Diana",
+   "attribute": "Manticore",
+   "group": "actor",
+   "rom_mp_per_use": 16,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Diagonal whip shoots one poison ball.",
+   "hod_mp_per_use": 4,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Diana",
+   "attribute": "Griffin",
+   "group": "actor",
+   "rom_mp_per_use": 128,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Swing fires one heavy sonic boom or arrowhead across the screen.",
+   "hod_mp_per_use": 32,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Diana",
+   "attribute": "Thunderbird",
+   "group": "actor",
+   "rom_mp_per_use": 12,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Lightning runs along the spinning whip.",
+   "hod_mp_per_use": 3,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Diana",
+   "attribute": "Unicorn",
+   "group": "actor",
+   "rom_mp_per_use": 48,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Holy projectile; repeated hits on the nearest enemy (guides differ on the shape).",
+   "hod_mp_per_use": 12,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Diana",
+   "attribute": "BlackDog",
+   "group": "actor",
+   "rom_mp_per_use": 32,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Eight dark balls burst around Nathan; 2x whip damage.",
+   "hod_mp_per_use": 8,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Serpent",
+   "group": "actor",
+   "rom_mp_per_use": 20,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Ice orb rises and splits on impact; can freeze (guides say 3 or 8 pieces).",
+   "hod_mp_per_use": 5,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Mandragora",
+   "group": "actor",
+   "rom_mp_per_use": 40,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Thrown flower, long range, leaves a trail of leaves.",
+   "hod_mp_per_use": 10,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Golem",
+   "group": "actor",
+   "rom_mp_per_use": 30,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Five spears erupt from the ground.",
+   "hod_mp_per_use": 8,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Cockatrice",
+   "group": "actor",
+   "rom_mp_per_use": 60,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Meteors fall; can stone (guides say 3 or 6).",
+   "hod_mp_per_use": 15,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Manticore",
+   "group": "actor",
+   "rom_mp_per_use": 10,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Poison dust that lingers and hurts enemies staying in it.",
+   "hod_mp_per_use": 3,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Griffin",
+   "group": "actor",
+   "rom_mp_per_use": 60,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Small tornado firing projectiles in several directions.",
+   "hod_mp_per_use": 15,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Thunderbird",
+   "group": "actor",
+   "rom_mp_per_use": 80,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Lightning ball sticks to an enemy and keeps hitting.",
+   "hod_mp_per_use": 20,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Unicorn",
+   "group": "actor",
+   "rom_mp_per_use": 80,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Holy lances or arrows rain down.",
+   "hod_mp_per_use": 20,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Apollo",
+   "attribute": "BlackDog",
+   "group": "actor",
+   "rom_mp_per_use": 120,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Large dark ball homes in on the nearest enemy; heavy damage.",
+   "hod_mp_per_use": 30,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Serpent",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 3276,
+   "mp_per_second": 2.99,
+   "rom_str_percent": 100,
+   "effect": "Immune to the Serpent element; attacks of that element heal instead.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.75
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Mandragora",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 3276,
+   "mp_per_second": 2.99,
+   "rom_str_percent": 100,
+   "effect": "Immune to the Mandragora element; attacks of that element heal instead.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.75
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Golem",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 3276,
+   "mp_per_second": 2.99,
+   "rom_str_percent": 100,
+   "effect": "Immune to the Golem element; attacks of that element heal instead.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.75
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Cockatrice",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 3276,
+   "mp_per_second": 2.99,
+   "rom_str_percent": 100,
+   "effect": "Immune to the Cockatrice element; attacks of that element heal instead.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.75
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Manticore",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 3276,
+   "mp_per_second": 2.99,
+   "rom_str_percent": 100,
+   "effect": "Immune to the Manticore element; attacks of that element heal instead.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.75
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Griffin",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 3276,
+   "mp_per_second": 2.99,
+   "rom_str_percent": 100,
+   "effect": "Immune to the Griffin element; attacks of that element heal instead.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.75
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Thunderbird",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 3276,
+   "mp_per_second": 2.99,
+   "rom_str_percent": 100,
+   "effect": "Immune to the Thunderbird element; attacks of that element heal instead.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.75
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Unicorn",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 3276,
+   "mp_per_second": 2.99,
+   "rom_str_percent": 100,
+   "effect": "Immune to the Unicorn element; attacks of that element heal instead.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.75
+  },
+  {
+   "action": "Neptune",
+   "attribute": "BlackDog",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 3276,
+   "mp_per_second": 2.99,
+   "rom_str_percent": 100,
+   "effect": "Immune to the BlackDog element; attacks of that element heal instead.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.75
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Serpent",
+   "group": "actor",
+   "rom_mp_per_use": 4,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Ghost hovers over an enemy and attacks; can freeze.",
+   "hod_mp_per_use": 1,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Mandragora",
+   "group": "actor",
+   "rom_mp_per_use": 4,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Bird familiar (owl or falcon) shoots projectiles when Nathan attacks.",
+   "hod_mp_per_use": 1,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Golem",
+   "group": "actor",
+   "rom_mp_per_use": 4,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Hawk charges enemies.",
+   "hod_mp_per_use": 1,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Cockatrice",
+   "group": "actor",
+   "rom_mp_per_use": 6,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Medusa head shoots stone balls; can stone.",
+   "hod_mp_per_use": 2,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Manticore",
+   "group": "actor",
+   "rom_mp_per_use": 8,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Mist floats behind Nathan; hurts enemies at his back.",
+   "hod_mp_per_use": 2,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Griffin",
+   "group": "actor",
+   "rom_mp_per_use": 8,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Fairy shoots energy balls when the whip spins.",
+   "hod_mp_per_use": 2,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Thunderbird",
+   "group": "actor",
+   "rom_mp_per_use": 16,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Electric hawk flies into enemies.",
+   "hod_mp_per_use": 4,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Unicorn",
+   "group": "actor",
+   "rom_mp_per_use": 32,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Angel throws knives when the whip spins.",
+   "hod_mp_per_use": 8,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Saturn",
+   "attribute": "BlackDog",
+   "group": "actor",
+   "rom_mp_per_use": 4,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Devil fires shots; more the longer the whip is spun.",
+   "hod_mp_per_use": 1,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Serpent",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 4368,
+   "mp_per_second": 3.98,
+   "rom_str_percent": 100,
+   "effect": "Subweapons fire twice at no extra heart cost (not Cross or Watch).",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.99
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Golem",
+   "group": "complex",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 8736,
+   "mp_per_second": 7.96,
+   "rom_str_percent": 100,
+   "effect": "Shadow Nathan mirrors his movements and attacks.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 1.99
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Manticore",
+   "group": "passive",
+   "rom_mp_per_use": 5,
+   "rom_drain_16_16": 0,
+   "mp_per_second": 0.0,
+   "rom_str_percent": 100,
+   "effect": "Subweapons cost MP instead of hearts.",
+   "hod_mp_per_use": 2,
+   "hod_mp_per_second": 0.0
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Griffin",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 4368,
+   "mp_per_second": 3.98,
+   "rom_str_percent": 100,
+   "effect": "Double movement speed.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 0.99
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Unicorn",
+   "group": "passive",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 21840,
+   "mp_per_second": 19.9,
+   "rom_str_percent": 100,
+   "effect": "Complete invincibility, but his attacks deal no damage.",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 4.97
+  },
+  {
+   "action": "Pluto",
+   "attribute": "BlackDog",
+   "group": "complex",
+   "rom_mp_per_use": 0,
+   "rom_drain_16_16": 5460,
+   "mp_per_second": 4.98,
+   "rom_str_percent": 100,
+   "effect": "Becomes a skeleton: any hit kills, rare 9999-damage bone (bear with Bear Ring).",
+   "hod_mp_per_use": 0,
+   "hod_mp_per_second": 1.25
+  }
+ ],
+ "salamander_update": {
+  "date": "2026-11-10",
+  "implemented_from_this_checklist": [
+   {
+    "action": "Jupiter",
+    "attribute": "Salamander",
+    "group": "actor",
+    "rom_mp_per_use": 0,
+    "rom_drain_16_16": 4368,
+    "mp_per_second": 3.98,
+    "rom_str_percent": 100,
+    "effect": "Two slow fire shields orbit Nathan and damage on contact (whip-level damage)."
+   },
+   {
+    "action": "Mars",
+    "attribute": "Salamander",
+    "group": "melee",
+    "rom_mp_per_use": 8,
+    "rom_drain_16_16": 0,
+    "mp_per_second": 0.0,
+    "rom_str_percent": 110,
+    "effect": "Fire sword, average speed."
+   },
+   {
+    "action": "Diana",
+    "attribute": "Salamander",
+    "group": "actor",
+    "rom_mp_per_use": 32,
+    "rom_drain_16_16": 0,
+    "mp_per_second": 0.0,
+    "rom_str_percent": 100,
+    "effect": "Each whip swing ejects one slow fireball."
+   },
+   {
+    "action": "Apollo",
+    "attribute": "Salamander",
+    "group": "actor",
+    "rom_mp_per_use": 20,
+    "rom_drain_16_16": 0,
+    "mp_per_second": 0.0,
+    "rom_str_percent": 100,
+    "effect": "Thrown fire bomb."
+   },
+   {
+    "action": "Neptune",
+    "attribute": "Salamander",
+    "group": "passive",
+    "rom_mp_per_use": 0,
+    "rom_drain_16_16": 3276,
+    "mp_per_second": 2.99,
+    "rom_str_percent": 100,
+    "effect": "Immune to the Salamander element; attacks of that element heal instead."
+   },
+   {
+    "action": "Saturn",
+    "attribute": "Salamander",
+    "group": "actor",
+    "rom_mp_per_use": 4,
+    "rom_drain_16_16": 0,
+    "mp_per_second": 0.0,
+    "rom_str_percent": 100,
+    "effect": "Bat familiar shoots fireballs."
+   },
+   {
+    "action": "Pluto",
+    "attribute": "Salamander",
+    "group": "complex",
+    "rom_mp_per_use": 0,
+    "rom_drain_16_16": 4368,
+    "mp_per_second": 3.98,
+    "rom_str_percent": 100,
+    "effect": "Item Crash for the equipped subweapon."
+   }
+  ],
+  "remaining_pairs": 59,
+  "note": "All ten Salamander combinations have code paths. Pluto includes documented HoD Item Crash adaptations; latest gameplay validation pending. Native actor/terrain/art verification is in modding/build/nathan_firewhip."
+ },
+ "current_update": {
+  "date": "2026-11-10",
+  "implementation_paths": 100,
+  "exhaustive_live_verification": false,
+  "status": "Initial HoD adapters; CotM fidelity work remains",
+  "approved_adaptations": {
+   "Pluto + Manticore": "50% lower subweapon MP costs",
+   "Neptune + Mandragora": "50% slash resistance",
+   "Neptune + Golem": "50% strike resistance",
+   "Neptune + Griffin": "50% pierce resistance"
+  },
+  "remaining_fidelity": [
+   "Four imported resource banks use unverified direct-frame timing",
+   "Exact moving melee geometry and some hit thresholds",
+   "Full native familiar AI, Apollo choreography and impact sequences",
+   "Jupiter Golem gear-dependent guard scaling",
+   "Jupiter Thunderbird final damage reduction parity",
+   "Jupiter Black Dog native poison status",
+   "Pluto Serpent exact native subweapon clone",
+   "Bear Ring conditional transformation",
+   "Live FX palette readiness and full stage/enemy/network coverage"
+  ]
+ },
+ "current_matrix": [
+  {
+   "action": "Mercury",
+   "attribute": "Salamander",
+   "status": "implemented_initial",
+   "description": "Mercury + Salamander\nFire Whip; STR 105%.\n2 MP/swing.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mercury",
+   "attribute": "Serpent",
+   "status": "implemented_initial",
+   "description": "Mercury + Serpent\nIce Whip; STR 71%.\n1 MP/swing.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mercury",
+   "attribute": "Mandragora",
+   "status": "implemented_initial",
+   "description": "Mercury + Mandragora\nPlant Whip; STR 110%.\n2 MP/swing.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mercury",
+   "attribute": "Golem",
+   "status": "implemented_initial",
+   "description": "Mercury + Golem\nEarth Whip; STR 100%.\n2 MP/swing.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mercury",
+   "attribute": "Cockatrice",
+   "status": "implemented_initial",
+   "description": "Mercury + Cockatrice\nStone Whip; STR 110%.\n2 MP/swing.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mercury",
+   "attribute": "Manticore",
+   "status": "implemented_initial",
+   "description": "Mercury + Manticore\nPoison Whip; STR 89%.\n2 MP/swing.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mercury",
+   "attribute": "Griffin",
+   "status": "implemented_initial",
+   "description": "Mercury + Griffin\nWind Whip; STR 87%.\n3 MP/swing.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mercury",
+   "attribute": "Thunderbird",
+   "status": "implemented_initial",
+   "description": "Mercury + Thunderbird\nLightning Whip; STR 100%.\n3 MP/swing.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mercury",
+   "attribute": "Unicorn",
+   "status": "implemented_initial",
+   "description": "Mercury + Unicorn\nHoly Whip; STR 122%. Heals 1% HP.\n5 MP/swing.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mercury",
+   "attribute": "Black Dog",
+   "status": "implemented_initial",
+   "description": "Mercury + Black Dog\nDark Whip; STR 141%.\n10 MP/swing.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Venus",
+   "attribute": "Salamander",
+   "status": "implemented_initial",
+   "description": "Venus + Salamander\nSTR 112%; 1 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Venus",
+   "attribute": "Serpent",
+   "status": "implemented_initial",
+   "description": "Venus + Serpent\nDEF +25%; 1 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Venus",
+   "attribute": "Mandragora",
+   "status": "implemented_initial",
+   "description": "Venus + Mandragora\nLCK +25%; 1 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Venus",
+   "attribute": "Golem",
+   "status": "implemented_initial",
+   "description": "Venus + Golem\nDEF +2% per owned card (max 40%).\n4 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Venus",
+   "attribute": "Cockatrice",
+   "status": "implemented_initial",
+   "description": "Venus + Cockatrice\nWalking: +1 XP/min per equipped skill.\n0.5 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Venus",
+   "attribute": "Manticore",
+   "status": "implemented_initial",
+   "description": "Venus + Manticore\nHeart MP x2; 0.5 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Venus",
+   "attribute": "Griffin",
+   "status": "implemented_initial",
+   "description": "Venus + Griffin\nINT +25%; 1 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Venus",
+   "attribute": "Thunderbird",
+   "status": "implemented_initial",
+   "description": "Venus + Thunderbird\nATK +2% per owned card (max 40%).\n4 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Venus",
+   "attribute": "Unicorn",
+   "status": "implemented_initial",
+   "description": "Venus + Unicorn\nDEF x2, STR 71%; 2 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Venus",
+   "attribute": "Black Dog",
+   "status": "implemented_initial",
+   "description": "Venus + Black Dog\nSTR 141%, DEF half; 2 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Salamander",
+   "status": "implemented_initial",
+   "description": "Jupiter + Salamander\nTwo orbiting flame shields.\n1 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Serpent",
+   "status": "implemented_initial",
+   "description": "Jupiter + Serpent\nFour fast orbiting ice shields.\n1 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Mandragora",
+   "status": "implemented_initial",
+   "description": "Jupiter + Mandragora\nRecover HP while standing still.\n4 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Golem",
+   "status": "implemented_initial",
+   "description": "Jupiter + Golem\nExtended post-hit invulnerability.\n1 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Cockatrice",
+   "status": "implemented_initial",
+   "description": "Jupiter + Cockatrice\nStone immunity; movement slowed.\n2 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Manticore",
+   "status": "implemented_initial",
+   "description": "Jupiter + Manticore\nDamaging poison mist.\n1 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Griffin",
+   "status": "implemented_initial",
+   "description": "Jupiter + Griffin\nShields Nathan while moving.\n1 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Thunderbird",
+   "status": "implemented_initial",
+   "description": "Jupiter + Thunderbird\nIncoming damage is halved.\n1 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Unicorn",
+   "status": "implemented_initial",
+   "description": "Jupiter + Unicorn\nHoly barrier blocks enemy shots.\n2 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Jupiter",
+   "attribute": "Black Dog",
+   "status": "implemented_initial",
+   "description": "Jupiter + Black Dog\nDark cloud; poisons Nathan.\n2 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mars",
+   "attribute": "Salamander",
+   "status": "implemented_initial",
+   "description": "Mars + Salamander\nFire sword; 110% attack power.\n2 MP/swing.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mars",
+   "attribute": "Serpent",
+   "status": "implemented_initial",
+   "description": "Mars + Serpent\nFast ice sword.\n1 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mars",
+   "attribute": "Mandragora",
+   "status": "implemented_initial",
+   "description": "Mars + Mandragora\nLarge plant sword.\n3 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mars",
+   "attribute": "Golem",
+   "status": "implemented_initial",
+   "description": "Mars + Golem\nHammer plus a ground quake.\n1 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mars",
+   "attribute": "Cockatrice",
+   "status": "implemented_initial",
+   "description": "Mars + Cockatrice\nStone blades.\n3 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mars",
+   "attribute": "Manticore",
+   "status": "implemented_initial",
+   "description": "Mars + Manticore\nPoison claws strike twice.\n2 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mars",
+   "attribute": "Griffin",
+   "status": "implemented_initial",
+   "description": "Mars + Griffin\nHold X to charge a long slash.\n4 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mars",
+   "attribute": "Thunderbird",
+   "status": "implemented_initial",
+   "description": "Mars + Thunderbird\nTap X repeatedly for a combo.\n4 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mars",
+   "attribute": "Unicorn",
+   "status": "implemented_initial",
+   "description": "Mars + Unicorn\nLong holy sword.\n8 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Mars",
+   "attribute": "Black Dog",
+   "status": "implemented_initial",
+   "description": "Mars + Black Dog\nSlow, powerful dark gun.\n8 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Diana",
+   "attribute": "Salamander",
+   "status": "implemented_initial",
+   "description": "Diana + Salamander\nWhip launches a fireball.\n8 MP/swing.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Diana",
+   "attribute": "Serpent",
+   "status": "implemented_initial",
+   "description": "Diana + Serpent\nThree short-range ice shots.\n16 MP/use.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Diana",
+   "attribute": "Mandragora",
+   "status": "implemented_initial",
+   "description": "Diana + Mandragora\nThree drifting plant clouds.\n24 MP/use.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Diana",
+   "attribute": "Golem",
+   "status": "implemented_initial",
+   "description": "Diana + Golem\nEarth wave follows the ground.\n4 MP/use.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Diana",
+   "attribute": "Cockatrice",
+   "status": "implemented_initial",
+   "description": "Diana + Cockatrice\nThree petrifying stones.\n4 MP/use.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Diana",
+   "attribute": "Manticore",
+   "status": "implemented_initial",
+   "description": "Diana + Manticore\nDiagonal whip and poison shot.\n4 MP/use.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Diana",
+   "attribute": "Griffin",
+   "status": "implemented_initial",
+   "description": "Diana + Griffin\nHeavy sonic projectile.\n32 MP/use.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Diana",
+   "attribute": "Thunderbird",
+   "status": "implemented_initial",
+   "description": "Diana + Thunderbird\nLightning while spinning the whip.\n3 MP/use.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Diana",
+   "attribute": "Unicorn",
+   "status": "implemented_initial",
+   "description": "Diana + Unicorn\nHoming, repeated holy hits.\n12 MP/use.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Diana",
+   "attribute": "Black Dog",
+   "status": "implemented_initial",
+   "description": "Diana + Black Dog\nEight dark shots burst outward.\n8 MP/use.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Salamander",
+   "status": "implemented_initial",
+   "description": "Apollo + Salamander\nThrow a fire bomb.\n5 MP/bomb.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Serpent",
+   "status": "implemented_initial",
+   "description": "Apollo + Serpent\nIce orb bursts into eight shards.\n5 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Mandragora",
+   "status": "implemented_initial",
+   "description": "Apollo + Mandragora\nFlower leaves a damaging leaf trail.\n10 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Golem",
+   "status": "implemented_initial",
+   "description": "Apollo + Golem\nFive spears rise from the ground.\n8 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Cockatrice",
+   "status": "implemented_initial",
+   "description": "Apollo + Cockatrice\nSix falling stone meteors.\n15 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Manticore",
+   "status": "implemented_initial",
+   "description": "Apollo + Manticore\nLingering poison cloud.\n3 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Griffin",
+   "status": "implemented_initial",
+   "description": "Apollo + Griffin\nTornado fires wind projectiles.\n15 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Thunderbird",
+   "status": "implemented_initial",
+   "description": "Apollo + Thunderbird\nLightning orb sticks to its target.\n20 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Unicorn",
+   "status": "implemented_initial",
+   "description": "Apollo + Unicorn\nRain of holy lances.\n20 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Apollo",
+   "attribute": "Black Dog",
+   "status": "implemented_initial",
+   "description": "Apollo + Black Dog\nLarge homing dark orb.\n30 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Salamander",
+   "status": "implemented_initial",
+   "description": "Neptune + Salamander\nFire hits heal 50 HP.\n0.75 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Serpent",
+   "status": "implemented_initial",
+   "description": "Neptune + Serpent\nIce hits heal 50 HP.\n0.75 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Mandragora",
+   "status": "implemented_initial",
+   "description": "Neptune + Mandragora\nSlash damage reduced by 50%.\n0.75 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Golem",
+   "status": "implemented_initial",
+   "description": "Neptune + Golem\nStrike damage reduced by 50%.\n0.75 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Cockatrice",
+   "status": "implemented_initial",
+   "description": "Neptune + Cockatrice\nStone attacks heal 50 HP.\n0.75 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Manticore",
+   "status": "implemented_initial",
+   "description": "Neptune + Manticore\nPoison attacks heal 50 HP.\n0.75 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Griffin",
+   "status": "implemented_initial",
+   "description": "Neptune + Griffin\nPierce damage reduced by 50%.\n0.75 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Thunderbird",
+   "status": "implemented_initial",
+   "description": "Neptune + Thunderbird\nLightning hits heal 50 HP.\n0.75 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Unicorn",
+   "status": "implemented_initial",
+   "description": "Neptune + Unicorn\nHoly hits heal 50 HP.\n0.75 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Neptune",
+   "attribute": "Black Dog",
+   "status": "implemented_initial",
+   "description": "Neptune + Black Dog\nDark hits heal 50 HP.\n0.75 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Salamander",
+   "status": "implemented_initial",
+   "description": "Saturn + Salamander\nBat familiar shoots when you attack.\n1 MP/shot.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Serpent",
+   "status": "implemented_initial",
+   "description": "Saturn + Serpent\nGhost attacks nearby enemies.\n1 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Mandragora",
+   "status": "implemented_initial",
+   "description": "Saturn + Mandragora\nOwl shoots when Nathan attacks.\n1 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Golem",
+   "status": "implemented_initial",
+   "description": "Saturn + Golem\nHawk dives into enemies.\n1 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Cockatrice",
+   "status": "implemented_initial",
+   "description": "Saturn + Cockatrice\nMedusa fires petrifying shots.\n2 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Manticore",
+   "status": "implemented_initial",
+   "description": "Saturn + Manticore\nMist attacks enemies behind Nathan.\n2 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Griffin",
+   "status": "implemented_initial",
+   "description": "Saturn + Griffin\nFairy shoots while the whip spins.\n2 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Thunderbird",
+   "status": "implemented_initial",
+   "description": "Saturn + Thunderbird\nElectric hawk dives into enemies.\n4 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Unicorn",
+   "status": "implemented_initial",
+   "description": "Saturn + Unicorn\nAngel throws knives during spins.\n8 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Saturn",
+   "attribute": "Black Dog",
+   "status": "implemented_initial",
+   "description": "Saturn + Black Dog\nDevil: spin longer for stronger shots.\n1 MP/attack.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Uranus",
+   "attribute": "Salamander",
+   "status": "implemented_initial",
+   "description": "Uranus + Salamander\nSummon fire across nearby enemies.\n40 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Uranus",
+   "attribute": "Serpent",
+   "status": "implemented_initial",
+   "description": "Uranus + Serpent\nSummon ice; freezes nearby enemies.\n30 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Uranus",
+   "attribute": "Mandragora",
+   "status": "implemented_initial",
+   "description": "Uranus + Mandragora\nSummon a burst of plant energy.\n25 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Uranus",
+   "attribute": "Golem",
+   "status": "implemented_initial",
+   "description": "Uranus + Golem\nSummon falling rocks.\n25 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Uranus",
+   "attribute": "Cockatrice",
+   "status": "implemented_initial",
+   "description": "Uranus + Cockatrice\nSummon petrifying stone attacks.\n50 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Uranus",
+   "attribute": "Manticore",
+   "status": "implemented_initial",
+   "description": "Uranus + Manticore\nSummon a cloud of poison.\n20 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Uranus",
+   "attribute": "Griffin",
+   "status": "implemented_initial",
+   "description": "Uranus + Griffin\nSummon a sweeping wind attack.\n25 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Uranus",
+   "attribute": "Thunderbird",
+   "status": "implemented_initial",
+   "description": "Uranus + Thunderbird\nSummon nearby lightning strikes.\n50 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Uranus",
+   "attribute": "Unicorn",
+   "status": "implemented_initial",
+   "description": "Uranus + Unicorn\nSummon healing; restores 16% HP.\n25 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Uranus",
+   "attribute": "Black Dog",
+   "status": "implemented_initial",
+   "description": "Uranus + Black Dog\nSummon darkness; hits heal 1% HP.\n25 MP/cast.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Salamander",
+   "status": "implemented_initial",
+   "description": "Pluto + Salamander\nItem Crash from your B subweapon.\nMP depends on the subweapon.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Serpent",
+   "status": "implemented_initial",
+   "description": "Pluto + Serpent\nExtra subweapon; excludes Cross.\n1 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Mandragora",
+   "status": "implemented_initial",
+   "description": "Pluto + Mandragora\nSubweapon mastery XP +20%.\n1 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Golem",
+   "status": "implemented_initial",
+   "description": "Pluto + Golem\nA shadow mirrors attacks.\n2 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Cockatrice",
+   "status": "implemented_initial",
+   "description": "Pluto + Cockatrice\nDEF +1%/6 min as Nathan (max 20%).\n2 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Manticore",
+   "status": "implemented_initial",
+   "description": "Pluto + Manticore\nSubweapon MP costs reduced by 50%.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Griffin",
+   "status": "implemented_initial",
+   "description": "Pluto + Griffin\nDouble movement speed.\n1 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Thunderbird",
+   "status": "implemented_initial",
+   "description": "Pluto + Thunderbird\nATK +1%/6 min as Nathan (max 20%).\n1 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Unicorn",
+   "status": "implemented_initial",
+   "description": "Pluto + Unicorn\nInvincible; attacks deal no damage.\n5 MP/sec.",
+   "live_verified_this_update": false
+  },
+  {
+   "action": "Pluto",
+   "attribute": "Black Dog",
+   "status": "implemented_initial",
+   "description": "Pluto + Black Dog\nSkeleton: any hit kills; rare big bone.\n1.25 MP/sec.",
+   "live_verified_this_update": false
+  }
+ ],
+ "historical_note": "The pairs list below preserves the earlier 59-pair source/planning audit. current_matrix is the implementation status; effect summaries remain research notes, not fidelity guarantees.",
+ "balance_update": {
+  "date": "2026-11-10",
+  "policy": "HoD adaptation: quarter CotM MP costs; positive per-use costs round up, minimum 1. Continuous drain scales without rounding.",
+  "note": "rom_* and mp_per_second are original CotM values; hod_* and current_matrix descriptions are what the mod uses.",
+  "speed": "Pluto+Griffin and Jupiter+Cockatrice use the native boots fields stats+388/392 via DssSpeedScope.",
+  "live_verified": false
+ }
+}

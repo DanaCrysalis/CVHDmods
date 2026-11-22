@@ -1,0 +1,387 @@
+{
+  "version": 1,
+  "policy": "HoD adaptation: quarter CotM MP costs; positive per-use costs round up, minimum 1. Continuous drain scales without rounding.",
+  "scale": 0.25,
+  "reference_mp_pool": 100,
+  "pair_level": {
+    "policy": "Pair level is the average of the two equipped cards' copies, each capped at 9 (HoD's per-skill cap). Effects grow linearly from today's values at level 1 to the at_max multiplier at level 9. Damage and healing scale whole; stat multipliers scale only their bonus part, so penalties stay fixed. MP costs and on/off effects do not scale.",
+    "damage_at_max": 2.0,
+    "healing_at_max": 2.0,
+    "bonus_at_max": 2.0
+  },
+  "cotm_costs": {
+    "Mercury": [
+      6,
+      2,
+      6,
+      8,
+      6,
+      6,
+      10,
+      10,
+      20,
+      40
+    ],
+    "Mars": [
+      8,
+      4,
+      10,
+      4,
+      12,
+      8,
+      16,
+      16,
+      32,
+      32
+    ],
+    "Diana": [
+      32,
+      64,
+      96,
+      16,
+      16,
+      16,
+      128,
+      12,
+      48,
+      32
+    ],
+    "Apollo": [
+      20,
+      20,
+      40,
+      30,
+      60,
+      10,
+      60,
+      80,
+      80,
+      120
+    ],
+    "Saturn": [
+      4,
+      4,
+      4,
+      4,
+      6,
+      8,
+      8,
+      16,
+      32,
+      4
+    ],
+    "Uranus": [
+      160,
+      120,
+      100,
+      100,
+      200,
+      80,
+      100,
+      200,
+      100,
+      100
+    ],
+    "Crash": [
+      40,
+      60,
+      80,
+      100,
+      60,
+      80,
+      60
+    ]
+  },
+  "damage": {
+    "policy": "Magic pairs (projectiles, familiars, shields, summons, Item Crash) use HoD's skill rule: P + (P/64 + 0.25) x INT, where P is the Hunter Whip's ATK times the pair's multiplier and pair level. Mars weapons and the Pluto shadow use the whip's native physical attack (STR-based)."
+  },
+  "pass_through": {
+    "policy": "Diana: the table is authoritative (true = passes through enemies, false = removed on the first hit; Manticore is false but sticks to what it hits). Apollo and Saturn: true only removes die-on-hit, false keeps the built-in behavior. Enemy invulnerability after a hit is native and per attacking player.",
+    "evidence": {
+      "Diana (all ten)": "the user's own CotM testing, 2026-11-11; Black Dog's ring of eight also seen in the reference video",
+      "Apollo/Black Dog": "guide: seeks enemies until they are destroyed or about five seconds pass",
+      "Apollo/Golem": "guide: five spears damage enemies near and far",
+      "other Apollo true entries": "already persistent by design",
+      "Apollo and Saturn false entries": "not confirmed against CotM"
+    },
+    "Diana": {
+      "Salamander": false,
+      "Serpent": true,
+      "Mandragora": false,
+      "Golem": true,
+      "Cockatrice": false,
+      "Manticore": false,
+      "Griffin": true,
+      "Thunderbird": true,
+      "Unicorn": true,
+      "Black Dog": true
+    },
+    "Apollo": {
+      "Salamander": false,
+      "Serpent": false,
+      "Mandragora": true,
+      "Golem": true,
+      "Cockatrice": false,
+      "Manticore": true,
+      "Griffin": true,
+      "Thunderbird": true,
+      "Unicorn": false,
+      "Black Dog": true
+    },
+    "Saturn": {
+      "Salamander": false,
+      "Serpent": false,
+      "Mandragora": false,
+      "Golem": false,
+      "Cockatrice": false,
+      "Manticore": false,
+      "Griffin": false,
+      "Thunderbird": false,
+      "Unicorn": false,
+      "Black Dog": false
+    }
+  },
+  "card_chests": {
+    "policy": "Ordinary chests hold no cards since enemy drops exist (all ranks 0). To put one back, give it a rank: the chest loot builder 823A9CD0 adds every soul row whose rank (+0x36) matches one of the chest's two ranks, has a nonzero flag (+0x38) and that the local character may use. Rank entries are unweighted: the chest picks one uniformly when its weighted roll (out of 10000) misses. General ranks run from 10 (first chapters on Normal) down to 0.",
+    "weight": 1,
+    "ranks": {
+      "Mercury": 0,
+      "Salamander": 0,
+      "Venus": 0,
+      "Serpent": 0,
+      "Jupiter": 0,
+      "Mandragora": 0,
+      "Mars": 0,
+      "Golem": 0,
+      "Diana": 0,
+      "Cockatrice": 0,
+      "Apollo": 0,
+      "Manticore": 0,
+      "Neptune": 0,
+      "Griffin": 0,
+      "Saturn": 0,
+      "Thunderbird": 0,
+      "Uranus": 0,
+      "Unicorn": 0,
+      "Pluto": 0,
+      "Black Dog": 0
+    }
+  },
+  "boss_chests": {
+    "policy": "Boss chests as a native table edit (tools/nathan_card_drops.py): the cards are appended to the boss chest's own weighted item list in the stage set file, at this weight (x10 out of 10000 before the game's luck scaling for souls, the same as a Hard boss soul). The game filters that list by character permission, so only Nathan can receive them. A chest is identified by its stage set file (chapters 6 and 7 share loot ranks); its two loot ranks are checked too. Cards listed here have rank 0 under card_chests.",
+    "weight": 100,
+    "chests": [
+      {
+        "name": "Hard chapter 2 (Puppet Master)",
+        "stage": "stage00_01_set_hard.dat",
+        "ranks": [
+          4,
+          5
+        ],
+        "cards": [
+          "Saturn"
+        ]
+      },
+      {
+        "name": "Hard chapter 3 (Menace)",
+        "stage": "stage00_02_set_hard.dat",
+        "ranks": [
+          3,
+          4
+        ],
+        "cards": [
+          "Unicorn"
+        ]
+      },
+      {
+        "name": "Hard chapter 4 (Brauner)",
+        "stage": "stage00_05_set_hard.dat",
+        "ranks": [
+          2,
+          3
+        ],
+        "cards": [
+          "Uranus"
+        ]
+      },
+      {
+        "name": "Hard chapter 5 (Death)",
+        "stage": "stage00_07_set_hard.dat",
+        "ranks": [
+          1,
+          2
+        ],
+        "cards": [
+          "Black Dog"
+        ]
+      },
+      {
+        "name": "Hard chapter 6 (Dracula)",
+        "stage": "stage00_08_set_hard.dat",
+        "ranks": [
+          0,
+          1
+        ],
+        "cards": [
+          "Pluto"
+        ]
+      },
+      {
+        "name": "Hard chapter 7 (Astarte)",
+        "stage": "stage00_04_set_hard.dat",
+        "ranks": [
+          0,
+          1
+        ],
+        "cards": [
+          "Unicorn"
+        ]
+      },
+      {
+        "name": "Hard chapter 8 (Legion)",
+        "stage": "stage00_03_set_hard.dat",
+        "ranks": [
+          0,
+          208
+        ],
+        "cards": [
+          "Uranus"
+        ]
+      },
+      {
+        "name": "Hard chapter 9 (Beelzebub)",
+        "stage": "stage00_09_set_hard.dat",
+        "ranks": [
+          0,
+          209
+        ],
+        "cards": [
+          "Saturn"
+        ]
+      },
+      {
+        "name": "Hard chapter 10 (R. the Count)",
+        "stage": "stage00_10_set_hard.dat",
+        "ranks": [
+          0,
+          306
+        ],
+        "cards": [
+          "Pluto"
+        ]
+      },
+      {
+        "name": "Hard chapter 11",
+        "stage": "stage00_11_set_hard.dat",
+        "ranks": [
+          0,
+          403
+        ],
+        "cards": [
+          "Black Dog"
+        ]
+      }
+    ]
+  },
+  "enemy_cards": {
+    "policy": "Kill drops as a native table edit (tools/nathan_card_drops.py): the card is written into a free item slot of the enemy's EnemyParam row at this rate (out of 1000; a drop may set its own rate, e.g. a rare one). The game's own drop roll applies luck and drop boosts, and its character permission check gives the card only to Nathan. The Monster Compendium lists it like any drop (????? until first seen, stars, or the percent with Gambler Glasses); other characters can see the entry but cannot get the card. An enemy has two item slots, so only enemies with a free slot can carry a card. Enemies are matched by the internal name in their row (+0x50); a row's +0x2A indexes the English enemy names (text section 0, group 9 of its own package).",
+    "rate": 25,
+    "drops": [
+      {
+        "enemy": "ya_skl",
+        "name": "Skeleton",
+        "card": "Mercury"
+      },
+      {
+        "enemy": "DLL_FuSimon",
+        "name": "Hellmont (chapter 11 DLC)",
+        "card": "Mercury"
+      },
+      {
+        "enemy": "sf_une",
+        "name": "Une",
+        "card": "Venus"
+      },
+      {
+        "enemy": "disk00",
+        "name": "Disc Armor",
+        "card": "Jupiter"
+      },
+      {
+        "enemy": "troop",
+        "name": "Gurkha Master",
+        "card": "Mars"
+      },
+      {
+        "enemy": "fu_sg",
+        "name": "Skeleton Gunman",
+        "card": "Diana"
+      },
+      {
+        "enemy": "frdm",
+        "name": "Fire Demon",
+        "card": "Apollo"
+      },
+      {
+        "enemy": "sedm",
+        "name": "Sea Demon",
+        "card": "Neptune"
+      },
+      {
+        "enemy": "honeb",
+        "name": "Bone Pillar",
+        "card": "Salamander"
+      },
+      {
+        "enemy": "oferia",
+        "name": "Frozen Shade",
+        "card": "Serpent"
+      },
+      {
+        "enemy": "syoku",
+        "name": "Man-eating Plant",
+        "card": "Mandragora"
+      },
+      {
+        "enemy": "ent",
+        "name": "Treant",
+        "card": "Golem"
+      },
+      {
+        "enemy": "medusa",
+        "name": "Medusa Head",
+        "card": "Cockatrice",
+        "rate": 5
+      },
+      {
+        "enemy": "grasha",
+        "name": "Glasya Labolas",
+        "card": "Manticore"
+      },
+      {
+        "enemy": "harpy",
+        "name": "Harpy",
+        "card": "Griffin"
+      },
+      {
+        "enemy": "thdm",
+        "name": "Thunder Demon",
+        "card": "Thunderbird"
+      }
+    ]
+  },
+  "tackle": {
+    "policy": "Nathan's Martial Art (martialartsset_dlc17.dat, global Martial Art 11, item 0x8B8). Input is the command Simon's module already registers: down, down-forward, forward + attack. The row is Richter's Tackle row with Nathan's text and character mask; the move itself is Nathan's state 37 (nathan_tackle_guest.h). Nathan dashes forward through enemies; only the tackle's own hit area damages, and his normal hurtbox stays, so anything the hit does not kill first can still hurt him.",
+    "mp": 15,
+    "power": 1.75,
+    "speed_walks": 4.0,
+    "dash_seconds": 0.35,
+    "hit_half_width": 18,
+    "hit_half_height": 22,
+    "hit_ahead": 14
+  },
+  "mp_regen": {
+    "policy": "Natural MP regeneration per second (player stats +0x2C, set by the character module's level/life init 836D00F8 from a module constant; equipment bonuses add to it). Simon's module gives 1.0; Yoko and Charlotte have 2.0 (measured live November 17). Nathan's override raises the native base to this value.",
+    "per_second": 2.0
+  }
+}

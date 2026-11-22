@@ -1,0 +1,95 @@
+{
+ "about": "Nathan's code module: Simon's dllSimon.dll (Simon 8-bit DLC) rebased to 0x836C0000 as dllTest12.dll by xexrebase.py, then these in-place patches. New bytes are this mod's own (IDs, pointers, hook code); original bytes are checked by hash only, so no game data is stored here.",
+ "rebase": {
+  "base": "836C0000",
+  "name": "dllTest12.dll",
+  "rebased_sha256": "e29700f608757a7f3498a0ffb502de5b3d455533638ce62b5d284ecf7dd6ad3a"
+ },
+ "result_sha256": "73d4b527997d81302f164b7f792b69e23f414b002f88d9d225dc7abb45e8801c",
+ "patches": [
+  {
+   "offset": "0x10f6",
+   "size": 1,
+   "original_sha256": "beead77994cf573341ec17b58bbf7eb34d2711c993c1d976b128b3188dc1829a",
+   "new": "09",
+   "what": "section count +1 (.nathan)"
+  },
+  {
+   "offset": "0x1328",
+   "size": 23,
+   "original_sha256": "015275e61fa0d0751c1d9f45541c7804c895404455470710ade3786f282f2da0",
+   "new": "2e6e617468616e000002000000c002000002000000c002",
+   "what": ".nathan section header"
+  },
+  {
+   "offset": "0x134c",
+   "size": 4,
+   "original_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+   "new": "20000060",
+   "what": ".nathan section flags (code, executable)"
+  },
+  {
+   "offset": "0x2cb4",
+   "size": 19,
+   "original_sha256": "27dc2c78dff421114738ffae82218a513c786d18849bd11506c4eeb553311c48",
+   "new": "6e617468616e2f705f6e617468616e2e6f7064",
+   "what": "in-level sprite path: nathan/p_nathan.opd"
+  },
+  {
+   "offset": "0x2e73",
+   "size": 1,
+   "original_sha256": "dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d986",
+   "new": "1e",
+   "what": "motion table byte (spin hold)"
+  },
+  {
+   "offset": "0x33cb",
+   "size": 13,
+   "original_sha256": "5bdd1b6f9e339792888b7ad2c30fa86c225a45f46fc75918ab235a5a1a0f391f",
+   "new": "1c000000020000001d00000002",
+   "what": "motions 191/192 -> slots 28/29, looping"
+  },
+  {
+   "offset": "0x3a41",
+   "size": 3,
+   "original_sha256": "074c12bbb278138898d9883b5ad207b130fd6d10c318046826e6bd5ae6ed13e0",
+   "new": "6ec098",
+   "what": "vtable entry 86 (setState) -> .nathan hook"
+  },
+  {
+   "offset": "0x3b25",
+   "size": 7,
+   "original_sha256": "c8816f8050234b20df262379dc60e6a17f13ddbeffd57556919f76f6828b8fa3",
+   "new": "6e4018836e4018",
+   "what": "vtable entries 143/144 (character ID) -> li r3,12"
+  },
+  {
+   "offset": "0x3d6d",
+   "size": 3,
+   "original_sha256": "ff77cac004ed21c5531b3db81faa6331f43b08e22f6f05bec9fbcc9347aba7d8",
+   "new": "6ec000",
+   "what": "state 23 update -> .nathan hook"
+  },
+  {
+   "offset": "0x3d85",
+   "size": 3,
+   "original_sha256": "98571b1e3351770a8325f75b64e12e6ce477e1d29402f0a1e3812f7b7f50a87c",
+   "new": "6ec04c",
+   "what": "state hook -> .nathan"
+  },
+  {
+   "offset": "0x25018",
+   "size": 8,
+   "original_sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+   "new": "3860000c4e800020",
+   "what": "li r3,12; blr (character ID 12)"
+  },
+  {
+   "offset": "0x2d000",
+   "size": 336,
+   "original_sha256": "52a3e0804d93dc525ec3c67ef8ac5b01756ecf0513e36f3c19435e4c82cb5d29",
+   "new": "816300042b0b0000419a0040814b02482f0a00bf409a0034814b0060814a000c814a0000714a0020394000024082001839400001914b024439400000914b024c39400003914b02644bfe5420816300042b0b0000419a0040814b02482f0a00c0409a0034814b0060814a000c814a0000714a0020394000024082001839400008914b024439400000914b024c39400003914b02644bfe553c8163023c2f0b0017419a00102f0b0018419a0050480000a02f040001409a009881630060816b000c816b0000716b002041820084816302482f0b00bf419a006c2f0b00bb409a00703960000291630264806300b8388000bf38a000004bfefe042f040008409a005081630060816b000c816b0000716b00204182003c816302482f0b00c0419a00242f0b00bc409a00283960000291630264806300bc388000c038a000004bfefdbc39600002916302644e8000204bfe8544",
+   "what": ".nathan section code (hold-to-spin hooks)"
+  }
+ ]
+}

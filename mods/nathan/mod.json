@@ -1,0 +1,74 @@
+{
+  "id": "nathan",
+  "name": "Nathan Graves (Circle of the Moon)",
+  "summary": "Nathan Graves as a 12th playable character: a rebased copy of Simon (8-bit)'s code module, the Hunter Whip, and CotM's Dual Set-up System with 20 cards and all 100 pairs.",
+  "characters": ["Nathan Graves (new, ID 12)"],
+  "state": "Playable; all 100 DSS pairs have code paths, many still await a play check (docs/NATHAN_RELEASE_CHECKLIST.md). Online DSS harness-tested only. No player installer yet.",
+  "features": [{"id": "nathan", "runtime_switch": "hod_native_mods.txt or package 17 listed in dlc_packages.txt (module code loads only from the package)"}],
+  "cmake_option": "HARMONYRECOMP_NATHAN",
+  "depends": ["core (Enchanted-row card icon, hurt-box feed for DSS targeting)", "official DLC: Simon (8-bit), as the source of his code module"],
+  "packages": [
+    {
+      "number": 17,
+      "content_id": "000000000000000000000000000000000C00001758",
+      "tag": "0C00",
+      "built_by": "mods/nathan/tools/setup_nathan.py (first install), build_nathan.py --assets --install (later)",
+      "contents": [
+        "data/player/dllTest12.dll (Simon's dllSimon.dll rebased to 0x836C0000 by xexrebase.py, patched per data/nathan_module_patches.json)",
+        "data/player/player_test12.def (ID 12, internal name Test12, DSS cards as the collection list, mode 1)",
+        "data/item/weaponset_dlc17.dat (Hunter Whip WEPN 0x91 and the DSS whips from 0x92; mask 0x800)",
+        "data/item/soulset_dlc17.dat (20 card rows, souls 90-110: 10 Action Cards in RB, 10 Attribute Cards in Enchanted)",
+        "data/opd/player/nathan/ (body sprite, DSS layers and effects, from the CotM ROM)",
+        "data/opd/weapon/wp/p_wpf0-2.opd, f_wpf0.csr, c_wpf0.col (invisible whip sprites with fitted hitboxes)",
+        "data/menu/chara_SEL11, g_face11, ui_chara11, ui_face11.dds (menu art; the portrait is hand-made, art/menu)",
+        "data/item/icon/icon17_*.dds (all four icon sheets; card icon in sub cell 80)",
+        "data/sound/VX_NATHN, VXJ_NATHN (.xsb/.xwb, rendered from CotM; about 5.1 MB of the 16 MB sound heap)",
+        "data/text/textres17_*.txrc"
+      ]
+    }
+  ],
+  "edits_outside_package": [
+    {"file": "data/player/guardset.dat (+ DLC 02/03/04/07 guardset_dlcNN.dat)", "owner": "base game and official DLC", "copies": ["assets/ or DLC sources", ".setup copies", "installed DLC"], "change": "Nathan's permission bit 0x800 on hunter armour and accessories", "tool": "nathan_equipment_access.py"},
+    {"file": "data/player/subweaponset.dat (+ DLC 02/04)", "owner": "base game and official DLC", "copies": ["same"], "change": "Bit 0x800 on sub-weapons", "tool": "nathan_equipment_access.py"},
+    {"file": "data/player/martialartsset.dat", "owner": "base game (the game reads Martial Arts from the base table only)", "copies": ["assets/", ".setup/package/src/assets/"], "change": "Tackle appended as Martial Art 11", "tool": "nathan_card_drops.py"},
+    {"file": "data/text/textres_{de,en,es,fr,it,ja}.txrc", "owner": "base game", "copies": ["assets/", ".setup/package/src/assets/"], "change": "Tackle name and description", "tool": "nathan_card_drops.py"},
+    {"file": "data/enemy/EnemyParam.dat, EnemyParam07.dat", "owner": "base game, Chapter 11 DLC", "copies": ["base and DLC copies"], "change": "Card drops in free item slots (2.5%, Cockatrice 0.5%), so the Compendium lists them", "tool": "nathan_card_drops.py (data/nathan_card_drop_originals.json keeps replaced slots)"},
+    {"file": "stage00_00/01/02/05/07/08_set_hard.dat (base); stage00_03 (DLC 02), stage00_04 (DLC 01), stage00_09 (DLC 03), stage00_10 (DLC 04), stage00_11 (DLC 07)", "owner": "base game and official DLC", "copies": ["base and DLC copies"], "change": "Saturn, Unicorn, Uranus, Black Dog and Pluto cards appended last in the Hard boss chests", "tool": "nathan_card_drops.py"}
+  ],
+  "native": {
+    "exe_sources": ["mods/nathan/src/nathan_dss_damage.cpp"],
+    "module_sources": [{"module": "harmonyrecomp_dllTest12", "source": "mods/nathan/src/nathan_dss.cpp"}],
+    "own_overrides": "17 in the exe (each passes to the game when the switch is off, and checks Nathan's player vtable before changing anything) and 16 in dllTest12; see docs/HOOKS.md",
+    "shared_hooks": ["kSpawnEvent 10", "kColliderPrepare 10", "kColliderAttack 30", "kOwnerDraw 10 (palette scope around the whole draw)", "kPhysicalDefense 10", "kStatusSummary 10", "kIncomingDamage 20", "kAttackValue 20"]
+  },
+  "claims": {
+    "character_id": "12 (13-15 free)",
+    "permission_bit": "0x800",
+    "wepn": "0x91-0x9F; weapon sprites 0xF0 and up",
+    "souls": "90-110",
+    "martial_art": 11,
+    "sub_icon_cell": 80,
+    "player_extension": "8192 bytes: projectile pool +1728, pair level +1580, network queue +7744, hurt-table pointer +8176",
+    "network_event": "kind 11 sub 1, r9/r10 'NA' 'TH'",
+    "render": "Card Swap: list 6, depth 60000",
+    "sound_banks": "VX_NATHN, VXJ_NATHN"
+  },
+  "generated_headers": [
+    {"file": "nathan_dss_balance.h", "by": "nathan_cards.py / nathan_dss_balance.py (config/nathan_dss_balance.json)"},
+    {"file": "nathan_dss_menu.h", "by": "nathan_cards.py"},
+    {"file": "nathan_dss_assets.h", "by": "nathan_firewhip_assets.py"},
+    {"file": "nathan_all_dss_assets.h", "by": "nathan_all_dss_assets.py"},
+    {"file": "nathan_uranus_assets.h", "by": "nathan_uranus_assets.py"},
+    {"file": "nathan_salamander_assets.h", "by": "nathan_salamander_assets.py"},
+    {"file": "nathan_card_swap_assets.h", "by": "nathan_card_swap_assets.py"},
+    {"file": "nathan_tackle_assets.h", "by": "nathan_rom_animations.py"}
+  ],
+  "user_inputs": ["Circle of the Moon ROM (USA)", "agbplay-cli (renders CotM's sounds)", "Simon (8-bit) DLC in the setup's DLC folder"],
+  "build": [
+    "python mods/nathan/tools/setup_nathan.py --rom <CotM ROM> --agbplay <agbplay-cli.exe>",
+    "python mods/nathan/tools/build_nathan.py --assets --install",
+    "python mods/nathan/tools/install_nathan_dss.py --restore <backup>"
+  ],
+  "tests": ["python mods/nathan/tools/verify_nathan_dss.py (26,323 native checks; 3 failures predate the hub, see README)"],
+  "docs": ["mods/nathan/README.md", "mods/nathan/docs/NATHAN_RELEASE_CHECKLIST.md", "mods/nathan/docs/TESTING.md", "mods/nathan/docs/PLAYER_README.md", "docs/reference/ONLINE_COOP_LESSONS.md"]
+}
