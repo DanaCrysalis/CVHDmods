@@ -1,0 +1,29 @@
+--- a/src/shield_rod.h
++++ b/src/shield_rod.h
+@@ -22,4 +22,6 @@
+ // replayed, before Shield Rod's own check and the native call.
+ using SpawnEventHook = void (*)(PPCContext& ctx, uint8_t* base);
+ void SetSpawnEventHook(SpawnEventHook hook);
++using PrepareHitHook = bool (*)(PPCContext&, uint8_t*);
++void SetPrepareHitHook(PrepareHitHook hook);
+ }
+--- a/src/shield_rod.cpp
++++ b/src/shield_rod.cpp
+@@ -1185,7 +1185,8 @@
+ // Player spawn event (see Announce). Remote copies replay a Shield Rod cast;
+ // everything else, including the marker itself, continues natively. Another
+ // character mod's hook (SetSpawnEventHook) sees every event first.
+-namespace { harmony::shield_rod::SpawnEventHook spawn_event_hook = nullptr; }
++namespace { harmony::shield_rod::SpawnEventHook spawn_event_hook = nullptr; harmony::shield_rod::PrepareHitHook prepare_hit_hook=nullptr; }
++void harmony::shield_rod::SetPrepareHitHook(PrepareHitHook hook) { prepare_hit_hook=hook; }
+ void harmony::shield_rod::SetSpawnEventHook(SpawnEventHook hook) { spawn_event_hook = hook; }
+ REX_EXTERN(sub_8244CA98) {
+   if (spawn_event_hook) spawn_event_hook(ctx, base);
+@@ -1242,6 +1243,7 @@
+ 
+ // Register only in the prepare phase; +0x24 later resolves the completed lists.
+ REX_EXTERN(sub_824823A0) {
++  if(prepare_hit_hook && prepare_hit_hook(ctx,base))return;
+   const auto hit=ctx.r3.u32;
+   if(hit && Read(base,hit)==hit+kColliderTable && Read(base,hit+0x190)==kHitTag){PrepareHit(ctx,base,hit);return;}
+   __imp__sub_824823A0(ctx,base);

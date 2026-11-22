@@ -1,0 +1,57 @@
+--- a/src/dlc.cpp
++++ b/src/dlc.cpp
+@@ -119,6 +119,14 @@
+   return data;
+ }
+ 
++// The name a package file is installed under. XCONTENT file names hold at most
++// 42 characters and the SDK cuts longer ones silently, so a package file whose
++// name is longer (renamed or retyped; official names are exactly 42) is
++// installed and listed under its first 42 characters. Comparing the full file
++// name with that listed name made every launch delete the installed copy and
++// unpack it again.
++std::string InstalledName(const std::string& name) { return ContentData(name).file_name(); }
++
+ }  // namespace
+ 
+ void InstallDlcPackages(rex::Runtime* runtime) {
+@@ -131,13 +139,24 @@
+   if (!have_list) {
+     REXLOG_WARN("[dlc] dlc_packages.txt missing next to the exe; no DLC is installed");
+   }
++  // Installed copies are listed under their installed (at most 42 character) names.
++  std::set<std::string> built_installed;
++  for (const auto& name : built) {
++    const auto installed = InstalledName(name);
++    if (installed != name) {
++      REXLOG_INFO("[dlc] {} is longer than 42 characters; installed as {}", name, installed);
++    }
++    if (!built_installed.insert(installed).second) {
++      REXLOG_WARN("[dlc] two package files share the installed name {}; rename one of them", installed);
++    }
++  }
+   // Installed earlier (by an older build, or with DLC that is no longer part
+   // of this build) but not recompiled now: remove, or the game finds it and
+   // crashes loading its code. The packages themselves stay in the DLC folder.
+   for (const auto& data : content->ListContent(1, 0, rex::system::XContentType::kMarketplaceContent,
+                                                kTitleId)) {
+     const auto name = data.file_name();
+-    if (built.count(name)) continue;
++    if (built_installed.count(name)) continue;
+     if (content->DeleteContent(0, data) == 0) {
+       REXLOG_WARN("[dlc] {} was not part of this build; removed its installed copy", name);
+     } else {
+@@ -193,7 +212,12 @@
+   bool found = false;
+   const auto list = BuiltList(&found);
+   auto it = list.find(entry);
+-  return it != list.end() ? it->second : entry;
++  if (it != list.end()) return it->second;
++  // An installed (shortened) name of a package file longer than 42 characters.
++  for (const auto& [name, id] : list) {
++    if (InstalledName(name) == entry) return id;
++  }
++  return entry;
+ }
+ 
+ std::string DlcName(const std::string& id) {

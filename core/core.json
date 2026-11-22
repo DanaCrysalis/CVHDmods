@@ -1,0 +1,45 @@
+{
+  "id": "core",
+  "name": "hod-mods core",
+  "summary": "The hook hub every section builds on, the runtime switches, the collision lock and crash guard, the shared enemy hurt-box feed, the Enchanted-row card icon, the recomp patch and the shared tools.",
+  "always_on": true,
+  "native": {
+    "exe_sources": [
+      "core/runtime/hod_hub.cpp (chains, registration, collision lock; links into test harnesses)",
+      "core/runtime/hod_overrides.cpp (the one definition of each shared guest function)",
+      "core/runtime/hod_mods.cpp (runtime switches)",
+      "core/runtime/equip_card_icon.cpp (compiled when familiars or nathan is: card icon for Alucard's and Nathan's Enchanted row)"
+    ],
+    "headers": ["core/runtime/hod_hooks.h (the API)", "core/runtime/hod_guest.h", "core/runtime/hurt_record_guest.h"],
+    "own_behaviour": {
+      "823C4C40 / 823C5098": "every collision shape registration and list traversal runs under one recursive lock (enemies register on several game threads)",
+      "823C4EC8": "rejects stale or sentinel collision requests before the game's filter reads them (a Medusa Shield crash)",
+      "823E0410, 823E6958, 823EA810, 823ED418, 823F46A8, 823F47C8": "Enchanted-row card icon for character IDs 2 (familiars on) and 12 (nathan on)"
+    }
+  },
+  "edits_outside_package": [
+    {"file": "data/opd/menu/p_ui_equip0.opd, f_ui_equip1a.csr", "owner": "base game", "copies": ["assets/", ".setup/package/src/assets/"], "change": "Card icon frames 180 (palette 6) and 181 (palette 7, dimmed) in the page's empty strip (rows 96-127); the drawing is core/art/equip_slot/card_slot_icon_source.png", "tool": "core/tools/equip_card_icon.py"}
+  ],
+  "recomp_patch": {
+    "file": "core/recomp/harmonyrecomp-v0.6.0.patch",
+    "applied_by": "core/tools/setup_recomp.py",
+    "changes": {
+      "src/CMakeLists.txt": "HODMODS_ROOT cache variable; includes core/cmake/hodmods.cmake, adds its sources, calls hodmods_configure_targets(). Without HODMODS_ROOT the build is stock.",
+      "src/scripts/build.py": "mods/<package>/ folders are built like DLC packages (code modules recompiled)",
+      "src/src/dlc.cpp": "package files whose names are longer than 42 characters no longer get deleted and re-extracted on every launch (reported upstream: core/recomp/BUG_DLC_LONG_FILENAMES.md)",
+      "src/src/harmonyrecomp_app.h": "a test-install exe (HARMONYRECOMP_POISONWORM) always uses the userdata folder next to it"
+    }
+  },
+  "tools": {
+    "hodpaths.py": "where the game, the work folder, the test install and every tool and setting are",
+    "setup_recomp.py": "prepare a stock v0.6.0 recomp tree (with backup and --restore)",
+    "rebuild_recomp.py": "configure and build the exe with chosen sections",
+    "hooks_table.py": "regenerate core/hooks.json and docs/HOOKS.md from the sources",
+    "check_native.py": "compile (and optionally link) every native source with the recomp's own flags, without touching the recomp tree",
+    "check_tools.py": "parse, path and import checks for every Python tool",
+    "check_repo.py": "no game files, large binaries, local paths or personal names",
+    "hod_musicpack.py": "the LIVE STFS package writer every section's installer uses (also the music pack builder)",
+    "shared libraries": "txrc.py (text), hodsprite.py (OPD/CSR/COL), sheet2hod.py, ndsfs.py (NDS file system), sotn_disc.py (SotN disc reader), cotm_extract.py / cotm_sprites.py / nathan_paths.py (CotM ROM extraction), xex*.py (XEX unpack, rebase, patch), overlap.py, dlcslots.py",
+    "research aids": "hod_disasm.py, moddisasm.py, xref.py, relsearch.py, lzscan.py, shotinfo.py, render_tpf.py, dumpguest.py, guestwatch.py, drawscan.py, enemyprobe.py, soundheap.py (read-only)"
+  }
+}

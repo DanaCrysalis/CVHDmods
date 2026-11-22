@@ -1,0 +1,25 @@
+{
+  "name": "hod-mods",
+  "description": "Mods for the HarmonyRecomp build of Castlevania: Harmony of Despair: shared hook hub plus five independent sections.",
+  "recomp": {
+    "project": "HarmonyRecomp",
+    "version": "v0.6.0",
+    "patch": "core/recomp/harmonyrecomp-v0.6.0.patch",
+    "cmake": "core/cmake/hodmods.cmake"
+  },
+  "core": "core/core.json",
+  "sections": [
+    "mods/catacombs/mod.json",
+    "mods/glyphs/mod.json",
+    "mods/shield-rod/mod.json",
+    "mods/familiars/mod.json",
+    "mods/nathan/mod.json"
+  ],
+  "hooks": "core/hooks.json",
+  "runtime_switches": {
+    "file": "hod_native_mods.txt next to harmonyrecomp.exe",
+    "format": "<feature id> = on|off, one per line, # comments",
+    "default": "on when the feature's package is listed in dlc_packages.txt; on when there is no dlc_packages.txt",
+    "environment": "HOD_NATIVE_MODS=feature=off,feature=on overrides the file"
+  }
+}

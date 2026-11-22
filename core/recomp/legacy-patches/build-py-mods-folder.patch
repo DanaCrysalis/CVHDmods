@@ -1,0 +1,48 @@
+--- a/scripts/build.py
++++ b/scripts/build.py
+@@ -56,6 +56,10 @@
+ # Codegen only reads modules inside the game root, hence assets/dlc/.
+ DLC_DIR = ROOT / "dlc"
+ DLC_ASSETS = ROOT / "assets" / "dlc"
++# Mod packages: mods/<package name>/ is an unpacked DLC package (000info/,
++# data/...). It is treated like a DLC package from dlc/: copied to
++# assets/dlc/, its code modules recompiled and its name put on the DLC list.
++MODS_DIR = ROOT / "mods"
+ # Manifest used for codegen when DLC modules are present: the base manifest
+ # plus one [[modules]] entry per DLC player DLL. Generated, not committed.
+ LOCAL_MANIFEST = ROOT / "harmonyrecomp_manifest.local.toml"
+@@ -383,6 +387,34 @@
+             count += 1
+         print(f"      DLC: {label} ({count} code modules)")
+         included.append(package_path.name)
++
++    if MODS_DIR.is_dir():
++        for mod in sorted(p for p in MODS_DIR.iterdir() if p.is_dir()):
++            if not (mod / "000info").is_dir():
++                print(f"      skipping mods/{mod.name}: no 000info folder (not an unpacked package)")
++                continue
++            if mod.name in skipped:
++                print(f"      MOD: {mod.name} - LEFT OUT, its code could not be recompiled "
++                      f"(see {DLC_SKIPPED.relative_to(ROOT)})")
++                continue
++            out_dir = DLC_ASSETS / mod.name
++            if out_dir.exists():
++                shutil.rmtree(out_dir)
++            shutil.copytree(mod, out_dir)
++            count = 0
++            for dll in sorted(out_dir.rglob("*")):
++                if not dll.is_file() or dll.suffix.lower() != ".dll":
++                    continue
++                guest = dll.relative_to(out_dir).as_posix().lower()
++                if guest in known:
++                    print(f"      warning: mods/{mod.name}: {guest} is already provided by "
++                          "another package; the game refuses a second copy")
++                    continue
++                known.add(guest)
++                modules.append((guest, dll.relative_to(ROOT).as_posix(), dll.stem))
++                count += 1
++            print(f"      MOD: {mod.name} ({count} code modules)")
++            included.append(mod.name)
+ 
+     # A console dump keeps the title update next to the DLC and the game, in
+     # 58410A7A/000B0000/: look there too, so the DLC folder (00000002) can be

@@ -1,0 +1,86 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -9,6 +9,61 @@
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+ include(generated/rexglue.cmake)
++
++# LLVM may fold a generated weak alias to its local __imp__ definition.
++# Incoming DEF calls its helper inside the same shard, so dispatch that one
++# call through the guest table to retain the Nathan strong override. Reapply
++# on configure if code generation replaces the shard.
++set(_nathan_def_shard "${CMAKE_CURRENT_SOURCE_DIR}/generated/default/harmonyrecomp_recomp.20.cpp")
++set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${_nathan_def_shard}")
++file(READ "${_nathan_def_shard}" _nathan_def_before)
++set(_nathan_def_after "${_nathan_def_before}")
++set(_nathan_rows_shard "${CMAKE_CURRENT_SOURCE_DIR}/generated/default/harmonyrecomp_recomp.21.cpp")
++file(READ "${_nathan_rows_shard}" _nathan_rows)
++string(REPLACE "sub_8246D8E8(ctx, base);" "REX_CALL_INDIRECT_FUNC(0x8246D8E8);" _nathan_rows "${_nathan_rows}")
++file(WRITE "${_nathan_rows_shard}" "${_nathan_rows}")
++# 82450658 (guard start) and 824519C8 (physical attack): Shield Rod overrides,
++# both called from inside shard 20 (src/shield_rod.cpp).
++foreach(_nathan_hook 82451AA8 82452658 8244BF10 82450658 824519C8)
++    string(REPLACE "sub_${_nathan_hook}(ctx, base);" "REX_CALL_INDIRECT_FUNC(0x${_nathan_hook});" _nathan_def_after "${_nathan_def_after}")
++endforeach()
++if(NOT _nathan_def_before STREQUAL _nathan_def_after)
++    file(WRITE "${_nathan_def_shard}" "${_nathan_def_after}")
++endif()
++unset(_nathan_def_before)
++unset(_nathan_def_after)
++# Character Select's virtual draw trampoline shares shard 18 with its draw
++# routine; keep its palette scope override reachable after LLVM optimizes it.
++set(_nathan_menu_shard "${CMAKE_CURRENT_SOURCE_DIR}/generated/default/harmonyrecomp_recomp.18.cpp")
++set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${_nathan_menu_shard}")
++file(READ "${_nathan_menu_shard}" _nathan_menu_before)
++string(REPLACE "sub_82412880(ctx, base);" "REX_CALL_INDIRECT_FUNC(0x82412880);" _nathan_menu_after "${_nathan_menu_before}")
++if(NOT _nathan_menu_before STREQUAL _nathan_menu_after)
++    file(WRITE "${_nathan_menu_shard}" "${_nathan_menu_after}")
++endif()
++unset(_nathan_menu_before)
++unset(_nathan_menu_after)
++# Three menus call the description footer helper inside its own shard 17;
++# keep Nathan's card LV/MP override reachable.
++set(_nathan_footer_shard "${CMAKE_CURRENT_SOURCE_DIR}/generated/default/harmonyrecomp_recomp.17.cpp")
++set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${_nathan_footer_shard}")
++file(READ "${_nathan_footer_shard}" _nathan_footer_before)
++string(REPLACE "sub_823E4AB0(ctx, base);" "REX_CALL_INDIRECT_FUNC(0x823E4AB0);" _nathan_footer_after "${_nathan_footer_before}")
++if(NOT _nathan_footer_before STREQUAL _nathan_footer_after)
++    file(WRITE "${_nathan_footer_shard}" "${_nathan_footer_after}")
++endif()
++unset(_nathan_footer_before)
++unset(_nathan_footer_after)
++# Both sprite paths share the material builder and lookup in shard 16.
++set(_nathan_palette_shard "${CMAKE_CURRENT_SOURCE_DIR}/generated/default/harmonyrecomp_recomp.16.cpp")
++set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${_nathan_palette_shard}")
++file(READ "${_nathan_palette_shard}" _nathan_palette_before)
++string(REPLACE "sub_823D7170(ctx, base);" "REX_CALL_INDIRECT_FUNC(0x823D7170);" _nathan_palette_after "${_nathan_palette_before}")
++if(NOT _nathan_palette_before STREQUAL _nathan_palette_after)
++    file(WRITE "${_nathan_palette_shard}" "${_nathan_palette_after}")
++endif()
++unset(_nathan_palette_before)
++unset(_nathan_palette_after)
+ 
+ # Sources
+ set(HARMONYRECOMP_SOURCES
+@@ -25,6 +80,8 @@
+     src/dlc.cpp
+     src/framerate_fixes.cpp
+     src/game_fixes.cpp
++    src/nathan_dss_damage.cpp
++    src/shield_rod.cpp
+     src/netplay/gamesock.cpp
+     src/netplay/hooks.cpp
+     src/netplay/lobby.cpp
+@@ -113,3 +170,12 @@
+     message(FATAL_ERROR "DLL function tables end at ${_harmony_table_end}, past 0x90000000")
+ endif()
+ 
++# Nathan's own module extends the player allocation and implements DSS. Keep
++# this outside generated/ so normal code generation preserves the overrides.
++if(TARGET harmonyrecomp_dllTest12)
++    target_sources(harmonyrecomp_dllTest12 PRIVATE src/nathan_dss.cpp)
++    if(WIN32)
++        target_link_options(harmonyrecomp_dllTest12 PRIVATE "LINKER:/MAP:harmonyrecomp_dllTest12.map")
++    endif()
++endif()
++
