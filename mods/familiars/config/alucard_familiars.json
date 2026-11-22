@@ -1,0 +1,258 @@
+{
+  "package": 21,
+  "first_soul_index": 111,
+  "card_cell": 81,
+  "tiers": 9,
+  "targeting": {
+    "horizontal_px": 240,
+    "vertical_px": 144
+  },
+  "ghost": {
+    "power_l1": 10,
+    "power_max": 40,
+    "steal_from_index": 7,
+    "steal_max_hp": 8,
+    "_steal_note": "Soul steal heals the HP the hit took, at most steal_max_hp (user, November 19; was a quarter of it).",
+    "delay_scale": 0.5,
+    "approach_divisor": 24,
+    "approach_max_px": 2.5,
+    "cling_share": 0.12,
+    "cling_catch_up_px": 3.5,
+    "cling_hold_px": 16,
+    "cling_release_px": 64,
+    "lost_grace_ticks": 60,
+    "face_dead_zone_px": 6,
+    "_speed_note": "Per SotN tick (60 a second). SotN itself: approach distance/8, cling distance/2, no cap; the user found that too fast.",
+    "_note": "Attack every 120 120 100 100 90 90 75 75 60 SotN ticks by cards owned (1-9), SotN's table; soul steal from that table's index 7 (8+ cards). Power uses the game's spell rule P + (P/64 + 0.25) * INT.",
+    "min_delay_ticks": 42
+  },
+  "bat": {
+    "power_l1": 8,
+    "power_max": 30,
+    "cooldown_ticks": 50
+  },
+  "demon": {
+    "power_l1": 14,
+    "power_max": 48,
+    "cooldown_ticks": 86
+  },
+  "sword": {
+    "power_l1": 12,
+    "power_max": 44,
+    "cooldown_ticks": 66
+  },
+  "sword_brothers": {
+    "mp": 30,
+    "power_l1": 20,
+    "power_max": 60,
+    "radius_px": 800,
+    "_note": "SotN's spell 7 (DRA.BIN spell table +0x8410): 30 MP, attack 20. Command (user's smoother version of SotN's): down, down-forward, forward, up-forward, up, down, then X or Y, each within 30 frames. Only with the Sword Card equipped. Power goes from power_l1 at 1 card to power_max at 9, plus the INT rule; each enemy is hit once as the wheel of 64 blades (radius_px wide) passes it."
+  },
+  "faerie": {
+    "cure_cooldown_s": [
+      12,
+      4
+    ],
+    "heal_cooldown_s": [
+      45,
+      20
+    ],
+    "heal_below_hp_share": 0.33,
+    "heal_spell_kind": 8,
+    "heal_spell_index": 2,
+    "cure_line": "healing",
+    "heal_line": "regeneration",
+    "_note": "Cooldowns go from the first value at 1 card to the second at 9 cards. Statuses: 0 poison, 1 curse, 2 stone, cured with the native 8244DCA0 (the Remedy path). The heal is Charlotte's Heal (learningset kind 8, index 2) cast through the skill factory at level = cards - 1, so its power is Heal's (30 at level 1 to 50, plus the INT rule). Lines: healing, potion, regeneration, oh_no (SotN 0x885, 0x886, 0x887, 0x891)."
+  },
+  "drops": {
+    "_note": "Native table edits (tools/familiar_drops.py). Enemy drops go in a free item slot of the enemy's EnemyParam row (rate out of 1000, before luck); the Monster Compendium lists them. Chest entries are explicit weighted items in the stage set file, drawn out of max(total weight, 10000) before luck (823AA6D8), so 300 is about 3% a chest. The cards' soul rows allow Alucard only, so nobody else receives them. Enemies are matched by internal resource name; the English name is the one at EnemyParam +0x28.",
+    "rate": 25,
+    "_rate_note": "Per-enemy 'rate' overrides it: Bat and Ghost 10 (user, November 19: both are easy to farm). A card's 'rarity' is its soul row +0x3A, the menu's rarity stars (Peeping Eye 5, Death 4); the drop roll (82243088) does not use it.",
+    "enemies": [
+      {
+        "enemy": "armc02",
+        "name": "Bat",
+        "card": "bat",
+        "rate": 10
+      },
+      {
+        "enemy": "sf_bor",
+        "name": "Ghost",
+        "card": "ghost",
+        "rate": 10
+      },
+      {
+        "enemy": "imp",
+        "name": "Imp",
+        "card": "demon"
+      }
+    ],
+    "chests": [
+      {
+        "name": "Chapter 7 Hard purple chests (Astarte)",
+        "stage": "stage00_04_set_hard.dat",
+        "type": 5,
+        "count": 5,
+        "weight": 300,
+        "card": "faerie"
+      },
+      {
+        "name": "Chapter 8 Hard purple chests (Legion)",
+        "stage": "stage00_03_set_hard.dat",
+        "type": 5,
+        "count": 4,
+        "weight": 300,
+        "card": "sword"
+      }
+    ]
+  },
+  "familiars": [
+    {
+      "key": "bat",
+      "rarity": 1,
+      "text": {
+        "en": [
+          "Bat Card",
+          "Summon a Bat as a familiar.\nIt attacks nearby enemies."
+        ],
+        "de": [
+          "Fledermauskarte",
+          "Ruft eine Fledermaus als\nVertraute. Greift Gegner an."
+        ],
+        "es": [
+          "Carta Murciélago",
+          "Invoca un murciélago como\nfamiliar. Ataca a enemigos."
+        ],
+        "fr": [
+          "Carte Chauve-souris",
+          "Invoque une chauve-souris\nfamilière qui attaque."
+        ],
+        "it": [
+          "Carta Pipistrello",
+          "Evoca un pipistrello famiglio.\nAttacca i nemici vicini."
+        ],
+        "ja": [
+          "コウモリのカード",
+          "使い魔「コウモリ」を呼ぶ\n近くの敵を攻撃する"
+        ]
+      }
+    },
+    {
+      "key": "ghost",
+      "rarity": 1,
+      "text": {
+        "en": [
+          "Ghost Card",
+          "Summon a Ghost as a familiar.\nIt drains HP from enemies."
+        ],
+        "de": [
+          "Geisterkarte",
+          "Ruft einen Geist als Vertrauten.\nEntzieht Gegnern HP."
+        ],
+        "es": [
+          "Carta Fantasma",
+          "Invoca un fantasma como\nfamiliar. Absorbe PS."
+        ],
+        "fr": [
+          "Carte Fantôme",
+          "Invoque un fantôme familier\nqui absorbe des PV."
+        ],
+        "it": [
+          "Carta Fantasma",
+          "Evoca un fantasma famiglio.\nAssorbe PS dai nemici."
+        ],
+        "ja": [
+          "ゴーストのカード",
+          "使い魔「ゴースト」を呼ぶ\n敵のHPを吸収する"
+        ]
+      }
+    },
+    {
+      "key": "faerie",
+      "text": {
+        "en": [
+          "Faerie Card",
+          "Summon a Faerie as a familiar.\nShe cures ailments and heals."
+        ],
+        "de": [
+          "Feenkarte",
+          "Ruft eine Fee als Vertraute.\nHeilt Zustände und HP."
+        ],
+        "es": [
+          "Carta Hada",
+          "Invoca un hada como familiar.\nCura estados y PS."
+        ],
+        "fr": [
+          "Carte Fée",
+          "Invoque une fée familière qui\nsoigne états et PV."
+        ],
+        "it": [
+          "Carta Fata",
+          "Evoca una fata famiglio.\nCura stati alterati e PS."
+        ],
+        "ja": [
+          "フェアリーのカード",
+          "使い魔「フェアリー」を呼ぶ\n状態異常とHPを回復する"
+        ]
+      }
+    },
+    {
+      "key": "demon",
+      "text": {
+        "en": [
+          "Demon Card",
+          "Summon a Demon as a familiar.\nIt casts elemental spells."
+        ],
+        "de": [
+          "Dämonenkarte",
+          "Ruft einen Dämon als Vertrauten.\nWirkt Elementzauber."
+        ],
+        "es": [
+          "Carta Demonio",
+          "Invoca un demonio como\nfamiliar. Lanza hechizos."
+        ],
+        "fr": [
+          "Carte Démon",
+          "Invoque un démon familier qui\nlance des sorts."
+        ],
+        "it": [
+          "Carta Demone",
+          "Evoca un demone famiglio.\nLancia incantesimi elementali."
+        ],
+        "ja": [
+          "デーモンのカード",
+          "使い魔「デーモン」を呼ぶ\n属性魔法で攻撃する"
+        ]
+      }
+    },
+    {
+      "key": "sword",
+      "text": {
+        "en": [
+          "Sword Card",
+          "Summon a Sword as a familiar.\nSword Brothers: ↓↘→↗↑↓+X/Y\n                                  MP 30"
+        ],
+        "de": [
+          "Schwertkarte",
+          "Ruft ein Schwert als Vertrauten.\nSchwertbrüder: ↓↘→↗↑↓+X/Y\n                                  MP 30"
+        ],
+        "es": [
+          "Carta Espada",
+          "Invoca una espada como familiar.\nHermanos Espada: ↓↘→↗↑↓+X/Y\n                                  MP 30"
+        ],
+        "fr": [
+          "Carte Épée",
+          "Invoque une épée familière.\nFrères d'épée : ↓↘→↗↑↓+X/Y\n                                  MP 30"
+        ],
+        "it": [
+          "Carta Spada",
+          "Evoca una spada famiglio.\nFratelli Spada: ↓↘→↗↑↓+X/Y\n                                  MP 30"
+        ],
+        "ja": [
+          "ソードのカード",
+          "使い魔「ソード」を呼ぶ\nソードブラザーズ：↓＼→／↑↓＋ＸかＹ\n　　　　　　　　　　ＭＰ３０"
+        ]
+      }
+    }
+  ]
+}

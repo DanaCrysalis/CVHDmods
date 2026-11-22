@@ -1,0 +1,27 @@
+{
+  "glyph_index": 9,
+  "text_index": 1,
+  "mp": 80,
+  "rarity": 4,
+  "seconds": 60,
+  "str_level1": 10,
+  "str_max": 25,
+  "missing_hp_bonus": 1.5,
+  "custos_pair_multiplier": 1.5,
+  "custos_items": [188, 189],
+  "mastery_every_seconds": 1.5,
+  "boss_chest_weight": 2500,
+  "head": {
+    "offset_x": -20,
+    "offset_y": -42,
+    "opacity": 0.75
+  },
+  "text": {
+    "en": ["Arma Custos", "The third head of Cerberus raises\nSTR for 60 s, more at low HP."],
+    "de": ["Arma Custos", "Der dritte Kopf des Zerberus erhöht\n60 Sek. lang STR, mehr bei wenig HP."],
+    "es": ["Arma Custos", "La tercera cabeza de Cerbero\naumenta la FZA 60 s, más si\nqueda poco Poder Sanador."],
+    "fr": ["Arma Custos", "La troisième tête de Cerbère\naugmente FOR 60 s, plus si\nles PV sont bas."],
+    "it": ["Arma Custos", "La terza testa di Cerbero aumenta\nFOR per 60 s, di più con pochi PS."],
+    "ja": ["アルマ・クストス", "６０秒間ＳＴＲアップ\nＨＰが少ないほど効果大"]
+  }
+}

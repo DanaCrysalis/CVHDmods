@@ -1,0 +1,6749 @@
+{
+ "about": "Planning manifest of Circle of the Moon enemies (modding/tools/cotm_enemies.py). The game never reads this file. Nothing is built for an entry until \"enabled\" is true; \"compendium\" separately gives it a Monster Compendium entry. Battle Arena copies are left out.",
+ "source": "User's own USA CotM ROM, read-only. Stats and room data are ROM-derived; do not distribute.",
+ "fields": {
+  "group": "work-set tag for planning (e.g. \"catacombs\"); builds nothing by itself",
+  "hod_name": "EnemyParam row / module name the build would use (DLL_ = loaded as its own module, the DLC way)",
+  "hod_stock": "the same monster already in HoD, if any (calibration and fallback)",
+  "actors.placed": "CotM actor type placed in rooms for this enemy (every room it appears in loads only this enemy)",
+  "actors.candidates": "other actor types that may belong to it (children, projectiles, alternatives); unverified",
+  "placements": "CotM area / room indexes (randomizer numbering) and how many are placed there",
+  "stats.drops": "CotM item id and rate, as stored"
+ },
+ "enemies": [
+  {
+   "cotm_index": 0,
+   "name": "Medusa Head",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm000",
+   "hod_stock": "medusa",
+   "stats": {
+    "hp": 6,
+    "attack": 120,
+    "defense": 60,
+    "exp": 2,
+    "attack_flags": "0x45",
+    "element": "Stone",
+    "status_on_hit": "Stone",
+    "knockback": false,
+    "drops": [
+     [
+      "0x22",
+      150
+     ],
+     [
+      "0x1A",
+      40
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB2B8",
+    "graphics_row": "0x080CDAA8",
+    "sprite_row": "0x080CD400"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x0B8",
+     "0x0F1"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 1,
+   "name": "Zombie",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm001",
+   "hod_stock": "zombi",
+   "stats": {
+    "hp": 48,
+    "attack": 70,
+    "defense": 20,
+    "exp": 2,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x11",
+      250
+     ],
+     [
+      "0x29",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB2CC",
+    "graphics_row": "0x080CDAB8",
+    "sprite_row": "0x080CD40C"
+   },
+   "actors": {
+    "placed": [
+     "0x0BE"
+    ],
+    "candidates": [
+     "0x1F9"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 8,
+     "count": 10
+    },
+    {
+     "area": 4,
+     "room": 1,
+     "count": 6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 2,
+   "name": "Ghoul",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm002",
+   "hod_stock": null,
+   "stats": {
+    "hp": 100,
+    "attack": 190,
+    "defense": 79,
+    "exp": 3,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x12",
+      250
+     ],
+     [
+      "0x34",
+      30
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB2E0",
+    "graphics_row": "0x080CDAC8",
+    "sprite_row": "0x080CD418"
+   },
+   "actors": {
+    "placed": [
+     "0x0BF"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 6,
+     "room": 6,
+     "count": 3
+    },
+    {
+     "area": 7,
+     "room": 13,
+     "count": 3
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 3,
+   "name": "Wight",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm003",
+   "hod_stock": null,
+   "stats": {
+    "hp": 110,
+    "attack": 235,
+    "defense": 87,
+    "exp": 4,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x0D",
+      150
+     ],
+     [
+      "0x31",
+      15
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB2F4",
+    "graphics_row": "0x080CDAD8",
+    "sprite_row": "0x080CD424"
+   },
+   "actors": {
+    "placed": [
+     "0x0C0"
+    ],
+    "candidates": [
+     "0x0BB",
+     "0x0BC",
+     "0x0BD",
+     "0x1F1"
+    ]
+   },
+   "placements": [
+    {
+     "area": 8,
+     "room": 1,
+     "count": 3
+    },
+    {
+     "area": 9,
+     "room": 10,
+     "count": 3
+    },
+    {
+     "area": 9,
+     "room": 11,
+     "count": 4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 4,
+   "name": "Clinking Man",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm004",
+   "hod_stock": null,
+   "stats": {
+    "hp": 80,
+    "attack": 135,
+    "defense": 25,
+    "exp": 21,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x12",
+      400
+     ],
+     [
+      "0x26",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB308",
+    "graphics_row": "0x080CDAE8",
+    "sprite_row": "0x080CD430"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x0C1"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 5,
+   "name": "Zombie Thief",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm005",
+   "hod_stock": null,
+   "stats": {
+    "hp": 120,
+    "attack": 185,
+    "defense": 30,
+    "exp": 58,
+    "attack_flags": "0x17",
+    "element": "Wind",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x12",
+      300
+     ],
+     [
+      "0x1C",
+      90
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB31C",
+    "graphics_row": "0x080CDAF8",
+    "sprite_row": "0x080CD43C"
+   },
+   "actors": {
+    "placed": [
+     "0x0C2"
+    ],
+    "candidates": [
+     "0x0C1"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 15,
+     "count": 3
+    },
+    {
+     "area": 5,
+     "room": 21,
+     "count": 6
+    }
+   ],
+   "notes": "Compendium framework No. 94, package 10 row 1 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 6,
+   "name": "Skeleton",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm006",
+   "hod_stock": "ya_skl",
+   "stats": {
+    "hp": 25,
+    "attack": 65,
+    "defense": 45,
+    "exp": 4,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x01",
+      250
+     ],
+     [
+      "0x29",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB330",
+    "graphics_row": "0x080CDB08",
+    "sprite_row": "0x080CD448"
+   },
+   "actors": {
+    "placed": [
+     "0x0C3"
+    ],
+    "candidates": [
+     "0x12F",
+     "0x1F2"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 3,
+     "count": 3
+    },
+    {
+     "area": 1,
+     "room": 8,
+     "count": 8
+    },
+    {
+     "area": 1,
+     "room": 19,
+     "count": 1
+    },
+    {
+     "area": 2,
+     "room": 0,
+     "count": 16
+    },
+    {
+     "area": 2,
+     "room": 4,
+     "count": 1
+    },
+    {
+     "area": 3,
+     "room": 1,
+     "count": 5
+    },
+    {
+     "area": 3,
+     "room": 6,
+     "count": 4
+    },
+    {
+     "area": 4,
+     "room": 2,
+     "count": 6
+    },
+    {
+     "area": 5,
+     "room": 12,
+     "count": 4
+    },
+    {
+     "area": 5,
+     "room": 14,
+     "count": 4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 7,
+   "name": "Skeleton Bomber",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm007",
+   "hod_stock": null,
+   "stats": {
+    "hp": 20,
+    "attack": 50,
+    "defense": 40,
+    "exp": 4,
+    "attack_flags": "0x11",
+    "element": "Fire",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x37",
+      2000
+     ],
+     [
+      "0x29",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB344",
+    "graphics_row": "0x080CDB18",
+    "sprite_row": "0x080CD454"
+   },
+   "actors": {
+    "placed": [
+     "0x0C6"
+    ],
+    "candidates": [
+     "0x0FE"
+    ]
+   },
+   "placements": [
+    {
+     "area": 0,
+     "room": 1,
+     "count": 5
+    },
+    {
+     "area": 1,
+     "room": 0,
+     "count": 3
+    },
+    {
+     "area": 1,
+     "room": 1,
+     "count": 8
+    },
+    {
+     "area": 1,
+     "room": 9,
+     "count": 4
+    },
+    {
+     "area": 1,
+     "room": 18,
+     "count": 4
+    },
+    {
+     "area": 1,
+     "room": 21,
+     "count": 10
+    },
+    {
+     "area": 1,
+     "room": 24,
+     "count": 2
+    },
+    {
+     "area": 7,
+     "room": 6,
+     "count": 5
+    },
+    {
+     "area": 11,
+     "room": 3,
+     "count": 7
+    },
+    {
+     "area": 11,
+     "room": 4,
+     "count": 7
+    }
+   ],
+   "notes": "Compendium framework No. 95, package 10 row 2 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 8,
+   "name": "Electric Skeleton",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm008",
+   "hod_stock": null,
+   "stats": {
+    "hp": 42,
+    "attack": 80,
+    "defense": 50,
+    "exp": 30,
+    "attack_flags": "0x18",
+    "element": "Thunder",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x01",
+      300
+     ],
+     [
+      "0x3A",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB358",
+    "graphics_row": "0x080CDB28",
+    "sprite_row": "0x080CD460"
+   },
+   "actors": {
+    "placed": [
+     "0x0C9"
+    ],
+    "candidates": [
+     "0x0AD"
+    ]
+   },
+   "placements": [
+    {
+     "area": 3,
+     "room": 6,
+     "count": 2
+    },
+    {
+     "area": 3,
+     "room": 12,
+     "count": 3
+    },
+    {
+     "area": 3,
+     "room": 16,
+     "count": 3
+    },
+    {
+     "area": 11,
+     "room": 3,
+     "count": 1
+    },
+    {
+     "area": 11,
+     "room": 4,
+     "count": 2
+    },
+    {
+     "area": 11,
+     "room": 5,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 9,
+   "name": "Skeleton Spear",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm009",
+   "hod_stock": null,
+   "stats": {
+    "hp": 30,
+    "attack": 65,
+    "defense": 46,
+    "exp": 6,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x01",
+      300
+     ],
+     [
+      "0x0C",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB36C",
+    "graphics_row": "0x080CDB38",
+    "sprite_row": "0x080CD46C"
+   },
+   "actors": {
+    "placed": [
+     "0x0CC"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 9,
+     "count": 2
+    },
+    {
+     "area": 1,
+     "room": 10,
+     "count": 1
+    },
+    {
+     "area": 1,
+     "room": 12,
+     "count": 4
+    },
+    {
+     "area": 1,
+     "room": 16,
+     "count": 4
+    }
+   ],
+   "notes": "Compendium framework No. 96, package 10 row 3 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 10,
+   "name": "Skeleton Boomerang",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm010",
+   "hod_stock": null,
+   "stats": {
+    "hp": 60,
+    "attack": 170,
+    "defense": 90,
+    "exp": 112,
+    "attack_flags": "0x17",
+    "element": "Wind",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x26",
+      420
+     ],
+     [
+      "0x13",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB380",
+    "graphics_row": "0x080CDB48",
+    "sprite_row": "0x080CD478"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x0D5",
+     "0x0D6"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 11,
+   "name": "Skeleton Soldier",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm011",
+   "hod_stock": null,
+   "stats": {
+    "hp": 35,
+    "attack": 90,
+    "defense": 60,
+    "exp": 16,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x01",
+      300
+     ],
+     [
+      "0x02",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB394",
+    "graphics_row": "0x080CDB58",
+    "sprite_row": "0x080CD484"
+   },
+   "actors": {
+    "placed": [
+     "0x0D7"
+    ],
+    "candidates": [
+     "0x09E",
+     "0x1F2"
+    ]
+   },
+   "placements": [
+    {
+     "area": 2,
+     "room": 6,
+     "count": 1
+    },
+    {
+     "area": 3,
+     "room": 1,
+     "count": 2
+    },
+    {
+     "area": 3,
+     "room": 3,
+     "count": 6
+    },
+    {
+     "area": 3,
+     "room": 6,
+     "count": 14
+    },
+    {
+     "area": 3,
+     "room": 16,
+     "count": 6
+    },
+    {
+     "area": 3,
+     "room": 22,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 12,
+   "name": "Skeleton Knight",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm012",
+   "hod_stock": null,
+   "stats": {
+    "hp": 50,
+    "attack": 140,
+    "defense": 80,
+    "exp": 39,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x01",
+      300
+     ],
+     [
+      "0x02",
+      125
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB3A8",
+    "graphics_row": "0x080CDB68",
+    "sprite_row": "0x080CD490"
+   },
+   "actors": {
+    "placed": [
+     "0x0D8"
+    ],
+    "candidates": [
+     "0x0D5",
+     "0x0D7",
+     "0x109"
+    ]
+   },
+   "placements": [
+    {
+     "area": 5,
+     "room": 4,
+     "count": 4
+    },
+    {
+     "area": 5,
+     "room": 14,
+     "count": 4
+    },
+    {
+     "area": 5,
+     "room": 18,
+     "count": 3
+    },
+    {
+     "area": 5,
+     "room": 21,
+     "count": 4
+    },
+    {
+     "area": 6,
+     "room": 1,
+     "count": 7
+    },
+    {
+     "area": 6,
+     "room": 6,
+     "count": 1
+    },
+    {
+     "area": 7,
+     "room": 18,
+     "count": 8
+    },
+    {
+     "area": 15,
+     "room": 0,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 13,
+   "name": "Bone Tower",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm013",
+   "hod_stock": null,
+   "stats": {
+    "hp": 84,
+    "attack": 201,
+    "defense": 280,
+    "exp": 160,
+    "attack_flags": "0x11",
+    "element": "Fire",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x33",
+      200
+     ],
+     [
+      "0x34",
+      75
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB3BC",
+    "graphics_row": "0x080CDB78",
+    "sprite_row": "0x080CD49C"
+   },
+   "actors": {
+    "placed": [
+     "0x0D9"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 20,
+     "count": 9
+    },
+    {
+     "area": 5,
+     "room": 17,
+     "count": 2
+    },
+    {
+     "area": 6,
+     "room": 6,
+     "count": 6
+    },
+    {
+     "area": 6,
+     "room": 7,
+     "count": 4
+    },
+    {
+     "area": 7,
+     "room": 6,
+     "count": 7
+    },
+    {
+     "area": 7,
+     "room": 10,
+     "count": 3
+    },
+    {
+     "area": 8,
+     "room": 8,
+     "count": 6
+    },
+    {
+     "area": 8,
+     "room": 15,
+     "count": 3
+    },
+    {
+     "area": 15,
+     "room": 1,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 14,
+   "name": "Fleaman",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm014",
+   "hod_stock": "nirus",
+   "stats": {
+    "hp": 60,
+    "attack": 142,
+    "defense": 45,
+    "exp": 29,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x11",
+      500
+     ],
+     [
+      "0x24",
+      125
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB3D0",
+    "graphics_row": "0x080CDB88",
+    "sprite_row": "0x080CD4A8"
+   },
+   "actors": {
+    "placed": [
+     "0x0FF"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 0,
+     "count": 8
+    },
+    {
+     "area": 3,
+     "room": 21,
+     "count": 4
+    },
+    {
+     "area": 4,
+     "room": 3,
+     "count": 2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 15,
+   "name": "Poltergeist",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm015",
+   "hod_stock": null,
+   "stats": {
+    "hp": 105,
+    "attack": 360,
+    "defense": 380,
+    "exp": 510,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x1D",
+      200
+     ],
+     [
+      "0x31",
+      60
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB3E4",
+    "graphics_row": "0x080CDB98",
+    "sprite_row": "0x080CD4B4"
+   },
+   "actors": {
+    "placed": [
+     "0x158"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 8,
+     "room": 3,
+     "count": 4
+    },
+    {
+     "area": 8,
+     "room": 17,
+     "count": 2
+    },
+    {
+     "area": 8,
+     "room": 23,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 16,
+   "name": "Bat",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm016",
+   "hod_stock": "armc02",
+   "stats": {
+    "hp": 5,
+    "attack": 50,
+    "defense": 15,
+    "exp": 4,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x22",
+      250
+     ],
+     [
+      "0x33",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB3F8",
+    "graphics_row": "0x080CDBA8",
+    "sprite_row": "0x080CD4C0"
+   },
+   "actors": {
+    "placed": [
+     "0x131"
+    ],
+    "candidates": [
+     "0x0F4"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 1,
+     "count": 6
+    },
+    {
+     "area": 1,
+     "room": 3,
+     "count": 4
+    },
+    {
+     "area": 1,
+     "room": 7,
+     "count": 17
+    },
+    {
+     "area": 1,
+     "room": 18,
+     "count": 6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 17,
+   "name": "Spirit",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm017",
+   "hod_stock": null,
+   "stats": {
+    "hp": 9,
+    "attack": 55,
+    "defense": 17,
+    "exp": 1,
+    "attack_flags": "0x11",
+    "element": "Fire",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x22",
+      200
+     ],
+     [
+      "0x30",
+      40
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB40C",
+    "graphics_row": "0x080CDBB8",
+    "sprite_row": "0x080CD4CC"
+   },
+   "actors": {
+    "placed": [
+     "0x16E"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 14,
+     "count": 1
+    },
+    {
+     "area": 1,
+     "room": 21,
+     "count": 4
+    }
+   ],
+   "notes": "Compendium framework No. 97, package 10 row 4 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 18,
+   "name": "Ectoplasm",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm018",
+   "hod_stock": "fu_he",
+   "stats": {
+    "hp": 12,
+    "attack": 165,
+    "defense": 51,
+    "exp": 2,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x22",
+      200
+     ],
+     [
+      "0x30",
+      40
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB420",
+    "graphics_row": "0x080CDBC8",
+    "sprite_row": "0x080CD4D8"
+   },
+   "actors": {
+    "placed": [
+     "0x16F"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 5,
+     "room": 21,
+     "count": 4
+    },
+    {
+     "area": 6,
+     "room": 0,
+     "count": 4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 19,
+   "name": "Specter",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm019",
+   "hod_stock": null,
+   "stats": {
+    "hp": 15,
+    "attack": 295,
+    "defense": 95,
+    "exp": 3,
+    "attack_flags": "0x11",
+    "element": "Fire",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x30",
+      45
+     ],
+     [
+      "0x31",
+      15
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB434",
+    "graphics_row": "0x080CDBD8",
+    "sprite_row": "0x080CD4E4"
+   },
+   "actors": {
+    "placed": [
+     "0x170",
+     "0x1F6"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 9,
+     "room": 4,
+     "count": 7
+    },
+    {
+     "area": 9,
+     "room": 17,
+     "count": 8
+    },
+    {
+     "area": 9,
+     "room": 18,
+     "count": 4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 20,
+   "name": "Axe Armor",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm020",
+   "hod_stock": "axe_am",
+   "stats": {
+    "hp": 55,
+    "attack": 120,
+    "defense": 130,
+    "exp": 31,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x01",
+      400
+     ],
+     [
+      "0x39",
+      150
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB448",
+    "graphics_row": "0x080CDBE8",
+    "sprite_row": "0x080CD4F0"
+   },
+   "actors": {
+    "placed": [
+     "0x0DE"
+    ],
+    "candidates": [
+     "0x09E",
+     "0x0AD",
+     "0x0DF"
+    ]
+   },
+   "placements": [
+    {
+     "area": 2,
+     "room": 3,
+     "count": 1
+    },
+    {
+     "area": 2,
+     "room": 7,
+     "count": 1
+    },
+    {
+     "area": 3,
+     "room": 2,
+     "count": 1
+    },
+    {
+     "area": 3,
+     "room": 3,
+     "count": 4
+    },
+    {
+     "area": 3,
+     "room": 4,
+     "count": 5
+    },
+    {
+     "area": 3,
+     "room": 7,
+     "count": 1
+    },
+    {
+     "area": 3,
+     "room": 18,
+     "count": 6
+    },
+    {
+     "area": 3,
+     "room": 20,
+     "count": 6
+    },
+    {
+     "area": 3,
+     "room": 23,
+     "count": 1
+    },
+    {
+     "area": 3,
+     "room": 24,
+     "count": 1
+    },
+    {
+     "area": 11,
+     "room": 5,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 21,
+   "name": "Flame Armor",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm021",
+   "hod_stock": null,
+   "stats": {
+    "hp": 160,
+    "attack": 320,
+    "defense": 300,
+    "exp": 280,
+    "attack_flags": "0x11",
+    "element": "Fire",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x02",
+      500
+     ],
+     [
+      "0x35",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB45C",
+    "graphics_row": "0x080CDBF8",
+    "sprite_row": "0x080CD4FC"
+   },
+   "actors": {
+    "placed": [
+     "0x0E0"
+    ],
+    "candidates": [
+     "0x0E1"
+    ]
+   },
+   "placements": [
+    {
+     "area": 4,
+     "room": 0,
+     "count": 1
+    },
+    {
+     "area": 7,
+     "room": 10,
+     "count": 1
+    },
+    {
+     "area": 7,
+     "room": 15,
+     "count": 3
+    },
+    {
+     "area": 7,
+     "room": 18,
+     "count": 4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 22,
+   "name": "Flame Demon",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm022",
+   "hod_stock": null,
+   "stats": {
+    "hp": 300,
+    "attack": 315,
+    "defense": 270,
+    "exp": 600,
+    "attack_flags": "0x11",
+    "element": "Fire",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x29",
+      400
+     ],
+     [
+      "0x04",
+      200
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB470",
+    "graphics_row": "0x080CDC08",
+    "sprite_row": "0x080CD508"
+   },
+   "actors": {
+    "placed": [
+     "0x094"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 6,
+     "room": 1,
+     "count": 1
+    },
+    {
+     "area": 6,
+     "room": 3,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 23,
+   "name": "Ice Armor",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm023",
+   "hod_stock": null,
+   "stats": {
+    "hp": 240,
+    "attack": 470,
+    "defense": 520,
+    "exp": 1500,
+    "attack_flags": "0x12",
+    "element": "Ice",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x05",
+      250
+     ],
+     [
+      "0x47",
+      120
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB484",
+    "graphics_row": "0x080CDC18",
+    "sprite_row": "0x080CD514"
+   },
+   "actors": {
+    "placed": [
+     "0x0E2"
+    ],
+    "candidates": [
+     "0x0E3"
+    ]
+   },
+   "placements": [
+    {
+     "area": 10,
+     "room": 2,
+     "count": 1
+    },
+    {
+     "area": 10,
+     "room": 3,
+     "count": 11
+    },
+    {
+     "area": 10,
+     "room": 7,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 24,
+   "name": "Thunder Armor",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm024",
+   "hod_stock": null,
+   "stats": {
+    "hp": 204,
+    "attack": 340,
+    "defense": 320,
+    "exp": 800,
+    "attack_flags": "0x18",
+    "element": "Thunder",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x03",
+      250
+     ],
+     [
+      "0x05",
+      75
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB498",
+    "graphics_row": "0x080CDC28",
+    "sprite_row": "0x080CD520"
+   },
+   "actors": {
+    "placed": [
+     "0x0E4"
+    ],
+    "candidates": [
+     "0x0E5"
+    ]
+   },
+   "placements": [
+    {
+     "area": 5,
+     "room": 22,
+     "count": 1
+    },
+    {
+     "area": 7,
+     "room": 6,
+     "count": 3
+    },
+    {
+     "area": 7,
+     "room": 18,
+     "count": 4
+    },
+    {
+     "area": 8,
+     "room": 3,
+     "count": 3
+    },
+    {
+     "area": 8,
+     "room": 8,
+     "count": 4
+    },
+    {
+     "area": 9,
+     "room": 20,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 25,
+   "name": "Wind Armor",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm025",
+   "hod_stock": null,
+   "stats": {
+    "hp": 320,
+    "attack": 500,
+    "defense": 460,
+    "exp": 1800,
+    "attack_flags": "0x17",
+    "element": "Wind",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x29",
+      200
+     ],
+     [
+      "0x2C",
+      40
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB4AC",
+    "graphics_row": "0x080CDC38",
+    "sprite_row": "0x080CD52C"
+   },
+   "actors": {
+    "placed": [
+     "0x0E6"
+    ],
+    "candidates": [
+     "0x0E7"
+    ]
+   },
+   "placements": [
+    {
+     "area": 10,
+     "room": 19,
+     "count": 1
+    },
+    {
+     "area": 11,
+     "room": 2,
+     "count": 8
+    },
+    {
+     "area": 11,
+     "room": 3,
+     "count": 3
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 26,
+   "name": "Earth Armor",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm026",
+   "hod_stock": null,
+   "stats": {
+    "hp": 130,
+    "attack": 230,
+    "defense": 280,
+    "exp": 240,
+    "attack_flags": "0x14",
+    "element": "Earth",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x23",
+      400
+     ],
+     [
+      "0x03",
+      200
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB4C0",
+    "graphics_row": "0x080CDC48",
+    "sprite_row": "0x080CD538"
+   },
+   "actors": {
+    "placed": [
+     "0x0E8"
+    ],
+    "candidates": [
+     "0x0AE",
+     "0x0E9"
+    ]
+   },
+   "placements": [
+    {
+     "area": 5,
+     "room": 3,
+     "count": 2
+    },
+    {
+     "area": 5,
+     "room": 13,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 27,
+   "name": "Poison Armor",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm027",
+   "hod_stock": null,
+   "stats": {
+    "hp": 260,
+    "attack": 382,
+    "defense": 310,
+    "exp": 822,
+    "attack_flags": "0x16",
+    "element": "Poison",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x2E",
+      500
+     ],
+     [
+      "0x0E",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB4D4",
+    "graphics_row": "0x080CDC58",
+    "sprite_row": "0x080CD544"
+   },
+   "actors": {
+    "placed": [
+     "0x0EA"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 3,
+     "room": 9,
+     "count": 1
+    },
+    {
+     "area": 9,
+     "room": 1,
+     "count": 1
+    },
+    {
+     "area": 9,
+     "room": 11,
+     "count": 4
+    },
+    {
+     "area": 9,
+     "room": 13,
+     "count": 2
+    },
+    {
+     "area": 9,
+     "room": 22,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 28,
+   "name": "Forest Armor",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm028",
+   "hod_stock": null,
+   "stats": {
+    "hp": 370,
+    "attack": 390,
+    "defense": 390,
+    "exp": 1280,
+    "attack_flags": "0x13",
+    "element": "Plant",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x04",
+      180
+     ],
+     [
+      "0x0E",
+      45
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB4E8",
+    "graphics_row": "0x080CDC68",
+    "sprite_row": "0x080CD550"
+   },
+   "actors": {
+    "placed": [
+     "0x0EC"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 3,
+     "room": 6,
+     "count": 5
+    },
+    {
+     "area": 8,
+     "room": 17,
+     "count": 4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 29,
+   "name": "Stone Armor",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm029",
+   "hod_stock": null,
+   "stats": {
+    "hp": 90,
+    "attack": 220,
+    "defense": 320,
+    "exp": 222,
+    "attack_flags": "0x15",
+    "element": "Stone",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x1A",
+      600
+     ],
+     [
+      "0x3B",
+      180
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB4FC",
+    "graphics_row": "0x080CDC78",
+    "sprite_row": "0x080CD55C"
+   },
+   "actors": {
+    "placed": [
+     "0x0ED"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 15,
+     "count": 2
+    },
+    {
+     "area": 5,
+     "room": 7,
+     "count": 3
+    },
+    {
+     "area": 5,
+     "room": 11,
+     "count": 1
+    },
+    {
+     "area": 5,
+     "room": 25,
+     "count": 1
+    }
+   ],
+   "notes": "Compendium framework No. 98, package 10 row 5 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 30,
+   "name": "Ice Demon",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm030",
+   "hod_stock": null,
+   "stats": {
+    "hp": 350,
+    "attack": 492,
+    "defense": 510,
+    "exp": 4200,
+    "attack_flags": "0x12",
+    "element": "Ice",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x0E",
+      220
+     ],
+     [
+      "0x07",
+      120
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB510",
+    "graphics_row": "0x080CDC88",
+    "sprite_row": "0x080CD568"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x098",
+     "0x099",
+     "0x09A"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 31,
+   "name": "Holy Armor",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm031",
+   "hod_stock": null,
+   "stats": {
+    "hp": 350,
+    "attack": 420,
+    "defense": 450,
+    "exp": 1700,
+    "attack_flags": "0x19",
+    "element": "Holy",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x38",
+      500
+     ],
+     [
+      "0x06",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB524",
+    "graphics_row": "0x080CDC98",
+    "sprite_row": "0x080CD574"
+   },
+   "actors": {
+    "placed": [
+     "0x0EF"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 8,
+     "room": 6,
+     "count": 2
+    },
+    {
+     "area": 8,
+     "room": 13,
+     "count": 3
+    },
+    {
+     "area": 8,
+     "room": 14,
+     "count": 2
+    },
+    {
+     "area": 8,
+     "room": 24,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 32,
+   "name": "Thunder Demon",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm032",
+   "hod_stock": "thdm",
+   "stats": {
+    "hp": 180,
+    "attack": 270,
+    "defense": 230,
+    "exp": 450,
+    "attack_flags": "0x18",
+    "element": "Thunder",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x25",
+      1500
+     ],
+     [
+      "0x3C",
+      300
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB538",
+    "graphics_row": "0x080CDCA8",
+    "sprite_row": "0x080CD580"
+   },
+   "actors": {
+    "placed": [
+     "0x09B"
+    ],
+    "candidates": [
+     "0x09C",
+     "0x09D"
+    ]
+   },
+   "placements": [
+    {
+     "area": 5,
+     "room": 12,
+     "count": 2
+    },
+    {
+     "area": 5,
+     "room": 23,
+     "count": 1
+    },
+    {
+     "area": 7,
+     "room": 8,
+     "count": 2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 33,
+   "name": "Dark Armor",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm033",
+   "hod_stock": null,
+   "stats": {
+    "hp": 400,
+    "attack": 680,
+    "defense": 560,
+    "exp": 3300,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x06",
+      200
+     ],
+     [
+      "0x17",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB54C",
+    "graphics_row": "0x080CDCB8",
+    "sprite_row": "0x080CD58C"
+   },
+   "actors": {
+    "placed": [
+     "0x0F2"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 12,
+     "room": 14,
+     "count": 4
+    },
+    {
+     "area": 12,
+     "room": 15,
+     "count": 2
+    },
+    {
+     "area": 12,
+     "room": 17,
+     "count": 3
+    },
+    {
+     "area": 12,
+     "room": 18,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 34,
+   "name": "Wind Demon",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm034",
+   "hod_stock": null,
+   "stats": {
+    "hp": 400,
+    "attack": 540,
+    "defense": 490,
+    "exp": 3600,
+    "attack_flags": "0x17",
+    "element": "Wind",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x31",
+      200
+     ],
+     [
+      "0x20",
+      120
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB560",
+    "graphics_row": "0x080CDCC8",
+    "sprite_row": "0x080CD598"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x09E"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 35,
+   "name": "Bloody Sword",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm035",
+   "hod_stock": null,
+   "stats": {
+    "hp": 30,
+    "attack": 220,
+    "defense": 500,
+    "exp": 200,
+    "attack_flags": "0x16",
+    "element": "Poison",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x24",
+      500
+     ],
+     [
+      "0x44",
+      120
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB574",
+    "graphics_row": "0x080CDCD8",
+    "sprite_row": "0x080CD5A4"
+   },
+   "actors": {
+    "placed": [
+     "0x15C"
+    ],
+    "candidates": [
+     "0x155"
+    ]
+   },
+   "placements": [
+    {
+     "area": 7,
+     "room": 5,
+     "count": 4
+    },
+    {
+     "area": 7,
+     "room": 9,
+     "count": 2
+    },
+    {
+     "area": 7,
+     "room": 12,
+     "count": 5
+    },
+    {
+     "area": 7,
+     "room": 14,
+     "count": 1
+    },
+    {
+     "area": 7,
+     "room": 15,
+     "count": 6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 36,
+   "name": "Golem",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm036",
+   "hod_stock": null,
+   "stats": {
+    "hp": 650,
+    "attack": 520,
+    "defense": 700,
+    "exp": 1400,
+    "attack_flags": "0x15",
+    "element": "Stone",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x14",
+      130
+     ],
+     [
+      "0x05",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB588",
+    "graphics_row": "0x080CDCE8",
+    "sprite_row": "0x080CD5B0"
+   },
+   "actors": {
+    "placed": [
+     "0x0FA"
+    ],
+    "candidates": [
+     "0x0FB",
+     "0x14A"
+    ]
+   },
+   "placements": [
+    {
+     "area": 8,
+     "room": 12,
+     "count": 2
+    },
+    {
+     "area": 8,
+     "room": 25,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 37,
+   "name": "Earth Demon",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm037",
+   "hod_stock": null,
+   "stats": {
+    "hp": 150,
+    "attack": 90,
+    "defense": 85,
+    "exp": 25,
+    "attack_flags": "0x14",
+    "element": "Earth",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x25",
+      1500
+     ],
+     [
+      "0x38",
+      250
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB59C",
+    "graphics_row": "0x080CDCF8",
+    "sprite_row": "0x080CD5BC"
+   },
+   "actors": {
+    "placed": [
+     "0x0A1"
+    ],
+    "candidates": [
+     "0x0A2",
+     "0x0A3"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 7,
+     "count": 1
+    },
+    {
+     "area": 1,
+     "room": 20,
+     "count": 1
+    }
+   ],
+   "notes": "Compendium framework No. 99, package 10 row 6 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 38,
+   "name": "Werewolf",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm038",
+   "hod_stock": null,
+   "stats": {
+    "hp": 160,
+    "attack": 265,
+    "defense": 110,
+    "exp": 140,
+    "attack_flags": "0x26",
+    "element": "Poison",
+    "status_on_hit": null,
+    "knockback": false,
+    "drops": [
+     [
+      "0x23",
+      200
+     ],
+     [
+      "0x2A",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB5B0",
+    "graphics_row": "0x080CDD08",
+    "sprite_row": "0x080CD5C8"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x109"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 39,
+   "name": "Man Eater",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm039",
+   "hod_stock": null,
+   "stats": {
+    "hp": 400,
+    "attack": 330,
+    "defense": 233,
+    "exp": 700,
+    "attack_flags": "0x23",
+    "element": "Plant",
+    "status_on_hit": null,
+    "knockback": false,
+    "drops": [
+     [
+      "0x33",
+      300
+     ],
+     [
+      "0x45",
+      150
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB5C4",
+    "graphics_row": "0x080CDD18",
+    "sprite_row": "0x080CD5D4"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x143",
+     "0x144",
+     "0x145",
+     "0x146"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 40,
+   "name": "Devil Tower",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm040",
+   "hod_stock": null,
+   "stats": {
+    "hp": 10,
+    "attack": 140,
+    "defense": 200,
+    "exp": 17,
+    "attack_flags": "0x15",
+    "element": "Stone",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x22",
+      400
+     ],
+     [
+      "0x29",
+      125
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB5D8",
+    "graphics_row": "0x080CDD28",
+    "sprite_row": "0x080CD5E0"
+   },
+   "actors": {
+    "placed": [
+     "0x14F"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 3,
+     "room": 12,
+     "count": 7
+    },
+    {
+     "area": 3,
+     "room": 15,
+     "count": 2
+    },
+    {
+     "area": 3,
+     "room": 18,
+     "count": 4
+    },
+    {
+     "area": 3,
+     "room": 20,
+     "count": 8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 41,
+   "name": "Skeleton Athlete",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm041",
+   "hod_stock": null,
+   "stats": {
+    "hp": 100,
+    "attack": 100,
+    "defense": 50,
+    "exp": 25,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x11",
+      300
+     ],
+     [
+      "0x3D",
+      75
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB5EC",
+    "graphics_row": "0x080CDD38",
+    "sprite_row": "0x080CD5EC"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x0CF",
+     "0x0D0",
+     "0x0D1",
+     "0x14C"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 42,
+   "name": "Harpy",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm042",
+   "hod_stock": "harpy",
+   "stats": {
+    "hp": 120,
+    "attack": 275,
+    "defense": 200,
+    "exp": 271,
+    "attack_flags": "0x17",
+    "element": "Wind",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x13",
+      250
+     ],
+     [
+      "0x18",
+      80
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB600",
+    "graphics_row": "0x080CDD48",
+    "sprite_row": "0x080CD5F8"
+   },
+   "actors": {
+    "placed": [
+     "0x127"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 9,
+     "room": 6,
+     "count": 2
+    },
+    {
+     "area": 9,
+     "room": 9,
+     "count": 1
+    },
+    {
+     "area": 9,
+     "room": 19,
+     "count": 3
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 43,
+   "name": "Siren",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm043",
+   "hod_stock": null,
+   "stats": {
+    "hp": 160,
+    "attack": 443,
+    "defense": 300,
+    "exp": 880,
+    "attack_flags": "0x17",
+    "element": "Wind",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x3D",
+      200
+     ],
+     [
+      "0x31",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB614",
+    "graphics_row": "0x080CDD58",
+    "sprite_row": "0x080CD604"
+   },
+   "actors": {
+    "placed": [
+     "0x128"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 10,
+     "room": 9,
+     "count": 2
+    },
+    {
+     "area": 10,
+     "room": 18,
+     "count": 1
+    },
+    {
+     "area": 12,
+     "room": 9,
+     "count": 4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 44,
+   "name": "Imp",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm044",
+   "hod_stock": "imp",
+   "stats": {
+    "hp": 90,
+    "attack": 220,
+    "defense": 99,
+    "exp": 103,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x37",
+      2000
+     ],
+     [
+      "0x2B",
+      25
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB628",
+    "graphics_row": "0x080CDD68",
+    "sprite_row": "0x080CD610"
+   },
+   "actors": {
+    "placed": [
+     "0x0B9"
+    ],
+    "candidates": [
+     "0x0BA",
+     "0x1F1"
+    ]
+   },
+   "placements": [
+    {
+     "area": 3,
+     "room": 6,
+     "count": 11
+    },
+    {
+     "area": 9,
+     "room": 6,
+     "count": 2
+    },
+    {
+     "area": 9,
+     "room": 10,
+     "count": 5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 45,
+   "name": "Mudman",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm045",
+   "hod_stock": null,
+   "stats": {
+    "hp": 25,
+    "attack": 79,
+    "defense": 30,
+    "exp": 2,
+    "attack_flags": "0x14",
+    "element": "Earth",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x11",
+      250
+     ],
+     [
+      "0x30",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB63C",
+    "graphics_row": "0x080CDD78",
+    "sprite_row": "0x080CD61C"
+   },
+   "actors": {
+    "placed": [
+     "0x0FE"
+    ],
+    "candidates": [
+     "0x0FD",
+     "0x0FE"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 9,
+     "count": 1
+    },
+    {
+     "area": 1,
+     "room": 21,
+     "count": 1
+    }
+   ],
+   "notes": "Compendium framework No. 100, package 10 row 7 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 46,
+   "name": "Gargoyle",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm046",
+   "hod_stock": null,
+   "stats": {
+    "hp": 60,
+    "attack": 160,
+    "defense": 66,
+    "exp": 3,
+    "attack_flags": "0x17",
+    "element": "Wind",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x12",
+      150
+     ],
+     [
+      "0x34",
+      40
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB650",
+    "graphics_row": "0x080CDD88",
+    "sprite_row": "0x080CD628"
+   },
+   "actors": {
+    "placed": [
+     "0x129",
+     "0x12C"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 2,
+     "room": 0,
+     "count": 13
+    },
+    {
+     "area": 5,
+     "room": 5,
+     "count": 8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 47,
+   "name": "Slime",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm047",
+   "hod_stock": null,
+   "stats": {
+    "hp": 40,
+    "attack": 102,
+    "defense": 18,
+    "exp": 11,
+    "attack_flags": "0x46",
+    "element": "Poison",
+    "status_on_hit": "Poison",
+    "knockback": false,
+    "drops": [
+     [
+      "0x2E",
+      400
+     ],
+     [
+      "0x42",
+      250
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB664",
+    "graphics_row": "0x080CDD98",
+    "sprite_row": "0x080CD634"
+   },
+   "actors": {
+    "placed": [
+     "0x165"
+    ],
+    "candidates": [
+     "0x166",
+     "0x167"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 0,
+     "count": 1
+    },
+    {
+     "area": 2,
+     "room": 7,
+     "count": 1
+    },
+    {
+     "area": 3,
+     "room": 4,
+     "count": 5
+    },
+    {
+     "area": 3,
+     "room": 6,
+     "count": 3
+    },
+    {
+     "area": 3,
+     "room": 9,
+     "count": 1
+    },
+    {
+     "area": 5,
+     "room": 3,
+     "count": 4
+    },
+    {
+     "area": 5,
+     "room": 8,
+     "count": 2
+    }
+   ],
+   "notes": "Compendium framework No. 101, package 10 row 8 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 48,
+   "name": "Frozen Shade",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm048",
+   "hod_stock": "oferia",
+   "stats": {
+    "hp": 112,
+    "attack": 490,
+    "defense": 560,
+    "exp": 1212,
+    "attack_flags": "0x12",
+    "element": "Ice",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x25",
+      300
+     ],
+     [
+      "0x18",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB678",
+    "graphics_row": "0x080CDDA8",
+    "sprite_row": "0x080CD640"
+   },
+   "actors": {
+    "placed": [
+     "0x105"
+    ],
+    "candidates": [
+     "0x106"
+    ]
+   },
+   "placements": [
+    {
+     "area": 5,
+     "room": 20,
+     "count": 1
+    },
+    {
+     "area": 10,
+     "room": 0,
+     "count": 1
+    },
+    {
+     "area": 10,
+     "room": 4,
+     "count": 1
+    },
+    {
+     "area": 10,
+     "room": 5,
+     "count": 9
+    },
+    {
+     "area": 10,
+     "room": 9,
+     "count": 13
+    },
+    {
+     "area": 10,
+     "room": 11,
+     "count": 2
+    },
+    {
+     "area": 10,
+     "room": 17,
+     "count": 1
+    },
+    {
+     "area": 12,
+     "room": 16,
+     "count": 4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 49,
+   "name": "Heat Shade",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm049",
+   "hod_stock": null,
+   "stats": {
+    "hp": 80,
+    "attack": 240,
+    "defense": 200,
+    "exp": 136,
+    "attack_flags": "0x11",
+    "element": "Fire",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x13",
+      250
+     ],
+     [
+      "0x43",
+      220
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB68C",
+    "graphics_row": "0x080CDDB8",
+    "sprite_row": "0x080CD64C"
+   },
+   "actors": {
+    "placed": [
+     "0x107"
+    ],
+    "candidates": [
+     "0x108"
+    ]
+   },
+   "placements": [
+    {
+     "area": 3,
+     "room": 10,
+     "count": 1
+    },
+    {
+     "area": 5,
+     "room": 0,
+     "count": 2
+    },
+    {
+     "area": 5,
+     "room": 8,
+     "count": 4
+    },
+    {
+     "area": 5,
+     "room": 9,
+     "count": 4
+    },
+    {
+     "area": 5,
+     "room": 16,
+     "count": 1
+    },
+    {
+     "area": 7,
+     "room": 6,
+     "count": 3
+    },
+    {
+     "area": 12,
+     "room": 16,
+     "count": 4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 50,
+   "name": "Poison Worm",
+   "kind": "enemy",
+   "enabled": true,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm050",
+   "hod_stock": null,
+   "stats": {
+    "hp": 120,
+    "attack": 30,
+    "defense": 20,
+    "exp": 12,
+    "attack_flags": "0x46",
+    "element": "Poison",
+    "status_on_hit": "Poison",
+    "knockback": false,
+    "drops": [
+     [
+      "0x2E",
+      400
+     ],
+     [
+      "0x25",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB6A0",
+    "graphics_row": "0x080CDDC8",
+    "sprite_row": "0x080CD658"
+   },
+   "actors": {
+    "placed": [
+     "0x160"
+    ],
+    "candidates": [
+     "0x161",
+     "0x162"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 1,
+     "count": 3
+    },
+    {
+     "area": 1,
+     "room": 8,
+     "count": 3
+    }
+   ],
+   "notes": "Compendium No. 93 (2026-11-20; poison_worm_module.COMPENDIUM_NUMBER). Built in package 23 (catacombs_dlc.py)."
+  },
+  {
+   "cotm_index": 51,
+   "name": "Myconid",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm051",
+   "hod_stock": null,
+   "stats": {
+    "hp": 50,
+    "attack": 250,
+    "defense": 114,
+    "exp": 25,
+    "attack_flags": "0x13",
+    "element": "Plant",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x29",
+      100
+     ],
+     [
+      "0x31",
+      20
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB6B4",
+    "graphics_row": "0x080CDDD8",
+    "sprite_row": "0x080CD664"
+   },
+   "actors": {
+    "placed": [
+     "0x149",
+     "0x1F7",
+     "0x1F8"
+    ],
+    "candidates": [
+     "0x148"
+    ]
+   },
+   "placements": [
+    {
+     "area": 9,
+     "room": 1,
+     "count": 12
+    },
+    {
+     "area": 9,
+     "room": 13,
+     "count": 1
+    },
+    {
+     "area": 9,
+     "room": 16,
+     "count": 10
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 52,
+   "name": "Will O'Wisp",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm052",
+   "hod_stock": null,
+   "stats": {
+    "hp": 11,
+    "attack": 110,
+    "defense": 16,
+    "exp": 9,
+    "attack_flags": "0x11",
+    "element": "Fire",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x22",
+      250
+     ],
+     [
+      "0x30",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB6C8",
+    "graphics_row": "0x080CDDE8",
+    "sprite_row": "0x080CD670"
+   },
+   "actors": {
+    "placed": [
+     "0x171"
+    ],
+    "candidates": [
+     "0x0B0",
+     "0x0B1",
+     "0x0B5",
+     "0x0C1",
+     "0x0EE",
+     "0x112",
+     "0x113",
+     "0x114",
+     "0x11F",
+     "0x121",
+     "0x122",
+     "0x126",
+     "0x135",
+     "0x138",
+     "0x142",
+     "0x153"
+    ]
+   },
+   "placements": [
+    {
+     "area": 3,
+     "room": 21,
+     "count": 4
+    },
+    {
+     "area": 4,
+     "room": 1,
+     "count": 10
+    },
+    {
+     "area": 4,
+     "room": 2,
+     "count": 6
+    },
+    {
+     "area": 11,
+     "room": 3,
+     "count": 3
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 53,
+   "name": "Spearfish",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm053",
+   "hod_stock": null,
+   "stats": {
+    "hp": 40,
+    "attack": 360,
+    "defense": 450,
+    "exp": 280,
+    "attack_flags": "0x12",
+    "element": "Ice",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x33",
+      200
+     ],
+     [
+      "0x35",
+      40
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB6DC",
+    "graphics_row": "0x080CDDF8",
+    "sprite_row": "0x080CD67C"
+   },
+   "actors": {
+    "placed": [
+     "0x139"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 10,
+     "room": 3,
+     "count": 2
+    },
+    {
+     "area": 10,
+     "room": 6,
+     "count": 6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 54,
+   "name": "Merman",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm054",
+   "hod_stock": "fm68",
+   "stats": {
+    "hp": 60,
+    "attack": 303,
+    "defense": 301,
+    "exp": 10,
+    "attack_flags": "0x12",
+    "element": "Ice",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x23",
+      100
+     ],
+     [
+      "0x2A",
+      15
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB6F0",
+    "graphics_row": "0x080CDE08",
+    "sprite_row": "0x080CD688"
+   },
+   "actors": {
+    "placed": [
+     "0x11C"
+    ],
+    "candidates": [
+     "0x11B"
+    ]
+   },
+   "placements": [
+    {
+     "area": 10,
+     "room": 1,
+     "count": 1
+    },
+    {
+     "area": 10,
+     "room": 5,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 55,
+   "name": "Minotaur",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm055",
+   "hod_stock": "minoHD",
+   "stats": {
+    "hp": 410,
+    "attack": 520,
+    "defense": 640,
+    "exp": 2000,
+    "attack_flags": "0x14",
+    "element": "Earth",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x3A",
+      150
+     ],
+     [
+      "0x2B",
+      75
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB704",
+    "graphics_row": "0x080CDE18",
+    "sprite_row": "0x080CD694"
+   },
+   "actors": {
+    "placed": [
+     "0x11E"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 12,
+     "room": 11,
+     "count": 3
+    },
+    {
+     "area": 12,
+     "room": 13,
+     "count": 3
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 56,
+   "name": "Were-horse",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm056",
+   "hod_stock": null,
+   "stats": {
+    "hp": 400,
+    "attack": 540,
+    "defense": 360,
+    "exp": 1970,
+    "attack_flags": "0x14",
+    "element": "Earth",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x2A",
+      150
+     ],
+     [
+      "0x1F",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB718",
+    "graphics_row": "0x080CDE28",
+    "sprite_row": "0x080CD6A0"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x120"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 57,
+   "name": "Marionette",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm057",
+   "hod_stock": null,
+   "stats": {
+    "hp": 80,
+    "attack": 160,
+    "defense": 150,
+    "exp": 127,
+    "attack_flags": "0x4A",
+    "element": "Dark",
+    "status_on_hit": "Curse",
+    "knockback": false,
+    "drops": [
+     [
+      "0x2F",
+      450
+     ],
+     [
+      "0x31",
+      75
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB72C",
+    "graphics_row": "0x080CDE38",
+    "sprite_row": "0x080CD6AC"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x155"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 58,
+   "name": "Gremlin",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm058",
+   "hod_stock": null,
+   "stats": {
+    "hp": 30,
+    "attack": 80,
+    "defense": 33,
+    "exp": 2,
+    "attack_flags": "0x17",
+    "element": "Wind",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x22",
+      250
+     ],
+     [
+      "0x30",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB740",
+    "graphics_row": "0x080CDE48",
+    "sprite_row": "0x080CD6B8"
+   },
+   "actors": {
+    "placed": [
+     "0x12F"
+    ],
+    "candidates": [
+     "0x12F"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 3,
+     "count": 6
+    },
+    {
+     "area": 2,
+     "room": 0,
+     "count": 13
+    }
+   ],
+   "notes": "Compendium framework No. 102, package 10 row 9 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 59,
+   "name": "Hopper",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm059",
+   "hod_stock": null,
+   "stats": {
+    "hp": 40,
+    "attack": 87,
+    "defense": 35,
+    "exp": 8,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x11",
+      500
+     ],
+     [
+      "0x23",
+      150
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB754",
+    "graphics_row": "0x080CDE58",
+    "sprite_row": "0x080CD6C4"
+   },
+   "actors": {
+    "placed": [
+     "0x100"
+    ],
+    "candidates": [
+     "0x0FF"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 4,
+     "count": 4
+    }
+   ],
+   "notes": "Compendium framework No. 103, package 10 row 10 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 60,
+   "name": "Evil Pillar",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm060",
+   "hod_stock": null,
+   "stats": {
+    "hp": 20,
+    "attack": 460,
+    "defense": 800,
+    "exp": 480,
+    "attack_flags": "0x15",
+    "element": "Stone",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x05",
+      200
+     ],
+     [
+      "0x27",
+      25
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB768",
+    "graphics_row": "0x080CDE68",
+    "sprite_row": "0x080CD6D0"
+   },
+   "actors": {
+    "placed": [
+     "0x150"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 12,
+     "room": 3,
+     "count": 2
+    },
+    {
+     "area": 12,
+     "room": 9,
+     "count": 10
+    },
+    {
+     "area": 12,
+     "room": 13,
+     "count": 3
+    },
+    {
+     "area": 12,
+     "room": 14,
+     "count": 3
+    },
+    {
+     "area": 12,
+     "room": 17,
+     "count": 8
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 61,
+   "name": "Were-panther",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm061",
+   "hod_stock": null,
+   "stats": {
+    "hp": 200,
+    "attack": 300,
+    "defense": 130,
+    "exp": 270,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x22",
+      550
+     ],
+     [
+      "0x3E",
+      110
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB77C",
+    "graphics_row": "0x080CDE78",
+    "sprite_row": "0x080CD6DC"
+   },
+   "actors": {
+    "placed": [
+     "0x10C"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 7,
+     "room": 2,
+     "count": 2
+    },
+    {
+     "area": 7,
+     "room": 20,
+     "count": 5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 62,
+   "name": "Were-jaguar",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm062",
+   "hod_stock": null,
+   "stats": {
+    "hp": 270,
+    "attack": 416,
+    "defense": 170,
+    "exp": 760,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x03",
+      250
+     ],
+     [
+      "0x15",
+      40
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB790",
+    "graphics_row": "0x080CDE88",
+    "sprite_row": "0x080CD6E8"
+   },
+   "actors": {
+    "placed": [
+     "0x10D"
+    ],
+    "candidates": [
+     "0x120"
+    ]
+   },
+   "placements": [
+    {
+     "area": 7,
+     "room": 22,
+     "count": 4
+    },
+    {
+     "area": 11,
+     "room": 0,
+     "count": 4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 63,
+   "name": "Bone Head",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm063",
+   "hod_stock": null,
+   "stats": {
+    "hp": 24,
+    "attack": 60,
+    "defense": 80,
+    "exp": 7,
+    "attack_flags": "0x11",
+    "element": "Fire",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x41",
+      2000
+     ],
+     [
+      "0x33",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB7A4",
+    "graphics_row": "0x080CDE98",
+    "sprite_row": "0x080CD6F4"
+   },
+   "actors": {
+    "placed": [
+     "0x0DA"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 1,
+     "count": 4
+    },
+    {
+     "area": 1,
+     "room": 12,
+     "count": 8
+    },
+    {
+     "area": 1,
+     "room": 16,
+     "count": 3
+    },
+    {
+     "area": 1,
+     "room": 21,
+     "count": 5
+    },
+    {
+     "area": 2,
+     "room": 0,
+     "count": 6
+    },
+    {
+     "area": 2,
+     "room": 1,
+     "count": 3
+    }
+   ],
+   "notes": "Compendium framework No. 104, package 10 row 11 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 64,
+   "name": "Fox Archer",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm064",
+   "hod_stock": null,
+   "stats": {
+    "hp": 75,
+    "attack": 130,
+    "defense": 59,
+    "exp": 53,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x0C",
+      200
+     ],
+     [
+      "0x0D",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB7B8",
+    "graphics_row": "0x080CDEA8",
+    "sprite_row": "0x080CD700"
+   },
+   "actors": {
+    "placed": [
+     "0x116"
+    ],
+    "candidates": [
+     "0x0B8"
+    ]
+   },
+   "placements": [
+    {
+     "area": 5,
+     "room": 0,
+     "count": 4
+    },
+    {
+     "area": 5,
+     "room": 7,
+     "count": 4
+    },
+    {
+     "area": 5,
+     "room": 8,
+     "count": 5
+    },
+    {
+     "area": 5,
+     "room": 9,
+     "count": 5
+    },
+    {
+     "area": 5,
+     "room": 14,
+     "count": 2
+    },
+    {
+     "area": 5,
+     "room": 15,
+     "count": 8
+    },
+    {
+     "area": 5,
+     "room": 18,
+     "count": 2
+    },
+    {
+     "area": 5,
+     "room": 24,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 65,
+   "name": "Fox Hunter",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm065",
+   "hod_stock": null,
+   "stats": {
+    "hp": 100,
+    "attack": 290,
+    "defense": 140,
+    "exp": 272,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x29",
+      140
+     ],
+     [
+      "0x2A",
+      80
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB7CC",
+    "graphics_row": "0x080CDEB8",
+    "sprite_row": "0x080CD70C"
+   },
+   "actors": {
+    "placed": [
+     "0x117"
+    ],
+    "candidates": [
+     "0x0AF"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 2,
+     "count": 2
+    },
+    {
+     "area": 8,
+     "room": 1,
+     "count": 2
+    },
+    {
+     "area": 8,
+     "room": 5,
+     "count": 2
+    },
+    {
+     "area": 8,
+     "room": 6,
+     "count": 9
+    },
+    {
+     "area": 8,
+     "room": 10,
+     "count": 1
+    },
+    {
+     "area": 8,
+     "room": 13,
+     "count": 4
+    }
+   ],
+   "notes": "Compendium framework No. 105, package 10 row 12 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 66,
+   "name": "Were-bear",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm066",
+   "hod_stock": null,
+   "stats": {
+    "hp": 265,
+    "attack": 250,
+    "defense": 140,
+    "exp": 227,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x0C",
+      400
+     ],
+     [
+      "0x19",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB7E0",
+    "graphics_row": "0x080CDEC8",
+    "sprite_row": "0x080CD718"
+   },
+   "actors": {
+    "placed": [
+     "0x10F"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 6,
+     "room": 2,
+     "count": 4
+    },
+    {
+     "area": 7,
+     "room": 2,
+     "count": 2
+    },
+    {
+     "area": 7,
+     "room": 24,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 67,
+   "name": "Grizzly",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm067",
+   "hod_stock": null,
+   "stats": {
+    "hp": 600,
+    "attack": 380,
+    "defense": 200,
+    "exp": 960,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x19",
+      150
+     ],
+     [
+      "0x2B",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB7F4",
+    "graphics_row": "0x080CDED8",
+    "sprite_row": "0x080CD724"
+   },
+   "actors": {
+    "placed": [
+     "0x115"
+    ],
+    "candidates": [
+     "0x0AF",
+     "0x10F"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 1,
+     "count": 6
+    },
+    {
+     "area": 7,
+     "room": 1,
+     "count": 3
+    },
+    {
+     "area": 8,
+     "room": 10,
+     "count": 1
+    },
+    {
+     "area": 8,
+     "room": 11,
+     "count": 4
+    }
+   ],
+   "notes": "Compendium framework No. 106, package 10 row 13 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 68,
+   "name": "Cerberus",
+   "kind": "boss",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm068",
+   "hod_stock": null,
+   "stats": {
+    "hp": 600,
+    "attack": 150,
+    "defense": 100,
+    "exp": 500,
+    "attack_flags": "0x29",
+    "element": "Holy",
+    "status_on_hit": null,
+    "knockback": false,
+    "drops": [
+     [
+      "0x00",
+      0
+     ],
+     [
+      "0x00",
+      0
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB808",
+    "graphics_row": "0x080CDEE8",
+    "sprite_row": "0x080CD730"
+   },
+   "actors": {
+    "placed": [
+     "0x174"
+    ],
+    "candidates": [
+     "0x14E",
+     "0x174",
+     "0x175",
+     "0x176",
+     "0x177",
+     "0x178",
+     "0x179",
+     "0x17A",
+     "0x17B",
+     "0x17C",
+     "0x17E"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 5,
+     "count": 1
+    }
+   ],
+   "notes": "Compendium framework No. 107, package 10 row 14 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 69,
+   "name": "Beast Demon",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm069",
+   "hod_stock": null,
+   "stats": {
+    "hp": 150,
+    "attack": 330,
+    "defense": 250,
+    "exp": 260,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x24",
+      400
+     ],
+     [
+      "0x1D",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB81C",
+    "graphics_row": "0x080CDEF8",
+    "sprite_row": "0x080CD73C"
+   },
+   "actors": {
+    "placed": [
+     "0x0A4"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 6,
+     "room": 2,
+     "count": 3
+    },
+    {
+     "area": 6,
+     "room": 5,
+     "count": 2
+    },
+    {
+     "area": 7,
+     "room": 13,
+     "count": 3
+    },
+    {
+     "area": 7,
+     "room": 20,
+     "count": 3
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 70,
+   "name": "Arch Demon",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm070",
+   "hod_stock": null,
+   "stats": {
+    "hp": 320,
+    "attack": 505,
+    "defense": 400,
+    "exp": 1000,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x1D",
+      300
+     ],
+     [
+      "0x46",
+      140
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB830",
+    "graphics_row": "0x080CDF08",
+    "sprite_row": "0x080CD748"
+   },
+   "actors": {
+    "placed": [
+     "0x0A5"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 2,
+     "count": 1
+    },
+    {
+     "area": 7,
+     "room": 11,
+     "count": 1
+    },
+    {
+     "area": 7,
+     "room": 19,
+     "count": 1
+    },
+    {
+     "area": 8,
+     "room": 1,
+     "count": 1
+    },
+    {
+     "area": 8,
+     "room": 7,
+     "count": 1
+    },
+    {
+     "area": 8,
+     "room": 11,
+     "count": 1
+    }
+   ],
+   "notes": "Compendium framework No. 108, package 10 row 15 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 71,
+   "name": "Demon Lord",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm071",
+   "hod_stock": null,
+   "stats": {
+    "hp": 460,
+    "attack": 660,
+    "defense": 500,
+    "exp": 1950,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x29",
+      200
+     ],
+     [
+      "0x1E",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB844",
+    "graphics_row": "0x080CDF18",
+    "sprite_row": "0x080CD754"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x0A6",
+     "0x140"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 72,
+   "name": "Gorgon",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm072",
+   "hod_stock": null,
+   "stats": {
+    "hp": 230,
+    "attack": 215,
+    "defense": 165,
+    "exp": 219,
+    "attack_flags": "0x15",
+    "element": "Stone",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x33",
+      250
+     ],
+     [
+      "0x2A",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB858",
+    "graphics_row": "0x080CDF28",
+    "sprite_row": "0x080CD760"
+   },
+   "actors": {
+    "placed": [
+     "0x132"
+    ],
+    "candidates": [
+     "0x12B"
+    ]
+   },
+   "placements": [
+    {
+     "area": 6,
+     "room": 0,
+     "count": 4
+    },
+    {
+     "area": 6,
+     "room": 5,
+     "count": 3
+    },
+    {
+     "area": 6,
+     "room": 8,
+     "count": 1
+    },
+    {
+     "area": 7,
+     "room": 5,
+     "count": 2
+    },
+    {
+     "area": 7,
+     "room": 25,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 73,
+   "name": "Catoblepas",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm073",
+   "hod_stock": null,
+   "stats": {
+    "hp": 550,
+    "attack": 500,
+    "defense": 430,
+    "exp": 1800,
+    "attack_flags": "0x15",
+    "element": "Stone",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x34",
+      200
+     ],
+     [
+      "0x16",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB86C",
+    "graphics_row": "0x080CDF38",
+    "sprite_row": "0x080CD76C"
+   },
+   "actors": {
+    "placed": [
+     "0x133"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 12,
+     "room": 6,
+     "count": 2
+    },
+    {
+     "area": 12,
+     "room": 19,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 74,
+   "name": "Succubus",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm074",
+   "hod_stock": "sakyu",
+   "stats": {
+    "hp": 150,
+    "attack": 400,
+    "defense": 350,
+    "exp": 710,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x1B",
+      240
+     ],
+     [
+      "0x3C",
+      150
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB880",
+    "graphics_row": "0x080CDF48",
+    "sprite_row": "0x080CD778"
+   },
+   "actors": {
+    "placed": [
+     "0x0A9"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 3,
+     "room": 2,
+     "count": 2
+    },
+    {
+     "area": 7,
+     "room": 11,
+     "count": 1
+    },
+    {
+     "area": 8,
+     "room": 7,
+     "count": 3
+    },
+    {
+     "area": 8,
+     "room": 15,
+     "count": 2
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 75,
+   "name": "Fallen Angel",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm075",
+   "hod_stock": null,
+   "stats": {
+    "hp": 370,
+    "attack": 770,
+    "defense": 770,
+    "exp": 6000,
+    "attack_flags": "0x19",
+    "element": "Holy",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x35",
+      200
+     ],
+     [
+      "0x48",
+      120
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB894",
+    "graphics_row": "0x080CDF58",
+    "sprite_row": "0x080CD784"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x0AC"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 76,
+   "name": "Necromancer",
+   "kind": "boss",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm076",
+   "hod_stock": null,
+   "stats": {
+    "hp": 500,
+    "attack": 200,
+    "defense": 250,
+    "exp": 2500,
+    "attack_flags": "0x2A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": false,
+    "drops": [
+     [
+      "0x00",
+      0
+     ],
+     [
+      "0x00",
+      0
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB8A8",
+    "graphics_row": "0x080CDF68",
+    "sprite_row": "0x080CD790"
+   },
+   "actors": {
+    "placed": [
+     "0x17F"
+    ],
+    "candidates": [
+     "0x180",
+     "0x181",
+     "0x182",
+     "0x183",
+     "0x186",
+     "0x187",
+     "0x188",
+     "0x189"
+    ]
+   },
+   "placements": [
+    {
+     "area": 3,
+     "room": 11,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 77,
+   "name": "Hyena",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm077",
+   "hod_stock": null,
+   "stats": {
+    "hp": 93,
+    "attack": 140,
+    "defense": 70,
+    "exp": 105,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x29",
+      150
+     ],
+     [
+      "0x14",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB8BC",
+    "graphics_row": "0x080CDF78",
+    "sprite_row": "0x080CD79C"
+   },
+   "actors": {
+    "placed": [
+     "0x110"
+    ],
+    "candidates": [
+     "0x109"
+    ]
+   },
+   "placements": [
+    {
+     "area": 5,
+     "room": 4,
+     "count": 7
+    },
+    {
+     "area": 7,
+     "room": 1,
+     "count": 2
+    },
+    {
+     "area": 7,
+     "room": 2,
+     "count": 2
+    },
+    {
+     "area": 7,
+     "room": 22,
+     "count": 3
+    },
+    {
+     "area": 7,
+     "room": 24,
+     "count": 1
+    },
+    {
+     "area": 7,
+     "room": 26,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 78,
+   "name": "Fishhead",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm078",
+   "hod_stock": null,
+   "stats": {
+    "hp": 80,
+    "attack": 320,
+    "defense": 504,
+    "exp": 486,
+    "attack_flags": "0x12",
+    "element": "Ice",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x04",
+      150
+     ],
+     [
+      "0x32",
+      30
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB8D0",
+    "graphics_row": "0x080CDF88",
+    "sprite_row": "0x080CD7A8"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x13A",
+     "0x13B"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 79,
+   "name": "Dryad",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm079",
+   "hod_stock": null,
+   "stats": {
+    "hp": 120,
+    "attack": 300,
+    "defense": 360,
+    "exp": 300,
+    "attack_flags": "0x13",
+    "element": "Plant",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x34",
+      100
+     ],
+     [
+      "0x36",
+      20
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB8E4",
+    "graphics_row": "0x080CDF98",
+    "sprite_row": "0x080CD7B4"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x14A",
+     "0x14B"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 80,
+   "name": "Mimic Candle",
+   "kind": "candle",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm080",
+   "hod_stock": null,
+   "stats": {
+    "hp": 990,
+    "attack": 600,
+    "defense": 600,
+    "exp": 6600,
+    "attack_flags": "0x16",
+    "element": "Poison",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x33",
+      1000
+     ],
+     [
+      "0x21",
+      200
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB8F8",
+    "graphics_row": "0x080CDFA8",
+    "sprite_row": "0x080CD7C0"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x0CF",
+     "0x14C"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 81,
+   "name": "Brain Float",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm081",
+   "hod_stock": null,
+   "stats": {
+    "hp": 20,
+    "attack": 50,
+    "defense": 25,
+    "exp": 10,
+    "attack_flags": "0x18",
+    "element": "Thunder",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x01",
+      500
+     ],
+     [
+      "0x30",
+      75
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB90C",
+    "graphics_row": "0x080CDFB8",
+    "sprite_row": "0x080CD7CC"
+   },
+   "actors": {
+    "placed": [
+     "0x169"
+    ],
+    "candidates": [
+     "0x16A",
+     "0x1F1"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 0,
+     "count": 6
+    },
+    {
+     "area": 7,
+     "room": 9,
+     "count": 5
+    },
+    {
+     "area": 7,
+     "room": 13,
+     "count": 3
+    },
+    {
+     "area": 9,
+     "room": 10,
+     "count": 3
+    },
+    {
+     "area": 10,
+     "room": 4,
+     "count": 3
+    },
+    {
+     "area": 11,
+     "room": 4,
+     "count": 10
+    }
+   ],
+   "notes": "Compendium framework No. 109, package 10 row 16 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 82,
+   "name": "Evil Hand",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm082",
+   "hod_stock": null,
+   "stats": {
+    "hp": 52,
+    "attack": 150,
+    "defense": 120,
+    "exp": 63,
+    "attack_flags": "0x16",
+    "element": "Poison",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x12",
+      250
+     ],
+     [
+      "0x1B",
+      60
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB920",
+    "graphics_row": "0x080CDFC8",
+    "sprite_row": "0x080CD7D8"
+   },
+   "actors": {
+    "placed": [
+     "0x168"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 6,
+     "room": 3,
+     "count": 11
+    },
+    {
+     "area": 9,
+     "room": 21,
+     "count": 9
+    },
+    {
+     "area": 10,
+     "room": 11,
+     "count": 4
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 83,
+   "name": "Abiondarg",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm083",
+   "hod_stock": null,
+   "stats": {
+    "hp": 88,
+    "attack": 388,
+    "defense": 188,
+    "exp": 388,
+    "attack_flags": "0x18",
+    "element": "Thunder",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x29",
+      125
+     ],
+     [
+      "0x2B",
+      30
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB934",
+    "graphics_row": "0x080CDFD8",
+    "sprite_row": "0x080CD7E4"
+   },
+   "actors": {
+    "placed": [
+     "0x163"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 10,
+     "room": 5,
+     "count": 4
+    },
+    {
+     "area": 10,
+     "room": 6,
+     "count": 5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 84,
+   "name": "Iron Golem",
+   "kind": "boss",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm084",
+   "hod_stock": null,
+   "stats": {
+    "hp": 640,
+    "attack": 290,
+    "defense": 450,
+    "exp": 8000,
+    "attack_flags": "0x25",
+    "element": "Stone",
+    "status_on_hit": null,
+    "knockback": false,
+    "drops": [
+     [
+      "0x00",
+      0
+     ],
+     [
+      "0x00",
+      0
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB948",
+    "graphics_row": "0x080CDFE8",
+    "sprite_row": "0x080CD7F0"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x14D",
+     "0x18A",
+     "0x18B",
+     "0x18C",
+     "0x18D",
+     "0x18E",
+     "0x18F"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 85,
+   "name": "Devil",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm085",
+   "hod_stock": null,
+   "stats": {
+    "hp": 1080,
+    "attack": 800,
+    "defense": 900,
+    "exp": 10000,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x2C",
+      200
+     ],
+     [
+      "0x08",
+      150
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB95C",
+    "graphics_row": "0x080CDFF8",
+    "sprite_row": "0x080CD7FC"
+   },
+   "actors": {
+    "placed": [
+     "0x086"
+    ],
+    "candidates": [
+     "0x088",
+     "0x089",
+     "0x08A",
+     "0x08B",
+     "0x08C"
+    ]
+   },
+   "placements": [
+    {
+     "area": 12,
+     "room": 5,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 86,
+   "name": "Witch",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm086",
+   "hod_stock": "majo",
+   "stats": {
+    "hp": 144,
+    "attack": 330,
+    "defense": 290,
+    "exp": 600,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x30",
+      125
+     ],
+     [
+      "0x0F",
+      20
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB970",
+    "graphics_row": "0x080CE008",
+    "sprite_row": "0x080CD808"
+   },
+   "actors": {
+    "placed": [
+     "0x0B3"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 3,
+     "room": 19,
+     "count": 1
+    },
+    {
+     "area": 6,
+     "room": 2,
+     "count": 4
+    },
+    {
+     "area": 10,
+     "room": 6,
+     "count": 7
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 87,
+   "name": "Mummy",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm087",
+   "hod_stock": "mum",
+   "stats": {
+    "hp": 100,
+    "attack": 100,
+    "defense": 35,
+    "exp": 3,
+    "attack_flags": "0x14",
+    "element": "Earth",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x11",
+      300
+     ],
+     [
+      "0x33",
+      75
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB984",
+    "graphics_row": "0x080CE018",
+    "sprite_row": "0x080CD814"
+   },
+   "actors": {
+    "placed": [
+     "0x103"
+    ],
+    "candidates": [
+     "0x102",
+     "0x104"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 6,
+     "count": 4
+    },
+    {
+     "area": 1,
+     "room": 23,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 88,
+   "name": "Hippogriff",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm088",
+   "hod_stock": null,
+   "stats": {
+    "hp": 300,
+    "attack": 500,
+    "defense": 210,
+    "exp": 740,
+    "attack_flags": "0x17",
+    "element": "Wind",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x2A",
+      125
+     ],
+     [
+      "0x35",
+      60
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB998",
+    "graphics_row": "0x080CE028",
+    "sprite_row": "0x080CD820"
+   },
+   "actors": {
+    "placed": [
+     "0x136"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 7,
+     "room": 19,
+     "count": 1
+    },
+    {
+     "area": 8,
+     "room": 0,
+     "count": 1
+    },
+    {
+     "area": 8,
+     "room": 5,
+     "count": 2
+    },
+    {
+     "area": 8,
+     "room": 9,
+     "count": 2
+    },
+    {
+     "area": 8,
+     "room": 18,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 89,
+   "name": "Adramelech",
+   "kind": "boss",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm089",
+   "hod_stock": null,
+   "stats": {
+    "hp": 1800,
+    "attack": 380,
+    "defense": 360,
+    "exp": 16000,
+    "attack_flags": "0x2A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": false,
+    "drops": [
+     [
+      "0x00",
+      0
+     ],
+     [
+      "0x00",
+      0
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB9AC",
+    "graphics_row": "0x080CE038",
+    "sprite_row": "0x080CD82C"
+   },
+   "actors": {
+    "placed": [
+     "0x191"
+    ],
+    "candidates": [
+     "0x192",
+     "0x193",
+     "0x194",
+     "0x195",
+     "0x196"
+    ]
+   },
+   "placements": [
+    {
+     "area": 7,
+     "room": 3,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 90,
+   "name": "Arachne",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm090",
+   "hod_stock": null,
+   "stats": {
+    "hp": 330,
+    "attack": 420,
+    "defense": 288,
+    "exp": 1300,
+    "attack_flags": "0x14",
+    "element": "Earth",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x34",
+      160
+     ],
+     [
+      "0x36",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB9C0",
+    "graphics_row": "0x080CE048",
+    "sprite_row": "0x080CD838"
+   },
+   "actors": {
+    "placed": [
+     "0x124"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 1,
+     "count": 6
+    }
+   ],
+   "notes": "Compendium framework No. 110, package 10 row 17 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 91,
+   "name": "Death Mantis",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm091",
+   "hod_stock": null,
+   "stats": {
+    "hp": 200,
+    "attack": 318,
+    "defense": 240,
+    "exp": 400,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x1A",
+      500
+     ],
+     [
+      "0x3B",
+      150
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB9D4",
+    "graphics_row": "0x080CE058",
+    "sprite_row": "0x080CD844"
+   },
+   "actors": {
+    "placed": [
+     "0x13C"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 9,
+     "room": 7,
+     "count": 3
+    },
+    {
+     "area": 9,
+     "room": 12,
+     "count": 1
+    },
+    {
+     "area": 9,
+     "room": 19,
+     "count": 3
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 92,
+   "name": "Alraune",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm092",
+   "hod_stock": null,
+   "stats": {
+    "hp": 774,
+    "attack": 490,
+    "defense": 303,
+    "exp": 2500,
+    "attack_flags": "0x13",
+    "element": "Plant",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x0F",
+      100
+     ],
+     [
+      "0x2D",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB9E8",
+    "graphics_row": "0x080CE068",
+    "sprite_row": "0x080CD850"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x0A6",
+     "0x140"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 93,
+   "name": "King Moth",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm093",
+   "hod_stock": null,
+   "stats": {
+    "hp": 140,
+    "attack": 290,
+    "defense": 160,
+    "exp": 150,
+    "attack_flags": "0x16",
+    "element": "Poison",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x2E",
+      300
+     ],
+     [
+      "0x35",
+      20
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CB9FC",
+    "graphics_row": "0x080CE078",
+    "sprite_row": "0x080CD85C"
+   },
+   "actors": {
+    "placed": [
+     "0x13D"
+    ],
+    "candidates": [
+     "0x13E"
+    ]
+   },
+   "placements": [
+    {
+     "area": 8,
+     "room": 2,
+     "count": 2
+    },
+    {
+     "area": 8,
+     "room": 9,
+     "count": 3
+    },
+    {
+     "area": 8,
+     "room": 14,
+     "count": 2
+    },
+    {
+     "area": 9,
+     "room": 7,
+     "count": 5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 94,
+   "name": "Killer Bee",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm094",
+   "hod_stock": null,
+   "stats": {
+    "hp": 8,
+    "attack": 308,
+    "defense": 108,
+    "exp": 88,
+    "attack_flags": "0x46",
+    "element": "Poison",
+    "status_on_hit": "Poison",
+    "knockback": false,
+    "drops": [
+     [
+      "0x2E",
+      300
+     ],
+     [
+      "0x14",
+      20
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBA10",
+    "graphics_row": "0x080CE088",
+    "sprite_row": "0x080CD868"
+   },
+   "actors": {
+    "placed": [
+     "0x13F"
+    ],
+    "candidates": [
+     "0x143"
+    ]
+   },
+   "placements": [
+    {
+     "area": 6,
+     "room": 0,
+     "count": 6
+    },
+    {
+     "area": 9,
+     "room": 8,
+     "count": 6
+    },
+    {
+     "area": 9,
+     "room": 21,
+     "count": 6
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 95,
+   "name": "Dragon Zombie",
+   "kind": "boss",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm095",
+   "hod_stock": null,
+   "stats": {
+    "hp": 1400,
+    "attack": 390,
+    "defense": 440,
+    "exp": 15000,
+    "attack_flags": "0x26",
+    "element": "Poison",
+    "status_on_hit": null,
+    "knockback": false,
+    "drops": [
+     [
+      "0x00",
+      0
+     ],
+     [
+      "0x00",
+      0
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBA24",
+    "graphics_row": "0x080CE098",
+    "sprite_row": "0x080CD874"
+   },
+   "actors": {
+    "placed": [
+     "0x199"
+    ],
+    "candidates": [
+     "0x19C",
+     "0x19D",
+     "0x19E",
+     "0x19F",
+     "0x1A0",
+     "0x1A1",
+     "0x1A2",
+     "0x1A3",
+     "0x1A4",
+     "0x1A5"
+    ]
+   },
+   "placements": [
+    {
+     "area": 9,
+     "room": 3,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 96,
+   "name": "Lizardman",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm096",
+   "hod_stock": null,
+   "stats": {
+    "hp": 100,
+    "attack": 345,
+    "defense": 400,
+    "exp": 800,
+    "attack_flags": "0x12",
+    "element": "Ice",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x04",
+      140
+     ],
+     [
+      "0x39",
+      135
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBA38",
+    "graphics_row": "0x080CE0A8",
+    "sprite_row": "0x080CD880"
+   },
+   "actors": {
+    "placed": [
+     "0x11D"
+    ],
+    "candidates": [
+     "0x098"
+    ]
+   },
+   "placements": [
+    {
+     "area": 9,
+     "room": 6,
+     "count": 1
+    },
+    {
+     "area": 10,
+     "room": 10,
+     "count": 13
+    },
+    {
+     "area": 10,
+     "room": 11,
+     "count": 3
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 97,
+   "name": "Franken",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm097",
+   "hod_stock": "frank",
+   "stats": {
+    "hp": 1200,
+    "attack": 700,
+    "defense": 350,
+    "exp": 2100,
+    "attack_flags": "0x14",
+    "element": "Earth",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x15",
+      120
+     ],
+     [
+      "0x16",
+      75
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBA4C",
+    "graphics_row": "0x080CE0B8",
+    "sprite_row": "0x080CD88C"
+   },
+   "actors": {
+    "placed": [
+     "0x101"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 6,
+     "room": 0,
+     "count": 3
+    },
+    {
+     "area": 6,
+     "room": 2,
+     "count": 3
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 98,
+   "name": "Legion",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm098",
+   "hod_stock": null,
+   "stats": {
+    "hp": 420,
+    "attack": 610,
+    "defense": 375,
+    "exp": 1590,
+    "attack_flags": "0x4A",
+    "element": "Dark",
+    "status_on_hit": "Curse",
+    "knockback": false,
+    "drops": [
+     [
+      "0x2F",
+      500
+     ],
+     [
+      "0x2C",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBA60",
+    "graphics_row": "0x080CE0C8",
+    "sprite_row": "0x080CD898"
+   },
+   "actors": {
+    "placed": [
+     "0x172"
+    ],
+    "candidates": [
+     "0x0AC"
+    ]
+   },
+   "placements": [
+    {
+     "area": 11,
+     "room": 1,
+     "count": 4
+    },
+    {
+     "area": 12,
+     "room": 3,
+     "count": 2
+    },
+    {
+     "area": 12,
+     "room": 6,
+     "count": 2
+    },
+    {
+     "area": 12,
+     "room": 12,
+     "count": 5
+    },
+    {
+     "area": 12,
+     "room": 20,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 99,
+   "name": "Dullahan",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm099",
+   "hod_stock": "dula00",
+   "stats": {
+    "hp": 240,
+    "attack": 550,
+    "defense": 440,
+    "exp": 2200,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x06",
+      200
+     ],
+     [
+      "0x3E",
+      140
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBA74",
+    "graphics_row": "0x080CE0D8",
+    "sprite_row": "0x080CD8A4"
+   },
+   "actors": {
+    "placed": [
+     "0x0F9"
+    ],
+    "candidates": []
+   },
+   "placements": [
+    {
+     "area": 12,
+     "room": 10,
+     "count": 5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 100,
+   "name": "Death",
+   "kind": "boss",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm100",
+   "hod_stock": "death",
+   "stats": {
+    "hp": 880,
+    "attack": 600,
+    "defense": 800,
+    "exp": 60000,
+    "attack_flags": "0x2A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": false,
+    "drops": [
+     [
+      "0x00",
+      0
+     ],
+     [
+      "0x00",
+      0
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBA88",
+    "graphics_row": "0x080CE0E8",
+    "sprite_row": "0x080CD8B0"
+   },
+   "actors": {
+    "placed": [
+     "0x1A6"
+    ],
+    "candidates": [
+     "0x1A7",
+     "0x1A9",
+     "0x1AA",
+     "0x1AB",
+     "0x1AC",
+     "0x1AD",
+     "0x1AE",
+     "0x1AF",
+     "0x1B6"
+    ]
+   },
+   "placements": [
+    {
+     "area": 8,
+     "room": 19,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 101,
+   "name": "Camilla",
+   "kind": "boss",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm101",
+   "hod_stock": null,
+   "stats": {
+    "hp": 1500,
+    "attack": 650,
+    "defense": 700,
+    "exp": 80000,
+    "attack_flags": "0x2A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": false,
+    "drops": [
+     [
+      "0x00",
+      0
+     ],
+     [
+      "0x00",
+      0
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBA9C",
+    "graphics_row": "0x080CE0F8",
+    "sprite_row": "0x080CD8BC"
+   },
+   "actors": {
+    "placed": [
+     "0x1B7"
+    ],
+    "candidates": [
+     "0x1B8",
+     "0x1B9",
+     "0x1BA",
+     "0x1BB",
+     "0x1BC",
+     "0x1BD",
+     "0x1BE"
+    ]
+   },
+   "placements": [
+    {
+     "area": 10,
+     "room": 13,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 102,
+   "name": "Hugh",
+   "kind": "boss",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm102",
+   "hod_stock": null,
+   "stats": {
+    "hp": 1400,
+    "attack": 570,
+    "defense": 750,
+    "exp": 120000,
+    "attack_flags": "0x29",
+    "element": "Holy",
+    "status_on_hit": null,
+    "knockback": false,
+    "drops": [
+     [
+      "0x00",
+      0
+     ],
+     [
+      "0x00",
+      0
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBAB0",
+    "graphics_row": "0x080CE108",
+    "sprite_row": "0x080CD8C8"
+   },
+   "actors": {
+    "placed": [
+     "0x1BF"
+    ],
+    "candidates": [
+     "0x1C0",
+     "0x1C1",
+     "0x1C2",
+     "0x1C3",
+     "0x1C4",
+     "0x1C5",
+     "0x1C6",
+     "0x1C7",
+     "0x1C8",
+     "0x1C9"
+    ]
+   },
+   "placements": [
+    {
+     "area": 12,
+     "room": 1,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 103,
+   "name": "Dracula (first form)",
+   "kind": "boss",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm103",
+   "hod_stock": null,
+   "stats": {
+    "hp": 1100,
+    "attack": 805,
+    "defense": 850,
+    "exp": 150000,
+    "attack_flags": "0x2A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": false,
+    "drops": [
+     [
+      "0x00",
+      0
+     ],
+     [
+      "0x00",
+      0
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBAC4",
+    "graphics_row": "0x080CE118",
+    "sprite_row": "0x080CD8D4"
+   },
+   "actors": {
+    "placed": [
+     "0x080",
+     "0x1CA",
+     "0x1D0"
+    ],
+    "candidates": [
+     "0x1CB",
+     "0x1CC",
+     "0x1CD",
+     "0x1CE",
+     "0x1CF"
+    ]
+   },
+   "placements": [
+    {
+     "area": 13,
+     "room": 1,
+     "count": 3
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 104,
+   "name": "Dracula (second form)",
+   "kind": "boss",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm104",
+   "hod_stock": null,
+   "stats": {
+    "hp": 3000,
+    "attack": 1000,
+    "defense": 1000,
+    "exp": 0,
+    "attack_flags": "0x2A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": false,
+    "drops": [
+     [
+      "0x00",
+      0
+     ],
+     [
+      "0x00",
+      0
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBAD8",
+    "graphics_row": "0x080CE128",
+    "sprite_row": "0x080CD8E0"
+   },
+   "actors": {
+    "placed": [
+     "0x1D1",
+     "0x1DC",
+     "0x1DD",
+     "0x1FE"
+    ],
+    "candidates": [
+     "0x1D2",
+     "0x1D4",
+     "0x1D5",
+     "0x1D6",
+     "0x1D7",
+     "0x1D8",
+     "0x1D9",
+     "0x1DA",
+     "0x1DB"
+    ]
+   },
+   "placements": [
+    {
+     "area": 0,
+     "room": 2,
+     "count": 5
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 105,
+   "name": "Skeleton Medalist",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm105",
+   "hod_stock": null,
+   "stats": {
+    "hp": 250,
+    "attack": 100,
+    "defense": 100,
+    "exp": 1500,
+    "attack_flags": "0x17",
+    "element": "Wind",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x27",
+      1000
+     ],
+     [
+      "0x28",
+      100
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBAEC",
+    "graphics_row": "0x080CE138",
+    "sprite_row": "0x080CD8EC"
+   },
+   "actors": {
+    "placed": [
+     "0x0D2"
+    ],
+    "candidates": [
+     "0x0D3",
+     "0x0D4"
+    ]
+   },
+   "placements": [
+    {
+     "area": 0,
+     "room": 5,
+     "count": 1
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "cotm_index": 136,
+   "name": "Scary Candle",
+   "kind": "candle",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm136",
+   "hod_stock": null,
+   "stats": {
+    "hp": 150,
+    "attack": 300,
+    "defense": 300,
+    "exp": 900,
+    "attack_flags": "0x16",
+    "element": "Poison",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x35",
+      80
+     ],
+     [
+      "0x49",
+      60
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBD58",
+    "graphics_row": "0x080CE328",
+    "sprite_row": "0x080CDA60"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x14D",
+     "0x18A"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 137,
+   "name": "Trick Candle",
+   "kind": "candle",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm137",
+   "hod_stock": null,
+   "stats": {
+    "hp": 200,
+    "attack": 400,
+    "defense": 400,
+    "exp": 1400,
+    "attack_flags": "0x16",
+    "element": "Poison",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x36",
+      50
+     ],
+     [
+      "0x4A",
+      40
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBD6C",
+    "graphics_row": "0x080CE338",
+    "sprite_row": "0x080CDA6C"
+   },
+   "actors": {
+    "placed": [
+     "0x14E"
+    ],
+    "candidates": [
+     "0x14C",
+     "0x14D",
+     "0x14E",
+     "0x174"
+    ]
+   },
+   "placements": [
+    {
+     "area": 1,
+     "room": 5,
+     "count": 1
+    }
+   ],
+   "notes": "Compendium framework No. 111, package 10 row 18 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  },
+  {
+   "cotm_index": 138,
+   "name": "Nightmare",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm138",
+   "hod_stock": null,
+   "stats": {
+    "hp": 250,
+    "attack": 550,
+    "defense": 550,
+    "exp": 2000,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x30",
+      250
+     ],
+     [
+      "0x09",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBD80",
+    "graphics_row": "0x080CE348",
+    "sprite_row": "0x080CDA78"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x0AD"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 139,
+   "name": "Lilim",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm139",
+   "hod_stock": null,
+   "stats": {
+    "hp": 400,
+    "attack": 800,
+    "defense": 800,
+    "exp": 8000,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x31",
+      200
+     ],
+     [
+      "0x0A",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBD94",
+    "graphics_row": "0x080CE358",
+    "sprite_row": "0x080CDA84"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x0AE"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 140,
+   "name": "Lilith",
+   "kind": "enemy",
+   "enabled": false,
+   "compendium": false,
+   "group": "",
+   "hod_name": "DLL_Cm140",
+   "hod_stock": null,
+   "stats": {
+    "hp": 660,
+    "attack": 960,
+    "defense": 960,
+    "exp": 20000,
+    "attack_flags": "0x1A",
+    "element": "Dark",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x32",
+      150
+     ],
+     [
+      "0x10",
+      50
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBDA8",
+    "graphics_row": "0x080CE368",
+    "sprite_row": "0x080CDA90"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": [
+     "0x0AC",
+     "0x0AD",
+     "0x0AE",
+     "0x0AF"
+    ]
+   },
+   "placements": [],
+   "notes": ""
+  },
+  {
+   "cotm_index": 141,
+   "name": "Coffin",
+   "kind": "special",
+   "enabled": false,
+   "compendium": true,
+   "group": "catacombs",
+   "hod_name": "DLL_Cm141",
+   "hod_stock": null,
+   "stats": {
+    "hp": 100,
+    "attack": 100,
+    "defense": 100,
+    "exp": 100,
+    "attack_flags": "0x14",
+    "element": "Earth",
+    "status_on_hit": null,
+    "knockback": true,
+    "drops": [
+     [
+      "0x00",
+      0
+     ],
+     [
+      "0x00",
+      0
+     ]
+    ]
+   },
+   "rom": {
+    "stats_row": "0x080CBDBC",
+    "graphics_row": "0x080CE378",
+    "sprite_row": "0x080CDA9C"
+   },
+   "actors": {
+    "placed": [],
+    "candidates": []
+   },
+   "placements": [],
+   "notes": "Compendium framework No. 112, package 10 row 19 (2026-11-20, catacombs_enemies.py); no module/AI yet."
+  }
+ ]
+}

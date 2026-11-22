@@ -1,0 +1,69 @@
+{
+  "id": "glyphs",
+  "name": "New glyphs for Shanoa: Refectio and Arma Custos",
+  "summary": "Refectio, a heal-over-time glyph (package 20), and Arma Custos, a timed STR buff with Cerberus's third head above Shanoa (its glyph row lives in the Catacombs package 10).",
+  "characters": ["Shanoa (6)"],
+  "state": "Refectio: casts, heals and gains mastery in game; its optional OoE cast art not yet seen in game. Arma Custos: confirmed in game 2026-11-21 (timer, head art, status screen, Custos pair bonus).",
+  "features": [
+    {"id": "refectio", "runtime_switch": "hod_native_mods.txt or package 20 listed in dlc_packages.txt"},
+    {"id": "arma-custos", "runtime_switch": "hod_native_mods.txt or the Catacombs package 10 listed in dlc_packages.txt"}
+  ],
+  "cmake_option": "HODMOD_GLYPHS",
+  "depends": ["core", "catacombs (Arma Custos only: its glyph row, text, art and Cerberus boss-chest drop are built into package 10)"],
+  "packages": [
+    {
+      "number": 20,
+      "content_id": "000000000000000000000000000000524600001458",
+      "tag": "RF",
+      "built_by": "mods/glyphs/tools/refectio.py install",
+      "contents": [
+        "000info/package20.dat",
+        "data/item/glyphset_dlc20.dat (glyph 8, item 0x815, cloned from Luminatio; power -60 -> -150, 40 MP, Shanoa only)",
+        "data/text/textres20_{de,en,es,fr,it,ja}.txrc",
+        "data/opd/skill/rfx/p_rfx00.opd (only when built with --ooe <the player's Order of Ecclesia ROM>)"
+      ]
+    },
+    {
+      "number": 10,
+      "content_id": "000000000000000000000000000000435400000A58",
+      "tag": "CT",
+      "built_by": "mods/catacombs/tools/catacombs_dlc.py build (calls arma_custos.add_to_package)",
+      "contents": [
+        "glyph 9 row (item 0x816), 80 MP, 60 s STR buff",
+        "name and description text",
+        "Cerberus boss chest entry (category 9, index 9, weight 2500) in the chapter's own set files",
+        "the third head's sprite from the player's OoE ROM (rbc09), when recorded"
+      ]
+    }
+  ],
+  "edits_outside_package": [
+    {"file": "data/stage/stage00_04_set.dat, stage00_04_set_hard.dat", "owner": "official DLC package 01 (Chapter 7, Astarte)", "copies": ["setup DLC source", "assets/dlc", "installed DLC folder"], "change": "Refectio (category 9, index 8) in the 5 purple chests (weight 300) and the boss chest (weight 1000), Normal and Hard", "tool": "refectio.py install / chests; uninstall removes them"}
+  ],
+  "native": {
+    "exe_sources": ["mods/glyphs/src/refectio.cpp", "mods/glyphs/src/arma_custos.cpp"],
+    "module_sources": [],
+    "own_overrides": {},
+    "shared_hooks": [
+      "refectio: kSkillPreload 10, kSkillFactory 10, kPlayerUpdate 30, kOwnerDraw 20",
+      "arma-custos: kSkillPreload 20, kSkillFactory 20, kPlayerUpdate 20, kOwnerDraw 30, kStatusSummary 20, kAttackValue 10"
+    ]
+  },
+  "claims": {
+    "glyphs": "8 Refectio (item 0x815), 9 Arma Custos (item 0x816); base glyphs 0-4, DLC 5-7",
+    "sprites": "data/opd/skill/rfx/p_rfx00.opd (Refectio, optional)"
+  },
+  "generated_headers": [
+    {"file": "refectio_balance.h", "by": "refectio.py header (config/refectio.json)"},
+    {"file": "arma_custos_balance.h", "by": "arma_custos.py header (config/arma_custos.json)"}
+  ],
+  "user_inputs": ["Optional: USA Order of Ecclesia ROM (.nds) for Refectio's cast art and Arma Custos's head; without it Refectio draws no effect"],
+  "build": [
+    "python mods/glyphs/tools/refectio.py install [--ooe <OoE ROM>]",
+    "python mods/glyphs/tools/refectio.py header",
+    "python mods/glyphs/tools/arma_custos.py header",
+    "python mods/glyphs/tools/arma_custos.py --ooe <OoE ROM>   (optional, records the ROM for the head art)",
+    "python mods/catacombs/tools/catacombs_dlc.py build          (Arma Custos data goes into package 10)",
+    "python core/tools/rebuild_recomp.py ON"
+  ],
+  "docs": ["mods/glyphs/README.md"]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "catacombs",
+  "name": "Chapter 14: the Catacombs (new monsters, souls and Charlotte's spell)",
+  "summary": "Circle of the Moon enemies as real HoD enemies in their own DLC-style code modules, packed with the stage designer's chapter as one official-style chapter package: the Poison Worm, Cerberus (boss) and the Skeleton Bomber, their Soma souls, and Charlotte's Lightning Orb.",
+  "characters": ["Soma (souls)", "Charlotte (Lightning Orb)", "everyone (the chapter)"],
+  "state": "Test install only. Poison Worm and its small worms, Cerberus (all attacks and sounds), Cerberus's soul and Charlotte's Lightning Orb confirmed in game. Skeleton Bomber and its soul built, untested. The worm soul's drop rate is still the test value 1000.",
+  "features": [{"id": "catacombs", "runtime_switch": "its code lives in its own modules, which load only from package 10"}],
+  "cmake_option": "HARMONYRECOMP_POISONWORM (test-install builds only; also makes the exe use the userdata folder next to it)",
+  "depends": ["core"],
+  "packages": [
+    {
+      "number": 10,
+      "content_id": "000000000000000000000000000000435400000A58",
+      "tag": "CT",
+      "chapter": 14,
+      "built_by": "mods/catacombs/tools/catacombs_dlc.py build / install",
+      "contents": [
+        "the stage designer's chapter (renumbered from the editor's package 31 to 10, chapter number 14)",
+        "data/enemy/EnemyParam10.dat rows (Compendium keys 146-164, spilling into package 11's block)",
+        "dll/enemy/DLL_Cm050.dll (Poison Worm, from 8-bit DLC_FCbat, base 0x89380000)",
+        "dll/enemy/DLL_Cm068.dll (Cerberus, from Legion's DLL_Region, base 0x8BF00000; replaces Legion as the chapter boss)",
+        "dll/enemy/DLL_Cm007.dll (Skeleton Bomber, from DLL_FCbat, base 0x89400000; replaces every Nova Skeleton in the chapter)",
+        "dll/shot/dllshotCm050w.dll (small worms, 0x85780000), dllshotCm068.dll (Cerberus orbs and bolts, 0x85800000), dllshotCm007.dll (bombs, 0x85980000)",
+        "dll/shot/dllshotSoulCm050.dll, dllshotSoulCm068.dll, dllshotSoulCm007.dll (Soma souls 116-118)",
+        "dll/shot/dllshotLearnCm068.dll (Charlotte's Lightning Orb, learningset index 26)",
+        "soulset_dlc10 / learningset rows, text, enemy sprites and Compendium pictures, VX_ENEMY_CERBERUS sound bank",
+        "Arma Custos (mods/glyphs): glyph 9 row, text, head art, Cerberus boss-chest entry"
+      ]
+    }
+  ],
+  "edits_outside_package": [],
+  "native": {
+    "exe_sources": [],
+    "module_sources": [
+      {"module": "harmonyrecomp_DLL_Cm050", "source": "mods/catacombs/src/poison_worm_module.cpp"},
+      {"module": "harmonyrecomp_dllshotCm050w", "source": "mods/catacombs/src/poison_worm_shot_module.cpp"},
+      {"module": "harmonyrecomp_dllshotSoulCm050", "source": "mods/catacombs/src/poison_worm_soul_module.cpp"},
+      {"module": "harmonyrecomp_DLL_Cm068", "source": "mods/catacombs/src/cerberus_module.cpp"},
+      {"module": "harmonyrecomp_dllshotCm068", "source": "mods/catacombs/src/cerberus_shot_module.cpp"},
+      {"module": "harmonyrecomp_dllshotSoulCm068", "source": "mods/catacombs/src/cerberus_soul_module.cpp"},
+      {"module": "harmonyrecomp_dllshotLearnCm068", "source": "mods/catacombs/src/cerberus_spell_module.cpp"},
+      {"module": "harmonyrecomp_DLL_Cm007", "source": "mods/catacombs/src/skeleton_bomber_module.cpp"},
+      {"module": "harmonyrecomp_dllshotCm007", "source": "mods/catacombs/src/skeleton_bomber_shot_module.cpp"},
+      {"module": "harmonyrecomp_dllshotSoulCm007", "source": "mods/catacombs/src/skeleton_bomber_soul_module.cpp"}
+    ],
+    "own_overrides": "module-internal functions only (listed in docs/HOOKS.md); no exe hooks",
+    "shared_hooks": []
+  },
+  "claims": {
+    "package": "10 (enemy keys need a package <= 20: key = 0x38 + (package - 1) * 10 + row indexes the save's kill counters, which end at 256)",
+    "chapter": 14,
+    "souls": "116 Poison Worm (item 0x6E7), 117 Cerberus (0x6E8), 118 Skeleton Bomber (0x6E9); next 119",
+    "learningset": "26 Lightning Orb (item 0x745 + 26)",
+    "module_bases": "enemies 0x89380000, 0x89400000 (next 0x89480000); bosses 0x8BF00000; shots 0x85700000-0x85A7FFFF (next 0x85A80000)",
+    "shot_ids": "0x4050, 0x4068, 0x4007",
+    "sound_bank": "VX_ENEMY_CERBERUS"
+  },
+  "generated_headers": [],
+  "user_inputs": [
+    "Circle of the Moon ROM (sprites, effects; sounds rendered with agbplay)",
+    "The stage designer's chapter (.hodchapter from the HoD Level Editor), placed in the test install's stage folder",
+    "Official DLC used as code/sprite templates: 8-bit DLC package 04 (B7ED140B...) and Chapter 8 package 02 (9CF52007...)"
+  ],
+  "build": [
+    "python mods/catacombs/tools/poison_worm_module.py codegen   (and cerberus_module.py, cerberus_shot.py, cerberus_soul.py, skeleton_bomber.py, skeleton_bomber_soul.py: each rebases its module and runs code generation)",
+    "python core/tools/rebuild_recomp.py ON POISONWORM",
+    "python mods/catacombs/tools/catacombs_dlc.py install        (package 10 into the test install)"
+  ],
+  "docs": ["mods/catacombs/README.md", "mods/catacombs/docs/CATACOMBS_NOTES.md", "mods/catacombs/docs/CERBERUS_SPEC.md", "mods/catacombs/docs/SKELETON_BOMBER_SPEC.md"]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "familiars",
+  "name": "Alucard's familiar cards",
+  "summary": "Five SotN familiar cards (Bat, Ghost, Faerie, Demon, Sword) for Alucard's Enchanted row; each summons its familiar while equipped. Sword Card adds the Sword Brothers command.",
+  "characters": ["Alucard (2)"],
+  "state": "All five familiars confirmed in game (2026-11-18); latest targeting fixes built but not all retested. Online co-op untested.",
+  "features": [{"id": "familiars", "runtime_switch": "hod_native_mods.txt or package 21 listed in dlc_packages.txt"}],
+  "cmake_option": "HODMOD_FAMILIARS",
+  "depends": ["core (Enchanted-row card icon, shared hurt-box feed)"],
+  "packages": [
+    {
+      "number": 21,
+      "content_id": "000000000000000000000000000000464D00001558",
+      "tag": "FM",
+      "built_by": "mods/familiars/tools/alucard_familiars.py install",
+      "contents": [
+        "000info/package21.dat",
+        "data/item/soulset_dlc21.dat (souls 111-115, items 0x6E2-0x6E6, Alucard only, soul type 3 = Enchanted row)",
+        "data/text/textres21_{de,en,es,fr,it,ja}.txrc",
+        "data/item/icon/icon21_{item,sub,armor,weapon}.dds (copies of the highest other package's sheets plus the card in sub cell 81)"
+      ]
+    }
+  ],
+  "edits_outside_package": [
+    {"file": "data/player/player_default.def", "owner": "base game", "copies": ["assets/", ".setup/package/src/assets/"], "change": "Alucard's equipment-row mask at record +0x2C 0x4FFF -> 0x6FFF (row 13, Enchanted)", "tool": "alucard_familiars.py install"},
+    {"file": "data/opd/player/aru/P_ARU_00.OPD", "owner": "base game", "copies": ["assets/", ".setup/package/src/assets/"], "change": "Familiar frames appended (Ghost 284-303, orb 304, Faerie 335-385, Bat/Demon/Sword); palette reference switched to C_ARFM.COL", "tool": "familiar_art.py (via alucard_familiars.py art/install)"},
+    {"file": "data/opd/player/aru/C_ARFM.COL, T_ARFM01-04.CSR", "owner": "new files in the base folder", "copies": ["assets/", ".setup/package/src/assets/"], "change": "Alucard's palettes plus servant colours; familiar texture pages (names up to T_ARFM06 reserved)", "tool": "familiar_art.py"},
+    {"file": "data/sound/SE_FAMILIAR.xsb, .xwb", "owner": "new files in the base folder", "copies": ["assets/", ".setup/package/src/assets/"], "change": "13 cues SE_FM_<sotn id> from the player's SotN disc (voices in XACT category 30)", "tool": "build_familiar_audio.py"},
+    {"file": "data/enemy/EnemyParam.dat", "owner": "base game", "copies": ["assets/", ".setup/package/src/assets/"], "change": "Card drops 2.5%: Bat card on armc02, Ghost card on sf_bor, Demon card on imp (free item slots, so the Compendium lists them)", "tool": "alucard_familiars.py drops (drops-remove undoes; data/alucard_familiar_drop_originals.json keeps the replaced slots)"},
+    {"file": "data/stage/stage00_04_set_hard.dat", "owner": "official DLC package 01 (Chapter 7)", "copies": ["setup DLC source", "installed DLC folder"], "change": "Faerie card (category 6, soul 113, weight 300) in all 5 purple chests", "tool": "alucard_familiars.py drops"},
+    {"file": "data/stage/stage00_03_set_hard.dat", "owner": "official DLC package 02 (Chapter 8)", "copies": ["setup DLC source", "installed DLC folder"], "change": "Sword card (soul 115, weight 300) in all 4 purple chests", "tool": "alucard_familiars.py drops"},
+    {"file": "data/arc/font.arc", "owner": "base game", "copies": ["assets/", ".setup/package/src/assets/"], "change": "Arrow glyphs in the three Latin fonts (the Sword Brothers input text)", "tool": "font_arrows.py"}
+  ],
+  "native": {
+    "exe_sources": ["mods/familiars/src/alucard_familiar.cpp"],
+    "module_sources": [],
+    "own_overrides": {},
+    "shared_hooks": ["kSpawnEvent 20", "kColliderPrepare 30", "kColliderAttack 20", "kEnemyHp 20", "kPlayerUpdate 10", "kOwnerDraw 40", "core: shape observer 20 (hurt-box feed)", "core: kPlayerUpdate 5 (publishes the hurt table to Nathan)"]
+  },
+  "claims": {
+    "souls": "111-115 (items 0x6E2-0x6E6)",
+    "sub_icon_cell": 81,
+    "collider_tag": "0x464D4C47 'FMLG'",
+    "network_event": "Sword Brothers: kind 11 sub 1, r9/r10 'SB' 'RO', id 0x6E6",
+    "repeat_hit_key": "0xFB, 0.25 s",
+    "menu_frames": "p_ui_equip0 180/181 (core card icon)",
+    "sound_bank": "SE_FAMILIAR",
+    "render": "list 5, depth 40000"
+  },
+  "generated_headers": [
+    {"file": "alucard_familiar_balance.h", "by": "alucard_familiars.py header (from config/alucard_familiars.json)"},
+    {"file": "alucard_familiar_art.h", "by": "familiar_art.py"},
+    {"file": "alucard_familiar_audio.h", "by": "build_familiar_audio.py"}
+  ],
+  "user_inputs": ["SotN USA disc image (SLUS_00067): servant sprites SERVANT/FT_00x.BIN, sounds SERVANT/SD_*.VH/VB"],
+  "build": [
+    "python mods/familiars/tools/alucard_familiars.py install",
+    "python mods/familiars/tools/alucard_familiars.py drops",
+    "python mods/familiars/tools/alucard_familiars.py header",
+    "python core/tools/equip_card_icon.py",
+    "python mods/familiars/tools/font_arrows.py",
+    "python core/tools/rebuild_recomp.py ON"
+  ],
+  "docs": ["mods/familiars/README.md", "mods/familiars/docs/ALUCARD_GHOST_HANDOFF.md", "mods/familiars/docs/ALUCARD_SWORD_TARGETING_HANDOFF.md"]
+}

@@ -1,0 +1,38 @@
+{
+  "package": 20,
+  "glyph_index": 8,
+  "template": "Luminatio",
+  "power_l1": -60,
+  "power_max": -150,
+  "mp": 40,
+  "rarity": 4,
+  "ticks": 20,
+  "tick_seconds": 1.0,
+  "fx": {
+    "ring_step_frames": 2,
+    "ring_b_delay_frames": 2,
+    "ring_offset_y": -6,
+    "wisp_step_frames": 3,
+    "wisp_every_frames": 4,
+    "wisp_rise_min": 2,
+    "wisp_rise_max": 3,
+    "wisp_spread_x": 8,
+    "wisp_spread_y": 4,
+    "wisp_drift": 0.5,
+    "wisp_offset_y": 4
+  },
+  "chests": [
+    {"name": "Chapter 7 Normal purple chests", "stage": "stage00_04_set.dat", "type": 5, "count": 5, "weight": 300},
+    {"name": "Chapter 7 Normal boss chest (Astarte)", "stage": "stage00_04_set.dat", "type": 4, "count": 1, "weight": 1000},
+    {"name": "Chapter 7 Hard purple chests", "stage": "stage00_04_set_hard.dat", "type": 5, "count": 5, "weight": 300},
+    {"name": "Chapter 7 Hard boss chest (Astarte)", "stage": "stage00_04_set_hard.dat", "type": 4, "count": 1, "weight": 1000}
+  ],
+  "text": {
+    "en": ["Refectio", "Slowly restores HP over\n20 seconds."],
+    "de": ["Refectio", "Regeneriert 20 Sekunden lang\nnach und nach HP."],
+    "es": ["Refectio", "Restablece poco a poco el\nPoder Sanador durante 20 s."],
+    "fr": ["Refectio", "Restaure peu à peu les PV\npendant 20 secondes."],
+    "it": ["Refectio", "Ripristina gradualmente i PS\nper 20 secondi."],
+    "ja": ["レフェクティオ", "20秒かけて少しずつ\nダメージを回復する印術"]
+  }
+}

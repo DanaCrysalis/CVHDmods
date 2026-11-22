@@ -1,0 +1,58 @@
+{
+  "id": "shield-rod",
+  "name": "Shield Rod and shield spells",
+  "summary": "Symphony of the Night's cut Shield Rod as a real Alucard weapon, with all 13 SotN shield spells (hold a shield, then press the rod's button).",
+  "characters": ["Alucard (2)"],
+  "state": "Released to players as ShieldRodInstaller 1.5.3 (pre-hub source layout). Weapon, spells, buffs and online replay confirmed in game.",
+  "features": [{"id": "shield-rod", "runtime_switch": "hod_native_mods.txt or package 19 listed in dlc_packages.txt"}],
+  "cmake_option": "HODMOD_SHIELD_ROD",
+  "depends": ["core"],
+  "packages": [
+    {
+      "number": 19,
+      "content_id": "000000000000000000000000000000535200001358",
+      "tag": "SR",
+      "built_by": "mods/shield-rod/tools/shield_rod.py install",
+      "contents": [
+        "000info/package19.dat",
+        "data/item/weaponset_dlc19.dat (WEPN 0xA0, item 0xD3, cloned from the base Mace row)",
+        "data/opd/weapon/ar/P_ARSW1B.OPD, T_ARSW1B.CSR (rod sprite, from the player's SotN disc)",
+        "data/text/textres19_{de,en,es,fr,it,ja}.txrc (base text index 68 'Shield Rod')"
+      ]
+    }
+  ],
+  "edits_outside_package": [
+    {"file": "data/stage/stage00_03_set_hard.dat", "owner": "official DLC package 02 (Chapter 8, 9CF520072EB8FA1F1BFFAE7F2C4CC375043CDA9658)", "copies": ["setup DLC source", "installed DLC folder"], "change": "Boss chest (type 4) gains (category 3, index 0xA0, weight 50)", "tool": "shield_rod.py install / chests"},
+    {"file": "data/opd/weapon/ar/P_ARSH00-0B.OPD, C_ARSH00.COL, C_ARSH01.COL", "owner": "base game", "copies": ["assets/", ".setup/package/src/assets/"], "change": "Spell frames appended to every shield sprite", "tool": "install_shield_sotn.py"},
+    {"file": "data/opd/weapon/ar/T_SF*.CSR, T_SRFX00-0A.CSR, T_SFNOTICE.CSR", "owner": "new files in the base folder", "copies": ["assets/", ".setup/package/src/assets/"], "change": "Spell effect pages and the buff notice", "tool": "install_shield_sotn.py"},
+    {"file": "data/sound/SE_SHIELDROD.xsb, .xwb", "owner": "new files in the base folder", "copies": ["assets/", ".setup/package/src/assets/"], "change": "XACT bank rendered from the player's SotN DRA.BIN (cues SE_SR_<sotn id>)", "tool": "install_shield_sotn.py"}
+  ],
+  "native": {
+    "exe_sources": ["mods/shield-rod/src/shield_rod.cpp"],
+    "module_sources": [],
+    "own_overrides": {"82450658": "guard start: the combo and cast", "824519C8": "physical attack: +5 with a shield, ATK buff", "824526D0": "INT total: Shaman buff", "825CEFA0": "XSB bank creation log", "825CED10": "XWB bank creation log"},
+    "shared_hooks": ["kSpawnEvent 30", "kColliderPrepare 20", "kColliderAttack 10", "kShapeRegister 10 + shape observer 10", "kEnemyHp 10", "kOwnerDraw 50", "kPhysicalDefense 20", "kStatusSummary 30", "kIncomingDamage 10"]
+  },
+  "claims": {
+    "wepn_index": "0xA0 (item 0xD3)",
+    "collider_tag": "0x53524B4E 'SRKN' at collider +0x190",
+    "network_event": "8244CA98 kind 11 sub 1, r9/r10 'SR' 'OD'",
+    "sound_bank": "SE_SHIELDROD",
+    "weapon_sprite": "ar/P_ARSW1B"
+  },
+  "generated_headers": [
+    {"file": "shield_rod_balance.h", "by": "shield_rod.py header (SotN combo rows + the player's HoD tables)"},
+    {"file": "shield_rod_audio.h", "by": "build_shield_audio.py"},
+    {"file": "shield_rod_sotn_trace.h", "by": "build_shield_sotn.py (traced from the player's SotN disc; about 22 MB)"}
+  ],
+  "user_inputs": ["SotN USA disc image (SLUS_00067, .cue/.bin)"],
+  "build": [
+    "python mods/shield-rod/tools/shield_rod.py --disc <SotN .cue>",
+    "python mods/shield-rod/tools/shield_rod.py --validate",
+    "python mods/shield-rod/tools/shield_rod.py install",
+    "python mods/shield-rod/tools/shield_rod.py header",
+    "python mods/shield-rod/tools/install_shield_sotn.py"
+  ],
+  "tests": ["python mods/shield-rod/tools/verify_shield_rod.py (588,678 native checks; 154 failures predate the hub, see README)"],
+  "docs": ["mods/shield-rod/README.md", "mods/shield-rod/docs/SHIELD_ROD_PLAN.md", "mods/shield-rod/docs/SHIELD_ROD_HANDOFF.md", "mods/shield-rod/docs/SHIELD_ROD_INSTALLER_HANDOFF.md"]
+}
