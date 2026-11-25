@@ -1,0 +1,74 @@
+{
+  "_comment": "Five OoE glyphs for Shanoa (user, 2026-11-24). Weapons go in her two weapon slots like Dextro/Sinestro Custos (WEPN rows from Dextro Custos, category 10 shot modules); spells go in her glyph slots like Luminatio (GLYP rows from Luminatio, category 3 shot modules). Every module is the 8-bit DLC's R. Zombie soul code rebased; behaviour is src/shanoa_glyph_*_module.cpp. Art: the player's own OoE ROM, converted 1:1 (tools/ooe_glyph_art.py). Package 20 = the Shanoa glyph pack with Refectio and Arma Custos (user, 2026-11-24). Weapon ATK is [mastery 1, max]: like Confodere and the Custos pair it scales with her glyph-mastery collection (8245D178, def mode 2) and STR (824519C8, which 82533878 uses for category 10 shots). Scutum deals no damage (user): ATK 0 and its OoE hitboxes stripped. Numbers are first-pass picks, to tune. tools/shanoa_glyphs.py reads this file.",
+  "package": 20,
+  "first_base": "85A80000",
+  "glyphs": [
+    {
+      "key": "arcus", "kind": "weapon", "index": 161, "ooe": "rap03", "module": "dllshotGlyphArcus",
+      "element": 4, "attack": [6, 48], "icon": 137, "motion": 110, "rarity": 2, "price": 0,
+      "text": {
+        "en": ["Arcus", "Draws a bow and looses an arrow\nstraight ahead."],
+        "de": ["Arcus", "Spannt einen Bogen und schießt\neinen Pfeil geradeaus."],
+        "es": ["Arcus", "Tensa un arco y dispara una\nflecha hacia delante."],
+        "fr": ["Arcus", "Bande un arc et décoche une\nflèche droit devant."],
+        "it": ["Arcus", "Tende un arco e scocca una\nfreccia in avanti."],
+        "ja": ["アルクス", "ゆみを ひき まえに\nやを はなつ"]
+      }
+    },
+    {
+      "key": "ascia", "kind": "weapon", "index": 162, "ooe": "rap04", "module": "dllshotGlyphAscia",
+      "element": 1, "attack": [10, 64], "ghosts": [0],
+      "_extras": "test 6: an impact spark on terrain, as HoD's Axe subweapon shows; OoE raw16 animation 0 (a white-orange star burst)",
+      "extras": [{"name": "spark", "ooe": "raw16", "frames": [0, 1, 2, 3], "ticks": 2}],
+      "icon": 137, "motion": 110, "rarity": 2, "price": 0,
+      "text": {
+        "en": ["Ascia", "Tosses a spinning axe\nin an arc."],
+        "de": ["Ascia", "Wirft eine wirbelnde Axt\nim Bogen."],
+        "es": ["Ascia", "Lanza un hacha giratoria\nen arco."],
+        "fr": ["Ascia", "Lance une hache tournoyante\nen arc de cercle."],
+        "it": ["Ascia", "Lancia un'ascia rotante\nad arco."],
+        "ja": ["アスキア", "かいてんする おのを\nほうぶつせんに なげる"]
+      }
+    },
+    {
+      "key": "scutum", "kind": "weapon", "index": 163, "ooe": "rap09", "module": "dllshotGlyphScutum",
+      "element": 2, "attack": [0, 0], "hitboxes": false,
+      "_shift": "test 3: the shield never drew; its art sat 37-61 px above the sprite origin (OoE draws it relative to Shanoa), so the frames are moved down onto the origin and the shot is placed overhead instead",
+      "shift": [2, 49], "icon": 137, "motion": 110, "rarity": 2, "price": 0,
+      "text": {
+        "en": ["Scutum", "Raises a shield overhead."],
+        "de": ["Scutum", "Hebt einen Schild über\nden Kopf."],
+        "es": ["Scutum", "Alza un escudo sobre\nla cabeza."],
+        "fr": ["Scutum", "Lève un bouclier au-dessus\nde la tête."],
+        "it": ["Scutum", "Alza uno scudo sopra\nla testa."],
+        "ja": ["スクトゥム", "たてを ずじょうに\nかかげる"]
+      }
+    },
+    {
+      "key": "umbra", "kind": "spell", "index": 10, "ooe": "ram08", "module": "dllshotGlyphUmbra",
+      "element": 128, "power": [8, 64], "mp": 18, "motion": 111, "rarity": 3,
+      "_boxes": "OoE gives ram08 no hitboxes (its hit was code); attack boxes added: soul head (flight frames 0-3) and burst (6-10)",
+      "boxes": {"0": [[-12, -8, 14, 16]], "1": [[-12, -8, 14, 16]], "2": [[-12, -8, 14, 16]], "3": [[-12, -8, 14, 16]], "6": [[-16, -16, 32, 32]], "7": [[-16, -16, 32, 32]], "8": [[-16, -16, 32, 32]], "9": [[-16, -16, 32, 32]], "10": [[-16, -16, 32, 32]]},
+      "text": {
+        "en": ["Umbra", "Releases a soul of darkness\nthat seeks out enemies."],
+        "de": ["Umbra", "Entlässt eine Seele der\nDunkelheit, die Feinde jagt."],
+        "es": ["Umbra", "Libera un alma de oscuridad\nque persigue enemigos."],
+        "fr": ["Umbra", "Libère une âme de ténèbres\nqui traque les ennemis."],
+        "it": ["Umbra", "Libera un'anima d'oscurità\nche insegue i nemici."],
+        "ja": ["ウンブラ", "てきを おいかける\nやみの たましいを はなつ"]
+      }
+    },
+    {
+      "key": "cubus", "kind": "spell", "index": 11, "ooe": "ram10", "module": "dllshotGlyphCubus",
+      "element": 2, "power": [4, 32], "mp": 10, "motion": 111, "rarity": 2,
+      "text": {
+        "en": ["Cubus", "Drops a block that can be\nstood on. It soon crumbles."],
+        "de": ["Cubus", "Lässt einen begehbaren Block\nfallen, der bald zerfällt."],
+        "es": ["Cubus", "Deja caer un bloque sobre el\nque subir. Pronto se deshace."],
+        "fr": ["Cubus", "Fait tomber un bloc praticable\nqui s'effrite vite."],
+        "it": ["Cubus", "Fa cadere un blocco su cui\nsalire. Presto si sgretola."],
+        "ja": ["クブス", "のれる ブロックを おとす\nすぐに くずれる"]
+      }
+    }
+  ]
+}
